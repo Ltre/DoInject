@@ -1,0 +1,204 @@
+@charset "utf-8";
+
+body{
+	background-color:rgba(30,28,28,0.21);
+}
+
+/*显示器*/
+#screen{
+	width: 1280px;
+	height: 690px;
+	margin-top: 35px;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	background-image:url(bg.jpg);
+	background-color: #66B3C7;
+	position: relative;
+}
+
+/*总容器内所有DIV默认圆角*/
+#screen div{
+	border-radius: 10px;
+}
+
+#screen>div{
+	position: absolute;
+}
+
+/*右侧窗格视图*/
+#overview{
+	width: 320px;
+	height: 600px;
+	background-color: rgba(204,201,202,0.96);
+	top: 20px;
+	right: 20px;
+}
+
+/*两个命令窗格*/
+#shellarea{
+	background-color: rgba(174,174,174,0.93);
+	margin-top: 20px;
+	width: 300px;
+	height: 270px;
+}
+
+/*左侧内容视图*/
+#content{
+	background-color: rgba(2,2,2,0.15);
+	width: 900px;
+	height: 600px;
+	top: 20px;
+	left: 20px;
+}
+
+/*浮动内嵌页*/
+#iframepage{
+	/*position:relative !important;*/
+	width: 896px;
+	height: 596px;
+	border-color:rgba(0,0,0,0.00);
+}
+
+/*命令行输入条*/
+#command{
+	font-size:15px;
+	font-family:微软雅黑;
+	font-weight: bold;
+	line-height: 20px;
+	text-align: center;
+	color: rgba(141,228,239,1.00);
+	background: rgba(0,0,0,0.55);
+	border-color: rgba(0,0,0,0.00);
+	width: 1240px;
+	height: 20px;
+	float:none;
+	clear:both;
+	top: 640px;
+	margin: 20px auto;
+	display: block;
+	position:relative !important;
+}
+
+/*支架*/
+#bracket{
+	width: 180px;
+	margin: 0 auto;
+}
+#bracket1{
+	height:30px;
+	background: rgba(125,185,241,0.94);
+}
+#bracket2{
+	height:30px;
+	background:rgba(142,150,161,0.91);
+}
+#bracket3{
+	height:30px;
+	background: rgba(125,195,185,0.97);/*rgba(54,138,82,0.89)*/
+}
+
+/*底座*/
+#pedestal{
+	background:rgba(86,86,86,0.98);
+	width: 399px;
+	height: 15px;
+	margin: 0 auto;
+}
+
+/*--------------------------- << PUBLIC - BEGIN ----------------------------*/
+
+
+/* .rd系列：圆角 */
+.rd1{
+	border-top-left-radius: 10px !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+}
+.rd2{
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 10px !important;
+	border-bottom-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+}
+.rd3{
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 10px !important;
+	border-bottom-left-radius: 0 !important;
+}
+.rd4{
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-left-radius: 10px !important;
+	border-bottom-right-radius: 0 !important;
+}
+.rd1__{
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 10px !important;
+	border-bottom-right-radius: 10px !important;
+	border-bottom-left-radius: 10px !important;
+}
+.rd2__{
+	border-top-left-radius: 10px !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 10px !important;
+	border-bottom-left-radius: 10px !important;
+}
+.rd3__{
+	border-top-left-radius: 10px !important;
+	border-top-right-radius: 10px !important;
+	border-bottom-right-radius: 0 !important;
+	border-bottom-left-radius: 10px !important;
+}
+.rd4__{
+	border-top-left-radius: 10px !important;
+	border-top-right-radius: 10px !important;
+	border-bottom-right-radius: 10px !important;
+	border-bottom-left-radius: 0 !important;
+}
+.rdtop{
+	border-top-left-radius: 10px !important;
+	border-top-right-radius: 10px !important;
+	border-bottom-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+}
+.rdleft{
+	border-top-left-radius: 10px !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+	border-bottom-left-radius: 10px !important;
+}
+.rdright{
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 10px !important;
+	border-bottom-right-radius: 10px !important;
+	border-bottom-left-radius: 0 !important;
+}
+.rdbottom{
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-left-radius: 10px !important;
+	border-bottom-right-radius: 10px !important;
+}
+.rd13{
+	border-top-left-radius: 10px !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 10px !important;
+	border-bottom-left-radius: 0 !important;
+}
+.rd24{
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 10px !important;
+	border-bottom-right-radius: 0 !important;
+	border-bottom-left-radius: 10px !important;
+}
+.rdall{
+	border-radius: 10px !important;
+}
+.rdall__{
+	border-radius: 0 !important;
+}
+
+/*--------------------------- PUBLIC - END >> ----------------------------*/

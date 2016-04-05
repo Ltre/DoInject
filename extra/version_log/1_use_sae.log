@@ -1,0 +1,4934 @@
+-- 以下版本历史属于SAE
+
+
+r583 | fkb_159357@163.com | 2016-03-04 15:47:38 CST
+Changed paths:
+	M /1/core/base/__lib.php
+----------------------------------------------------------------------------
+r582 | fkb_159357@163.com | 2015-12-01 14:10:18 CST
+Changed paths:
+	M /1/core/config/database.php
+----------------------------------------------------------------------------
+r581 | fkb_159357@163.com | 2015-10-25 20:13:34 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+修正DIModel的单例模式处理，仅在统一个表名下，才生成单例；换表名时，则会生成新的单例
+----------------------------------------------------------------------------
+r580 | fkb_159357@163.com | 2015-10-10 14:08:07 CST
+Changed paths:
+	M /1/core/base/__exception.php
+
+修正__exception.php的BUG：处于非DEBUG模式时，抛异常自动终止程序的问题。
+----------------------------------------------------------------------------
+r579 | fkb_159357@163.com | 2015-09-13 01:54:54 CST
+Changed paths:
+	M /1/core/base/__inject.php
+
+recall()修正BUG
+----------------------------------------------------------------------------
+r578 | fkb_159357@163.com | 2015-09-11 00:40:59 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+__model.php修复确实的DIException
+----------------------------------------------------------------------------
+r577 | fkb_159357@163.com | 2015-09-11 00:24:35 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+支持Model名到下划线表名的转换规则：AbcDefGh=>Abc_Aef_Gh
+----------------------------------------------------------------------------
+r576 | fkb_159357@163.com | 2015-09-06 20:59:53 CST
+Changed paths:
+	A /1/core/ext/dw/dwXhprof.php
+	A /1/core/ext/dw
+
+加入xhprof
+----------------------------------------------------------------------------
+r575 | fkb_159357@163.com | 2015-08-31 22:02:24 CST
+Changed paths:
+	A /1/core/ext/time/WeekUtil.php
+	A /1/core/ext/time
+
+WeekUtil
+----------------------------------------------------------------------------
+r574 | fkb_159357@163.com | 2015-08-15 19:44:31 CST
+Changed paths:
+	M /1/core/base/__base.php
+
+DIRuntime加入非严格模式
+----------------------------------------------------------------------------
+r573 | fkb_159357@163.com | 2015-08-06 14:46:00 CST
+Changed paths:
+	M /1/.idea/workspace.xml
+----------------------------------------------------------------------------
+r572 | fkb_159357@163.com | 2015-07-18 17:54:29 CST
+Changed paths:
+	M /1/core/base/__inject.php
+
+修正recall
+----------------------------------------------------------------------------
+r571 | fkb_159357@163.com | 2015-07-18 17:44:31 CST
+Changed paths:
+	M /1/core/base/__inject.php
+
+加入recall()
+----------------------------------------------------------------------------
+r570 | fkb_159357@163.com | 2015-07-18 17:11:08 CST
+Changed paths:
+	M /1/core/base/__inject.php
+----------------------------------------------------------------------------
+r569 | fkb_159357@163.com | 2015-07-13 00:33:48 CST
+Changed paths:
+	A /1/core/let/test/banconsole.php
+
+banconsole
+----------------------------------------------------------------------------
+r568 | fkb_159357@163.com | 2015-07-11 15:30:29 CST
+Changed paths:
+	M /1/core/let/test/regular.php
+
+test.regular体验
+----------------------------------------------------------------------------
+r567 | fkb_159357@163.com | 2015-07-11 15:02:16 CST
+Changed paths:
+	M /1/core/let/test/regular.php
+----------------------------------------------------------------------------
+r566 | fkb_159357@163.com | 2015-07-11 14:59:35 CST
+Changed paths:
+	M /1/core/let/test/regular.php
+----------------------------------------------------------------------------
+r565 | fkb_159357@163.com | 2015-07-11 14:57:38 CST
+Changed paths:
+	M /1/core/let/test/regular.php
+
+test.regular样式
+----------------------------------------------------------------------------
+r564 | fkb_159357@163.com | 2015-07-11 14:18:12 CST
+Changed paths:
+	A /1/core/let/test/regular.php
+
+增加test.regular
+----------------------------------------------------------------------------
+r563 | fkb_159357@163.com | 2015-06-14 01:48:37 CST
+Changed paths:
+	A /1/res/lib/jquery.pjax.min.js
+
+加入pjax
+----------------------------------------------------------------------------
+r562 | fkb_159357@163.com | 2015-06-11 21:32:18 CST
+Changed paths:
+	M /1/core/ext/phone/dwSMS.php
+
+修正dwSMS头部
+----------------------------------------------------------------------------
+r561 | fkb_159357@163.com | 2015-06-10 23:26:55 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+
+ROUTE别名 => 真实ROUTE值，支持任意通配符，不区分大小写，匹配优先级以最小数组索引值为最高。由于存在BUG，禁止在配置左侧时仅使用通配符，如“'<X>' => '<X>/start'”，若有需要，请配置具体的，如'fm'=>'fm/start'
+----------------------------------------------------------------------------
+r560 | fkb_159357@163.com | 2015-06-10 20:44:34 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+
+由于存在BUG，禁止在配置左侧使用通配符，如“'<X>' => '<X>/start'”，若有需要，请配置具体的，如'fm'=>'fm/start'
+----------------------------------------------------------------------------
+r559 | fkb_159357@163.com | 2015-06-10 19:55:14 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+
+alias加入以下规则：
+'<X>/<Y>' => '<X>/<Y>',
+'<X>' => '<X>/某方法名'，
+这两条规则要么并存，要么只保留'<X>/<Y>' => '<X>/<Y>'
+
+----------------------------------------------------------------------------
+r558 | fkb_159357@163.com | 2015-06-09 16:54:12 CST
+Changed paths:
+	M /1/core/ext/ApiMerge.php
+----------------------------------------------------------------------------
+r557 | fkb_159357@163.com | 2015-06-09 10:00:09 CST
+Changed paths:
+	M /1/core/ext/ApiMerge.php
+	M /1/core/do/Test.do.php
+
+删除没用代码
+----------------------------------------------------------------------------
+r556 | fkb_159357@163.com | 2015-06-08 20:40:20 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+	A /1/core/ext/ApiMerge.php
+
+加入用于合并API调用的工具ApiMerge
+----------------------------------------------------------------------------
+r555 | fkb_159357@163.com | 2015-06-05 12:33:09 CST
+Changed paths:
+	M /1/core/ext/xsshtml.class.php
+	M /1/core/ext/libutil/xsshtml.php
+
+xsshtml作者已修复对纯文本自动换行和加p标签包裹的BUG
+----------------------------------------------------------------------------
+r554 | fkb_159357@163.com | 2015-06-02 19:54:34 CST
+Changed paths:
+	A /1/res/lib/gimite-websocket/WebSocketMain.swf
+	A /1/core/let/test/websocket/client.php
+	A /1/res/lib/gimite-websocket
+	A /1/core/let/test/websocket/server.php
+	A /1/res/lib/gimite-websocket/test.html
+	A /1/core/let/test/websocket
+	A /1/res/lib/gimite-websocket/swfobject.js
+	A /1/res/lib/gimite-websocket/web_socket.js
+
+加入兼容性的websocket和测试用例
+----------------------------------------------------------------------------
+r553 | fkb_159357@163.com | 2015-06-02 19:50:16 CST
+Changed paths:
+	A /1/core/ext/phone
+	A /1/core/ext/phone/dwSMS.php
+
+加入dwSMS
+----------------------------------------------------------------------------
+r552 | fkb_159357@163.com | 2015-06-01 04:53:47 CST
+Changed paths:
+	M /1/core/config/database.php
+	A /1/core/ext/store
+	M /1/core/do/Test.do.php
+	A /1/core/ext/store/dwCache.php
+
+加入dwCache扩展，并附带测试用例
+----------------------------------------------------------------------------
+r551 | fkb_159357@163.com | 2015-05-19 11:23:02 CST
+Changed paths:
+	M /1/.idea/workspace.xml
+----------------------------------------------------------------------------
+r550 | fkb_159357@163.com | 2015-05-18 15:38:11 CST
+Changed paths:
+	A /1/.idea
+	A /1/.idea/workspace.xml
+	A /1/.idea/scopes
+	A /1/.idea/misc.xml
+	A /1/.idea/scopes/scope_settings.xml
+	A /1/.idea/modules.xml
+	A /1/.idea/DoInject.iml
+	A /1/.idea/encodings.xml
+	A /1/.idea/.name
+	A /1/.idea/vcs.xml
+
+加入idea项目文件
+----------------------------------------------------------------------------
+r549 | fkb_159357@163.com | 2015-05-04 03:39:59 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+修改注释
+----------------------------------------------------------------------------
+r548 | fkb_159357@163.com | 2015-04-21 10:09:45 CST
+Changed paths:
+	A /1/core/ext/libutil
+	A /1/core/ext/libutil/readme.md
+	A /1/core/ext/libutil/xsshtml.php
+
+加入xssFilter()便捷处理xsshtml库
+----------------------------------------------------------------------------
+r547 | fkb_159357@163.com | 2015-04-20 15:52:36 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+修正test/plugin回调的错误URL
+----------------------------------------------------------------------------
+r546 | fkb_159357@163.com | 2015-04-20 15:51:02 CST
+Changed paths:
+	A /1/core/ext/net/AiFtp.php
+
+加入APFTP库
+----------------------------------------------------------------------------
+r545 | fkb_159357@163.com | 2015-04-20 05:31:51 CST
+Changed paths:
+	M /1/core/config/filtermap.php
+
+调整示例全局过滤器的作用域
+----------------------------------------------------------------------------
+r544 | fkb_159357@163.com | 2015-04-20 05:28:54 CST
+Changed paths:
+	M /1/core/base/__filter.php
+
+DIFilterUtil::execGlobalFilter()【此条没什么意义，还影响实际使用体验，暂时废弃】1、首选如果当前请求的shell等于首选启动指令，则忽略过滤器
+----------------------------------------------------------------------------
+r543 | fkb_159357@163.com | 2015-04-20 04:21:05 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+DIModel将_init()代码转移到__construct中，修复多次使用supertable造成使用错表名的BUG
+----------------------------------------------------------------------------
+r542 | fkb_159357@163.com | 2015-04-20 02:58:50 CST
+Changed paths:
+	D /1/core/ext/xsshtml
+	A /1/core/ext/xsshtml.class.php
+----------------------------------------------------------------------------
+r541 | fkb_159357@163.com | 2015-04-20 01:54:18 CST
+Changed paths:
+	A /1/core/ext/xsshtml/xsshtml.class.php
+	A /1/core/ext/xsshtml
+	A /1/core/ext/xsshtml/README.txt
+
+加入xsshtml
+----------------------------------------------------------------------------
+r540 | fkb_159357@163.com | 2015-04-19 22:48:55 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+调整test/plugin输入框大小
+----------------------------------------------------------------------------
+r539 | fkb_159357@163.com | 2015-04-19 22:18:11 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+test/plugin操作成功后，回调原页面。修改插件表单界面容纳度
+----------------------------------------------------------------------------
+r538 | fkb_159357@163.com | 2015-04-19 22:04:00 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+let()防止创建过目录后无法再在其中创建插件
+----------------------------------------------------------------------------
+r537 | fkb_159357@163.com | 2015-04-19 21:59:03 CST
+Changed paths:
+	M /1/core/base/__let.php
+
+let()防止创建过目录后无法再在其中创建插件
+----------------------------------------------------------------------------
+r536 | fkb_159357@163.com | 2015-04-19 21:33:22 CST
+Changed paths:
+	M /1/core/base/__let.php
+
+修改无法在let目录第一层无法创建插件的BUG
+----------------------------------------------------------------------------
+r535 | fkb_159357@163.com | 2015-04-19 16:03:32 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+测试插件生成：完善权限验证
+----------------------------------------------------------------------------
+r534 | fkb_159357@163.com | 2015-04-19 15:58:14 CST
+Changed paths:
+	M /1/extra/how_to_use.md
+
+最简单的登录验证模型
+----------------------------------------------------------------------------
+r533 | fkb_159357@163.com | 2015-04-19 15:41:11 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+test/plugin测试插件生成
+----------------------------------------------------------------------------
+r532 | fkb_159357@163.com | 2015-04-19 15:31:02 CST
+Changed paths:
+	M /1/core/base/__let.php
+
+let()生成插件支持文件夹嵌套创建
+----------------------------------------------------------------------------
+r531 | fkb_159357@163.com | 2015-04-19 14:19:34 CST
+Changed paths:
+	M /1/extra/how_to_use.md
+	M /1/core/base/__lib.php
+
+1、url()接到空串参数时，返回“./”
+2、UserDo::loginView()指定成功回调去向：当前路由且非登录视图
+----------------------------------------------------------------------------
+r530 | fkb_159357@163.com | 2015-04-19 14:04:03 CST
+Changed paths:
+	M /1/extra/how_to_use.md
+
+难点提示：正确的POST/GET提交方式、巧用登录回调
+----------------------------------------------------------------------------
+r529 | fkb_159357@163.com | 2015-04-19 03:43:46 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+----------------------------------------------------------------------------
+r528 | fkb_159357@163.com | 2015-04-19 03:26:47 CST
+Changed paths:
+	M /1/core/ext/bootstrap.php
+	M /1/core/base/__tpl.php
+
+注册spte分页标签
+----------------------------------------------------------------------------
+r527 | fkb_159357@163.com | 2015-04-19 03:19:57 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+	M /1/core/ext/bootstrap.php
+
+加入bootstrap3分页函数，注册spte3到smarty标签。
+----------------------------------------------------------------------------
+r526 | fkb_159357@163.com | 2015-04-18 22:48:36 CST
+Changed paths:
+	M /1/core/config/rewrite.php
+	M /1/core/base/__route.php
+
+优化DIRoute::tranAlias()，防止没配置别名规则时出错。
+----------------------------------------------------------------------------
+r525 | fkb_159357@163.com | 2015-04-18 18:09:38 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+取消shell console自动歌曲播放
+----------------------------------------------------------------------------
+r524 | fkb_159357@163.com | 2015-04-18 16:24:45 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+shell console 支持缩放参数rate
+----------------------------------------------------------------------------
+r523 | fkb_159357@163.com | 2015-04-18 04:34:00 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+
+取消smarty默认eacape:html
+----------------------------------------------------------------------------
+r522 | fkb_159357@163.com | 2015-04-18 04:24:33 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+
+恢复$_smarty原代码
+----------------------------------------------------------------------------
+r521 | fkb_159357@163.com | 2015-04-18 04:18:09 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+
+DITpl::$_smarty改为public，供DIDo子类使用
+----------------------------------------------------------------------------
+r520 | fkb_159357@163.com | 2015-04-18 04:15:53 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+
+DITpl::$_smarty改为protected，供DIDo子类使用
+----------------------------------------------------------------------------
+r519 | fkb_159357@163.com | 2015-04-18 03:15:31 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+putalert()参数优化
+----------------------------------------------------------------------------
+r518 | fkb_159357@163.com | 2015-04-17 22:13:59 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+DIRoute::getShell()方法中，取得的原始shell去除右侧的“/”
+----------------------------------------------------------------------------
+r517 | fkb_159357@163.com | 2015-04-15 13:09:57 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+url()采用“./”前缀
+----------------------------------------------------------------------------
+r516 | fkb_159357@163.com | 2015-04-15 10:40:03 CST
+Changed paths:
+	M /1/core/base/__exception.php
+	M /1/core/base/__init.php
+
+取消全局DIError监控
+----------------------------------------------------------------------------
+r515 | fkb_159357@163.com | 2015-04-15 02:28:30 CST
+Changed paths:
+	M /1/core/base/__exception.php
+	M /1/core/base/__init.php
+
+1、增加setIgnoreErrors(),可以设置忽略的错误类型。
+2、可以使用beginTrace()和endTrace()来选定抓错的区域
+----------------------------------------------------------------------------
+r514 | fkb_159357@163.com | 2015-04-13 21:58:29 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+路由重写增加<any>标签支持，表示任意占位符
+----------------------------------------------------------------------------
+r513 | fkb_159357@163.com | 2015-04-13 21:36:25 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+删除DIRoute::tranAlias()多余代码
+----------------------------------------------------------------------------
+r512 | fkb_159357@163.com | 2015-04-13 13:57:28 CST
+Changed paths:
+	M /1/core/config/define.php
+	M /1/core/config/database.php
+
+配置域名doinject.me
+----------------------------------------------------------------------------
+r511 | fkb_159357@163.com | 2015-04-13 01:20:27 CST
+Changed paths:
+	M /1/core/base/__exception.php
+	M /1/core/base/__init.php
+
+1、优化异常日志
+2、增肌DIError，错误捕捉类(仅在非调试模式触发)，目前除了E_ERROR以外，应该都可以捕捉
+3、__init.php增加全局错误捕捉代码
+----------------------------------------------------------------------------
+r510 | fkb_159357@163.com | 2015-04-12 13:46:59 CST
+Changed paths:
+	M /1/core/tpl/test-stemplate.html
+	M /1/core/tpl/test-template.html
+	M /1/core/tpl/test-else.html
+
+示例模板
+----------------------------------------------------------------------------
+r509 | fkb_159357@163.com | 2015-04-12 13:42:06 CST
+Changed paths:
+	M /1/core/base/__env.php
+	M /1/core/base/__tpl.php
+
+Smarty标签定界符配置
+----------------------------------------------------------------------------
+r508 | fkb_159357@163.com | 2015-04-12 13:21:50 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+兼容类似这样的规则并存，并不强制要求顺序：
+'posts' => 'posts/getlist',
+            'posts/<A>/<B>' => 'posts/getlist/<A>/<B>',
+----------------------------------------------------------------------------
+r507 | fkb_159357@163.com | 2015-04-12 10:56:57 CST
+Changed paths:
+	M /1/core/base/__do.php
+
+__do.php加入_init()
+----------------------------------------------------------------------------
+r506 | fkb_159357@163.com | 2015-04-12 01:21:32 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+----------------------------------------------------------------------------
+r505 | fkb_159357@163.com | 2015-04-12 01:19:08 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+	M /1/core/base/__route.php
+
+ROUTE别名 => 真实ROUTE值，支持任意通配符，不区分大小写，匹配优先级以最小数组索引值为最高。
+增加DIRoute::tranAlias()以支持路由别名
+----------------------------------------------------------------------------
+r504 | fkb_159357@163.com | 2015-04-10 03:45:12 CST
+Changed paths:
+	M /1/core/do/Template.do.php
+----------------------------------------------------------------------------
+r503 | fkb_159357@163.com | 2015-04-10 03:41:35 CST
+Changed paths:
+	M /1/core/do/Template.do.php
+
+修改注释
+----------------------------------------------------------------------------
+r502 | fkb_159357@163.com | 2015-04-10 03:04:06 CST
+Changed paths:
+	A /1/extra/doinject_templates.xml
+
+语法快捷提示
+----------------------------------------------------------------------------
+r501 | fkb_159357@163.com | 2015-04-10 02:42:21 CST
+Changed paths:
+	A /1/.htaccess
+----------------------------------------------------------------------------
+r500 | fkb_159357@163.com | 2015-04-10 02:41:31 CST
+Changed paths:
+	M /1/core/let/shell/shell-css.php
+	A /1/res/biz/shell/di-logo-large-fixvein.png
+	A /1/res/lib/bootstarp-material-design/css/material-wfont.css.map
+	A /1/res/lib
+	A /1/res/lib/bootstarp-material-design/js/material.js
+	A /1/res/lib/bootstarp-material-design/css/material-wfont.css
+	A /1/res/lib/bootstarp-material-design/js/ripples.min.js
+	A /1/res/biz/shell
+	A /1/res/biz/shell/bg.jpg
+	A /1/res/lib/bootstarp-material-design/js
+	D /1/res/js
+	A /1/res/lib/jquery-1.8.3.min.js
+	M /1/core/let/shell/shell.php
+	A /1/res/lib/respond.min.js
+	A /1/res/lib/bootstarp-material-design/js/ripples.js
+	A /1/res/lib/bootstarp-material-design/css/ripples.css
+	A /1/res/lib/bootstrap3/fonts/glyphicons-halflings-regular.woff2
+	A /1/res/lib/bootstarp-material-design/css/ripples.min.css
+	A /1/res/lib/bootstrap3/fonts/glyphicons-halflings-regular.woff
+	A /1/res/lib/bootstrap3/css/bootstrap-theme.min.css
+	A /1/res/biz
+	A /1/res/biz/shell/shell_black.css
+	A /1/res/lib/underscore-1.7-min.js
+	A /1/res/lib/bootstarp-material-design/fonts
+	A /1/res/lib/bootstrap3/js
+	A /1/res/lib/bootstarp-material-design/js/material.min.js
+	D /1/res/shell
+	A /1/res/lib/bootstarp-material-design/css/material-wfont.min.css
+	A /1/res/lib/bootstarp-material-design/js/ripples.min.js.map
+	A /1/res/lib/momentjs/moment.min.js
+	A /1/res/biz/shell/shell_gray.css
+	A /1/res/lib/momentjs
+	A /1/res/biz/shell/shell.css
+	A /1/res/lib/jquery.min.map
+	A /1/res/lib/bootstrap3/fonts/glyphicons-halflings-regular.svg
+	A /1/res/biz/shell/shell_grayzhuanscreen_blackzhuanbg.css
+	A /1/res/lib/bootstarp-material-design/js/material.min.js.map
+	A /1/res/lib/momentjs/info.txt
+	A /1/res/lib/bootstrap3/css/bootstrap.css.map
+	A /1/res/biz/shell/di-logo-large.png
+	A /1/res/lib/bootstrap3/css/bootstrap.min.css
+	A /1/res/lib/bootstarp-material-design/fonts/Material-Design-Icons.woff
+	A /1/res/lib/bootstarp-material-design/fonts/Material-Design-Icons.svg
+	A /1/res/lib/jquery-1.11.1.min.js
+	A /1/res/lib/bootstarp-material-design/css/material-wfont.min.css.map
+	A /1/res/lib/bootstrap3
+	A /1/res/biz/shell/shell.rar
+	A /1/res/biz/shell/shell_deepcyangreenscreen_deepbg.css
+	A /1/res/biz/shell/shell_bluegreenscreen_graybg.css
+	A /1/res/lib/bootstarp-material-design/css/material.css.map
+	A /1/res/biz/shell/shell_blackscreen_graybg.css
+	A /1/res/lib/bootstarp-material-design/css/ripples.css.map
+	A /1/res/lib/bootstrap3/js/bootstrap.min.js
+	A /1/res/lib/bootstrap3/fonts/glyphicons-halflings-regular.eot
+	A /1/res/lib/momentjs/moment-with-locales.min.js
+	A /1/res/lib/bootstarp-material-design/fonts/Material-Design-Icons.ttf
+	A /1/res/lib/bootstarp-material-design
+	A /1/res/lib/bootstarp-material-design/css
+	A /1/res/lib/bootstarp-material-design/fonts/LICENSE.txt
+	A /1/res/lib/bootstarp-material-design/css/material.css
+	A /1/res/lib/bootstarp-material-design/css/ripples.min.css.map
+	A /1/res/biz/shell/index.html
+	D /1/res/shell.rar
+	A /1/res/lib/di.js
+	A /1/res/lib/bootstrap3/fonts
+	A /1/res/biz/shell/shell_blackbluescreen_graybg.css
+	A /1/res/biz/shell/login_bg_rev.jpg
+	A /1/res/lib/bootstrap3/css
+	A /1/res/lib/bootstrap3/fonts/glyphicons-halflings-regular.ttf
+	A /1/res/lib/bootstarp-material-design/css/material.min.css.map
+	A /1/res/lib/bootstarp-material-design/css/material.min.css
+	A /1/res/lib/bootstarp-material-design/fonts/Material-Design-Icons.eot
+	A /1/res/lib/html5shiv.js
+	A /1/res/lib/bootstrap3/css/bootstrap-theme.css.map
+	A /1/res/biz/shell/di-logo-large-fixcolor.png
+
+整理前端资源
+----------------------------------------------------------------------------
+r499 | fkb_159357@163.com | 2015-04-09 02:04:13 CST
+Changed paths:
+	M /1/core/config/rewrite.php
+
+加入跨域名重写的例子
+----------------------------------------------------------------------------
+r498 | fkb_159357@163.com | 2015-04-09 01:51:35 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+1、整理__route.php中分散的$GLOBALS
+2、在重写路由前进行判断isAllowRewrite()，需要满足条件：
+    A、启用了重写开关；
+    B、 路由“x”参数的值没被指定；
+    C、request_args中下标为零且值为空串的参数不存在
+3、修改路由值获取策略：“第一个值为空串的参数名”变更为“第索引为零且值为空串的参数名”
+----------------------------------------------------------------------------
+r497 | fkb_159357@163.com | 2015-04-09 01:38:31 CST
+Changed paths:
+	M /1/cli_debug.php
+
+$_SERVER['REQUEST_URI'] = '/';//一切URI的模拟写法都从“/”开始
+----------------------------------------------------------------------------
+r496 | fkb_159357@163.com | 2015-04-09 00:58:52 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+（注意合并顺序，可能会影响到路由的最终值）
+----------------------------------------------------------------------------
+r495 | fkb_159357@163.com | 2015-04-08 22:37:16 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+	A /1/core/let/test/diyroute.php
+	M /1/core/config/rewrite.php
+	M /1/core/base/__route.php
+	M /1/core/ext/net/ip.php
+
+完美支持跨域名重写路由
+----------------------------------------------------------------------------
+r494 | fkb_159357@163.com | 2015-04-08 03:29:59 CST
+Changed paths:
+	M /1/index.php
+----------------------------------------------------------------------------
+r493 | fkb_159357@163.com | 2015-04-08 01:18:24 CST
+Changed paths:
+	M /1/core/config/filtermap.php
+----------------------------------------------------------------------------
+r492 | fkb_159357@163.com | 2015-04-08 00:42:36 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+关闭自动音乐
+----------------------------------------------------------------------------
+r491 | fkb_159357@163.com | 2015-04-07 23:38:56 CST
+Changed paths:
+	M /1/core/config/database.php
+----------------------------------------------------------------------------
+r490 | fkb_159357@163.com | 2015-04-07 23:12:26 CST
+Changed paths:
+	M /1/core/config/define.php
+
+绑定di.me到本地
+----------------------------------------------------------------------------
+r489 | fkb_159357@163.com | 2015-04-07 23:12:14 CST
+Changed paths:
+	M /1/core/config/database.php
+
+绑定di.me到本地
+----------------------------------------------------------------------------
+r488 | fkb_159357@163.com | 2015-04-05 18:09:32 CST
+Changed paths:
+	M /1/core/base/__env.php
+
+增加DI_CACHE_PATH
+----------------------------------------------------------------------------
+r487 | fkb_159357@163.com | 2015-04-03 23:35:12 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+开始支持类似<num1><num2><num3><num4>
+----------------------------------------------------------------------------
+r486 | fkb_159357@163.com | 2015-04-02 14:12:55 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+DIRoute::rewrite()::原来的\/?替换为(\/|\.html?)，默认支持后缀“/”、“.htm”、“.html”
+----------------------------------------------------------------------------
+r485 | fkb_159357@163.com | 2015-04-02 13:46:15 CST
+Changed paths:
+	M /1/core/config/rewrite.php
+----------------------------------------------------------------------------
+r484 | fkb_159357@163.com | 2015-04-01 10:25:32 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+优化array_item()
+----------------------------------------------------------------------------
+r483 | fkb_159357@163.com | 2015-04-01 10:20:03 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+加入array_remove_duplicate()
+----------------------------------------------------------------------------
+r482 | fkb_159357@163.com | 2015-04-01 02:10:50 CST
+Changed paths:
+	M /1/core/base/__lib.php
+----------------------------------------------------------------------------
+r481 | fkb_159357@163.com | 2015-04-01 01:50:03 CST
+Changed paths:
+	M /1/core/config/define.php
+----------------------------------------------------------------------------
+r480 | fkb_159357@163.com | 2015-04-01 01:49:39 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+优化冗余代码
+----------------------------------------------------------------------------
+r479 | fkb_159357@163.com | 2015-04-01 01:24:53 CST
+Changed paths:
+	M /1/core/config/rewrite.php
+----------------------------------------------------------------------------
+r478 | fkb_159357@163.com | 2015-04-01 01:18:39 CST
+Changed paths:
+	M /1/core/config/rewrite.php
+----------------------------------------------------------------------------
+r477 | fkb_159357@163.com | 2015-03-31 23:05:21 CST
+Changed paths:
+	M /1/core/config/rewrite.php
+	M /1/core/base/__route.php
+
+修复匹配重写规则时，参数类型不匹配时的不及时的处理
+----------------------------------------------------------------------------
+r476 | fkb_159357@163.com | 2015-03-31 21:47:28 CST
+Changed paths:
+	M /1/core/base/__env.php
+	M /1/core/config/rewrite.php
+	M /1/core/base/__route.php
+
+路由重写失败(无匹配)时，是否终止程序。
+对于重写例外规则，可以自行决定是否终止程序
+----------------------------------------------------------------------------
+r475 | fkb_159357@163.com | 2015-03-31 21:25:31 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+路由重写未找到匹配规则时，则不进行重写，并终止程序(这是绝对合理的设计，不用怀疑)
+----------------------------------------------------------------------------
+r474 | fkb_159357@163.com | 2015-03-31 21:16:59 CST
+Changed paths:
+	A /1/core/config/rewrite.php
+	M /1/core/base/__include.php
+	M /1/core/base/__env.php
+	M /1/core/base/__route.php
+	M /1/core/config/define.php
+	M /1/core/do/Test.do.php
+
+1、路由重写去除会话跟踪这种不合理的做法
+2、路由重写常量更名为DI_ROUTE_REWRITE
+3、加入core/config/rewrite.php，用于配置重写规则
+4、颠覆之前写好的重写路由算法，采用phpbase为基础的解析方法，并加入更灵活的参数位置、类型控制
+----------------------------------------------------------------------------
+r473 | fkb_159357@163.com | 2015-03-31 20:17:22 CST
+Changed paths:
+	M /1/core/base/__lib.php
+----------------------------------------------------------------------------
+r472 | fkb_159357@163.com | 2015-03-31 16:12:55 CST
+Changed paths:
+	A /1/extra/codes/backup_DiyRoute.php
+	A /1/extra/codes/backup_checkReqSimilarWithPath.php
+	A /1/extra/codes
+
+备份两段尝试路由重写的代码
+----------------------------------------------------------------------------
+r471 | fkb_159357@163.com | 2015-03-31 15:13:14 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+修改url_prefix()
+----------------------------------------------------------------------------
+r470 | fkb_159357@163.com | 2015-03-29 01:26:13 CST
+Changed paths:
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r469 | fkb_159357@163.com | 2015-03-29 00:13:48 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+修改注释
+----------------------------------------------------------------------------
+r468 | fkb_159357@163.com | 2015-03-27 05:09:49 CST
+Changed paths:
+	M /1/core/base/__route.php
+	M /1/core/do/Test.do.php
+	M /1/core/let/shell/shell.php
+----------------------------------------------------------------------------
+r467 | fkb_159357@163.com | 2015-03-26 16:14:57 CST
+Changed paths:
+	M /1/core/base/__exception.php
+
+            @$msg = $time . "    {$_SERVER['SERVER_PROTOCOL']}    {$_SERVER['SERVER_NAME']}" . (80==$_SERVER['SERVER_PORT']?'':':'.$_SERVER['SERVER_PORT']) . "{$_SERVER['REQUEST_URI']}    REFERER[{$_SERVER['HTTP_REFERER']}]    REMOTE_ADDR[{$_SERVER['REMOTE_ADDR']}]    REQUEST_METHOD[{$_SERVER['REQUEST_METHOD']}]    $message\r\n";
+----------------------------------------------------------------------------
+r466 | fkb_159357@163.com | 2015-03-25 23:10:50 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+修正checkReqSimilarWithPath()，放弃使用抓取session异常的方式
+----------------------------------------------------------------------------
+r465 | fkb_159357@163.com | 2015-03-25 22:51:12 CST
+Changed paths:
+	M /1/core/base/__env.php
+	M /1/core/base/__lib.php
+	M /1/core/base/__route.php
+
+1、增加会话key{DI_SESSIONKEY_ALL_FILEPATHS|DI_SESSIONKEY_LAST_REQPATH|DI_SESSIONKEY_ISREQ_FILEPATH}用于跟踪路由重写机制
+2、增加array_unshift_withkey(),在array_unshift的基础上，对插入首部的元素带上自定义key
+3、增加parseFilePaths()，扫描得到指定路径的所有层次文件路径
+4、DIRoute::uri_shift_reqest()重命名为DIRoute::uri_unshift_reqest()，增加checkReqSimilarWithPath(),用于检测请求路径是否类似于文件/目录的路径，以及对robots.txt,favicon.ico,index.php之类的请求的处理，防止误重写。
+----------------------------------------------------------------------------
+r464 | fkb_159357@163.com | 2015-03-25 17:01:23 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+优化会话便捷操作代码test/session
+----------------------------------------------------------------------------
+r463 | fkb_159357@163.com | 2015-03-25 13:27:30 CST
+Changed paths:
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r462 | fkb_159357@163.com | 2015-03-25 13:18:35 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+parsePhpDirFromLibDirAndAutoIncludeTheir()修正路径匹配判断
+----------------------------------------------------------------------------
+r461 | fkb_159357@163.com | 2015-03-25 12:39:12 CST
+Changed paths:
+	M /1/core/base/__lib.php
+----------------------------------------------------------------------------
+r460 | fkb_159357@163.com | 2015-03-25 12:36:46 CST
+Changed paths:
+	M /1/core/base/__lib.php
+----------------------------------------------------------------------------
+r459 | fkb_159357@163.com | 2015-03-25 01:33:17 CST
+Changed paths:
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r458 | fkb_159357@163.com | 2015-03-24 20:19:52 CST
+Changed paths:
+	M /1/core/base/__env.php
+----------------------------------------------------------------------------
+r457 | fkb_159357@163.com | 2015-03-24 20:18:31 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+可根据DI_URLREWRITE_ENABLE决定是否重写路由
+----------------------------------------------------------------------------
+r456 | fkb_159357@163.com | 2015-03-24 20:10:03 CST
+Changed paths:
+	M /1/core/base/__route.php
+	M /1/core/base/__lib.php
+
+修正重写BUG，确保有“?”不会出错
+----------------------------------------------------------------------------
+r455 | fkb_159357@163.com | 2015-03-24 19:25:20 CST
+Changed paths:
+	M /1/core/base/__route.php
+	M /1/core/base/__lib.php
+
+增加uri_pure()，支持在非DocumentRoot下进行重写，需要配合.htaccess文件
+----------------------------------------------------------------------------
+r454 | fkb_159357@163.com | 2015-03-24 14:11:09 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+前端资源引用，如果需要服务器处理的，最好在URL前加上“./”
+----------------------------------------------------------------------------
+r453 | fkb_159357@163.com | 2015-03-24 14:06:16 CST
+Changed paths:
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r452 | fkb_159357@163.com | 2015-03-24 13:51:25 CST
+Changed paths:
+	M /1/core/base/__route.php
+	M /1/core/base/__lib.php
+	M /1/core/base/__init.php
+
+增加路由重写支持
+----------------------------------------------------------------------------
+r451 | fkb_159357@163.com | 2015-03-24 12:55:00 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+$GLOBALS['request_args'] = array_merge($_GET, $_POST, $_REQUEST); @ __lib.php
+----------------------------------------------------------------------------
+r450 | fkb_159357@163.com | 2015-03-24 12:39:09 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+新增uri_prefix()
+----------------------------------------------------------------------------
+r449 | fkb_159357@163.com | 2015-03-18 13:37:06 CST
+Changed paths:
+	M /1/core/config/database.php
+	M /1/core/config/define.php
+	M /1/core/base/__lib.php
+
+增加host_name()，修正在非80端口下容易被终止程序的问题
+----------------------------------------------------------------------------
+r448 | fkb_159357@163.com | 2015-03-16 16:10:14 CST
+Changed paths:
+	M /1/core/config/define.php
+	M /1/core/config/database.php
+
+HTTP_HOST
+----------------------------------------------------------------------------
+r447 | fkb_159357@163.com | 2015-03-15 19:33:34 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+提高superput()容错性
+----------------------------------------------------------------------------
+r446 | fkb_159357@163.com | 2015-03-15 14:30:43 CST
+Changed paths:
+	A /1/core/data/cache/index.html
+	M /1/core/base/__lib.php
+	M /1/core/base/__do.php
+
+dispatch()从__lib.php转移到__do.php
+----------------------------------------------------------------------------
+r445 | fkb_159357@163.com | 2015-03-13 23:41:48 CST
+Changed paths:
+	M /1/cli_debug.php
+
+cli_debug改为$_REQUEST方式
+----------------------------------------------------------------------------
+r444 | fkb_159357@163.com | 2015-03-13 21:50:24 CST
+Changed paths:
+	A /1/core/ext/net
+	A /1/core/tpl/testtest-stpl.html
+	A /1/core/ext/net/ip.php
+	A /1/core/ext/net/dwHttp.php
+	M /1/core/base/__env.php
+	M /1/core/base/__entity.php
+	A /1/core/tpl/testtest-testtpl.php
+	M /1/core/do/Test.do.php
+	A /1/core/let/shell/index.html
+	M /1/core/let/shell/shell.php
+	A /1/core/tpl/test-stemplate.html
+	M /1/core/do/Testtest.do.php
+	M /1/core/do/Template.do.php
+	M /1/core/base/__do.php
+	D /1/core/ext/phpQuery.php
+	A /1/core/tpl/testtest-teststpl.html
+	A /1/core/tpl/testtest-tpl.php
+	A /1/core/data/log/index.html
+	M /1/core/config/define.php
+	M /1/core/base/__event.php
+	A /1/core/ext/smarty/index.html
+
+1、不再强制指定单一的输出方式，tpl()输出模板的方式由DI_SMARTY_DEFAULT决定。如一定要使用Smarty，请使用stpl()。
+2、修复DIEvent::on()中的参数判断问题，删除参数表中的前缀声明-callable，改由is_callable()判断
+3、加入dwHttp.php,ip.php
+----------------------------------------------------------------------------
+r443 | fkb_159357@163.com | 2015-03-13 21:20:42 CST
+Changed paths:
+	M /1/core/base/__base.php
+
+修正使用$this->xxx = 'sometext::sometext';这样的语句时，报出的 [class sometext not found]错误
+----------------------------------------------------------------------------
+r442 | fkb_159357@163.com | 2015-03-13 18:08:38 CST
+Changed paths:
+	M /1/core/base/__event.php
+
+提升DIEvent::do()容错性，如果参数错误，会抛出异常，并准确指出错误源
+----------------------------------------------------------------------------
+r441 | fkb_159357@163.com | 2015-03-12 17:22:24 CST
+Changed paths:
+	M /1/core/base/__lib.php
+----------------------------------------------------------------------------
+r440 | fkb_159357@163.com | 2015-03-12 04:19:48 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+redirect改为dispatch
+----------------------------------------------------------------------------
+r439 | fkb_159357@163.com | 2015-03-11 22:55:43 CST
+Changed paths:
+	M /1/core/base/__env.php
+	M /1/core/base/__route.php
+	M /1/core/base/__init.php
+
+1、DI_ROUTE_GET_PARAM_NAME改为DI_ROUTE_REQUEST_PARAM_NAME
+2、__init.php改为$_REQUEST输入
+3、superput()超级输出
+4、__route.php支持对$_REQUEST的解析
+----------------------------------------------------------------------------
+r438 | fkb_159357@163.com | 2015-03-11 22:25:36 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+超级输出superput()
+----------------------------------------------------------------------------
+r437 | fkb_159357@163.com | 2015-03-11 21:18:13 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+__route.php::getShell()获取指令，这里只针对URL分析，即针对$_GET。取值优先顺序：配置的默认指令 => “x”参数的值 => 左起第一个没有值的参数名。
+----------------------------------------------------------------------------
+r436 | fkb_159357@163.com | 2015-03-10 01:47:14 CST
+Changed paths:
+	M /1/core/config/define.php
+
+加入iio.ooo域名
+----------------------------------------------------------------------------
+r435 | fkb_159357@163.com | 2015-03-09 13:24:57 CST
+Changed paths:
+	M /1/core/config/database.php
+	M /1/core/config/define.php
+
+配置文件的HTTP_HOST改为SERVER_NAME
+----------------------------------------------------------------------------
+r434 | fkb_159357@163.com | 2015-03-04 00:50:57 CST
+Changed paths:
+	M /1/core/ext/bootstrap.php
+
+bt_shell_page兼容GET型参数
+----------------------------------------------------------------------------
+r433 | fkb_159357@163.com | 2015-03-03 17:49:21 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+route()::throw new DIException('无法识别request类型或找不到request目标，详见：' . var_export($rt, true), DI_PAGE_400);
+----------------------------------------------------------------------------
+r432 | fkb_159357@163.com | 2015-03-03 02:33:00 CST
+Changed paths:
+	M /1/extra/how_to_use.md
+----------------------------------------------------------------------------
+r431 | fkb_159357@163.com | 2015-03-03 02:27:57 CST
+Changed paths:
+	A /1/core/tpl/_layout.php
+	M /1/core/do/Test.do.php
+	M /1/core/base/__do.php
+
+tpl()输出支持layout替换，并在test.do中给出示例
+----------------------------------------------------------------------------
+r430 | fkb_159357@163.com | 2015-03-03 01:58:14 CST
+Changed paths:
+	M /1/core/base/__base.php
+
+屏蔽未完成的__isset()和__clone()
+----------------------------------------------------------------------------
+r429 | fkb_159357@163.com | 2015-03-03 01:54:42 CST
+Changed paths:
+	M /1/core/base/__do.php
+----------------------------------------------------------------------------
+r428 | fkb_159357@163.com | 2015-03-03 01:51:55 CST
+Changed paths:
+	M /1/core/base/__do.php
+
+暂时屏蔽代码：if(! method_exists($do_name.'Do', $func_name)){
+	            throw new DIException("由于{$do_name}Do::{$func_name}组件不存在，导致输出模板[ $tpl_name ]时出错");
+	        }
+----------------------------------------------------------------------------
+r427 | fkb_159357@163.com | 2015-03-02 18:14:11 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+js的alert()
+----------------------------------------------------------------------------
+r426 | fkb_159357@163.com | 2015-03-02 12:23:20 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+优化putjsonp()
+----------------------------------------------------------------------------
+r425 | fkb_159357@163.com | 2015-02-21 14:34:12 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+修复redirect()的BUG【在*NIX系列机器中执行redirect('与类名、文件名不同大小写单词单词/单词')时，抛出某某类找不到的异常】
+修改明细：
+$do = $ar[0] . DI_KEYWORD_DO;
+更改为
+$do = ucfirst($ar[0]) . ucfirst(DI_KEYWORD_DO);
+----------------------------------------------------------------------------
+r424 | fkb_159357@163.com | 2015-02-15 15:13:20 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+完善无法识别request类型的提示
+----------------------------------------------------------------------------
+r423 | fkb_159357@163.com | 2015-02-06 22:14:12 CST
+Changed paths:
+	M /1/core/base/__exception.php
+----------------------------------------------------------------------------
+r422 | fkb_159357@163.com | 2015-02-06 21:34:21 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+增加path_prefix()
+----------------------------------------------------------------------------
+r421 | fkb_159357@163.com | 2015-02-06 21:30:43 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+----------------------------------------------------------------------------
+r420 | fkb_159357@163.com | 2015-02-05 01:19:01 CST
+Changed paths:
+	M /1/core/base/__event.php
+	M /1/core/do/Test.do.php
+
+模拟Node.js的Emitter模型
+----------------------------------------------------------------------------
+r419 | fkb_159357@163.com | 2015-02-04 00:06:48 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+supertable(), supermodel()
+----------------------------------------------------------------------------
+r418 | fkb_159357@163.com | 2015-02-03 23:50:36 CST
+Changed paths:
+	M /1/core/base/__lib.php
+	M /1/core/base/__route.php
+
+__lib.php::获取当前执行的URL前缀，截至当前执行目录，尾部有“/”
+----------------------------------------------------------------------------
+r417 | fkb_159357@163.com | 2015-02-02 20:39:49 CST
+Changed paths:
+	A /1/core/let/test/form.php
+	A /1/core/let/test
+
+特殊表单提交方式
+----------------------------------------------------------------------------
+r416 | fkb_159357@163.com | 2015-02-02 20:32:39 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r415 | fkb_159357@163.com | 2015-02-02 20:13:52 CST
+Changed paths:
+	M /1/extra/how_to_use.md
+
+注意：对于URL“http://danmu.me/test.upload”，其转化为常规URL时为“http://danmu.me/x=test_upload”
+----------------------------------------------------------------------------
+r414 | fkb_159357@163.com | 2015-02-01 22:05:38 CST
+Changed paths:
+	M /1/core/base/__lib.php
+	M /1/core/do/Test.do.php
+
+优化session，使用序列化。
+增加session_all()
+----------------------------------------------------------------------------
+r413 | fkb_159357@163.com | 2015-02-01 18:43:24 CST
+Changed paths:
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r412 | fkb_159357@163.com | 2015-02-01 17:12:49 CST
+Changed paths:
+	M /1/core/base/__exception.php
+	M /1/core/base/__route.php
+
+1、抛异常一定会记录日志，支持错误页指定和回调体。
+2、route在代码中找不到Do::func()定义时，在线上模式会输出400
+----------------------------------------------------------------------------
+r411 | fkb_159357@163.com | 2015-01-31 23:27:31 CST
+Changed paths:
+	M /1/extra/how_to_use.md
+
+八、使用Do模块级注入(过滤)
+----------------------------------------------------------------------------
+r410 | fkb_159357@163.com | 2015-01-31 23:20:26 CST
+Changed paths:
+	M /1/core/base/__do.php
+
+执行模块级过滤
+----------------------------------------------------------------------------
+r409 | fkb_159357@163.com | 2015-01-31 22:55:36 CST
+Changed paths:
+	M /1/extra/how_to_use.md
+
+使用受保护XxxDo::func()时，如果参数表有默认值，则应将有默认值的参数置于尾部，并且不要使用环绕注入。
+----------------------------------------------------------------------------
+r408 | fkb_159357@163.com | 2015-01-31 22:52:27 CST
+Changed paths:
+	M /1/core/base/__do.php
+
+没有环绕注入时，不会把环绕functions的空数组注入到XxxDo::func()的参数表中，防止参数污染
+----------------------------------------------------------------------------
+r407 | fkb_159357@163.com | 2015-01-26 22:09:51 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+按键获取数组中的项
+----------------------------------------------------------------------------
+r406 | fkb_159357@163.com | 2015-01-25 18:06:23 CST
+Changed paths:
+	M /1/core/base/__route.php
+	M /1/extra/how_to_use.md
+	M /1/core/base/__env.php
+
+备用的路由GET参数，方便HTML表单使用
+----------------------------------------------------------------------------
+r405 | fkb_159357@163.com | 2015-01-25 16:55:50 CST
+Changed paths:
+	A /1/core/ext/Snoopy.class.php
+
+加入snoopy
+
+----------------------------------------------------------------------------
+r404 | fkb_159357@163.com | 2015-01-25 16:23:28 CST
+Changed paths:
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r403 | fkb_159357@163.com | 2015-01-25 15:58:14 CST
+Changed paths:
+	M /1/index.php
+
+附加服务器环境检测
+----------------------------------------------------------------------------
+r402 | fkb_159357@163.com | 2015-01-23 10:09:18 CST
+Changed paths:
+	M /1/core/config/database.php
+----------------------------------------------------------------------------
+r401 | fkb_159357@163.com | 2015-01-23 10:07:35 CST
+Changed paths:
+	A /1/extra/sql/create_user.sql
+----------------------------------------------------------------------------
+r400 | fkb_159357@163.com | 2015-01-23 10:04:03 CST
+Changed paths:
+	M /1/core/config/database.php
+----------------------------------------------------------------------------
+r399 | fkb_159357@163.com | 2015-01-23 10:00:33 CST
+Changed paths:
+	M /1/core/config/database.php
+----------------------------------------------------------------------------
+r398 | fkb_159357@163.com | 2015-01-23 10:00:26 CST
+Changed paths:
+	M /1/core/config/define.php
+----------------------------------------------------------------------------
+r397 | fkb_159357@163.com | 2015-01-23 09:51:35 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+----------------------------------------------------------------------------
+r396 | fkb_159357@163.com | 2015-01-23 09:44:47 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+shell测试页命令去除首字符"?"
+----------------------------------------------------------------------------
+r395 | fkb_159357@163.com | 2015-01-22 11:26:57 CST
+Changed paths:
+	M /1/extra/how_to_use.md
+
+如遇到类加载与本框架的__autoload()冲突，可临时解除强制加载，再重写autoload()。
+----------------------------------------------------------------------------
+r394 | fkb_159357@163.com | 2015-01-22 10:51:06 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+
+smarty导入时机更改为真正需要利用其输出模板时
+----------------------------------------------------------------------------
+r393 | fkb_159357@163.com | 2015-01-22 10:30:03 CST
+Changed paths:
+	M /1/extra/how_to_use.md
+
+如遇到类加载与本框架的__autoload()冲突，可临时解除强制加载。
+----------------------------------------------------------------------------
+r392 | fkb_159357@163.com | 2015-01-22 03:42:39 CST
+Changed paths:
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Hostname/Interface.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Date.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Http/Cookie.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Http/Client.php
+	D /1/core/ext/Snoopy.class.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Json/Decoder.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/StringLength.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Regex.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Interface.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Hostname/Se.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/File/MimeType.php
+	A /1/core/ext/phpQuery/phpQuery/plugins/Scripts.php
+	A /1/core/ext/phpQuery/phpQuery/plugins/Scripts/example.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/GreaterThan.php
+	A /1/core/ext/phpQuery/phpQuery/plugins/example.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Http
+	A /1/core/ext/phpQuery/phpQuery/compat
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Identical.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Json/Exception.php
+	A /1/core/ext/phpQuery/phpQuery/DOMEvent.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Hostname/No.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Http/Client/Adapter/Interface.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Hostname.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/File/ImageSize.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Uri
+	A /1/core/ext/phpQuery/phpQuery/plugins/Scripts/print_source.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Exception.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Ip.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Hostname
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/File/Exists.php
+	M /1/core/do/Test.do.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/NotEmpty.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Http/Client/Adapter
+	A /1/core/ext/phpQuery/phpQuery/phpQueryObject.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/File/Count.php
+	A /1/core/ext/phpQuery/phpQuery/bootstrap.example.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/File/Extension.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Http/Client/Adapter/Proxy.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Hostname/At.php
+	A /1/core/ext/phpQuery/phpQuery/Callback.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Http/Client/Adapter/Exception.php
+	A /1/core/ext/phpQuery/phpQuery/DOMDocumentWrapper.php
+	A /1/core/ext/phpQuery/phpQuery/plugins/Scripts/google_login.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Uri.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Digits.php
+	A /1/core/ext/phpQuery/phpQuery/phpQueryEvents.php
+	A /1/core/ext/phpQuery/phpQuery/plugins
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Hostname/Ch.php
+	A /1/core/ext/phpQuery/phpQuery/plugins/Scripts/print_websafe.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Alnum.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Float.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Http/Response.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Loader.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Hex.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Http/Client/Adapter/Test.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Registry.php
+	A /1/core/ext/phpQuery/phpQuery/plugins/WebBrowser.php
+	A /1/core/ext/phpQuery/phpQuery/compat/mbstring.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/EmailAddress.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Http/Client
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Hostname/Hu.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Alpha.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Uri/Http.php
+	A /1/core/ext/phpQuery/phpQuery/plugins/Scripts
+	A /1/core/ext/phpQuery/phpQuery/Zend/Http/Exception.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/File/Size.php
+	A /1/core/ext/phpQuery/phpQuery
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/File/NotExists.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Hostname/De.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Barcode
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/File/FilesSize.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Http/Client/Adapter/Socket.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Hostname/Fi.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Barcode/UpcA.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Barcode.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Uri/Exception.php
+	A /1/core/ext/phpQuery/phpQuery/Zend
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/InArray.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Json/Encoder.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Exception.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/File
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Int.php
+	A /1/core/ext/phpQuery/phpQuery/plugins/Scripts/__config.example.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/File/Upload.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Http/CookieJar.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Between.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Json
+	A /1/core/ext/phpQuery/phpQuery/plugins/Scripts/fix_webroot.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Hostname/Li.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Barcode/Ean13.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/LessThan.php
+	A /1/core/ext/phpQuery
+	A /1/core/ext/phpQuery/phpQuery/Zend/Http/Client/Exception.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Ccnum.php
+	A /1/core/ext/phpQuery/phpQuery/Zend/Validate/Abstract.php
+	A /1/core/ext/phpQuery/phpQuery.php
+
+加入phpQuery
+----------------------------------------------------------------------------
+r391 | fkb_159357@163.com | 2015-01-22 03:18:13 CST
+Changed paths:
+	A /1/core/ext/phpQuery.php
+----------------------------------------------------------------------------
+r390 | fkb_159357@163.com | 2015-01-22 01:14:08 CST
+Changed paths:
+	A /1/core/ext/Snoopy.class.php
+
+加入爬虫支持
+----------------------------------------------------------------------------
+r389 | fkb_159357@163.com | 2015-01-21 11:00:40 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+按位置获取数组的key
+----------------------------------------------------------------------------
+r388 | fkb_159357@163.com | 2015-01-15 09:32:06 CST
+Changed paths:
+	M /1/core/let/shell/clock.php
+----------------------------------------------------------------------------
+r387 | fkb_159357@163.com | 2015-01-14 10:55:33 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r386 | fkb_159357@163.com | 2015-01-14 10:54:56 CST
+Changed paths:
+	M /1/README.MD
+
+代办：过滤器层次要求：
+		全局绝对过滤器	GAF (GlobalAbsoluteFilter, 后缀名.filter) -> 
+		全局普通过滤器	GGF (GlobalGeneralFilter, 后缀名.filter) -> 
+		特定范围过滤器	SSF (SpecificScopeFilter, 后缀名.filter) -> 
+		Do单元过滤器		DUF (DoUnitFilter.inject)。
+----------------------------------------------------------------------------
+r385 | fkb_159357@163.com | 2015-01-14 00:58:01 CST
+Changed paths:
+	M /1/core/do/Template.do.php
+
+Template.do.php：：要注意：上级调用这有可能还是tpl()，所以要逐层判断。在调用栈中，找到第一个非tpl()的对象方法名，这个名称会对应模板名称
+----------------------------------------------------------------------------
+r384 | fkb_159357@163.com | 2015-01-11 22:59:26 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+创建一个临时的DIModel实例，和任何表无关
+----------------------------------------------------------------------------
+r383 | fkb_159357@163.com | 2015-01-09 14:26:36 CST
+Changed paths:
+	A /1/extra/doc/resources/inherit.png
+	A /1/extra/doc/resources/collapsed.png
+	A /1/extra/doc/resources/footer.png
+	A /1/extra/doc/resources/tree-cleaner.png
+	A /1/extra/doc/resources/tree-vertical.png
+	A /1/extra/doc/resources/style.css
+	A /1/extra/doc/resources/tree-last.png
+	A /1/extra/doc/resources
+	A /1/extra/doc/resources/code-line.png
+	A /1/extra/doc/resources/sort.png
+	A /1/extra/doc/resources/combined.js
+	A /1/extra/doc/resources/resize.png
+	A /1/extra/doc/resources/tree-hasnext.png
+----------------------------------------------------------------------------
+r382 | fkb_159357@163.com | 2015-01-09 14:26:14 CST
+Changed paths:
+	M /1/extra/doc/source-class-DIUrlShell.html
+	D /1/extra/doc/resources
+	M /1/extra/doc/class-DIUrlShell.html
+----------------------------------------------------------------------------
+r381 | fkb_159357@163.com | 2015-01-09 13:50:42 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+----------------------------------------------------------------------------
+r380 | fkb_159357@163.com | 2015-01-09 13:48:08 CST
+Changed paths:
+	A /1/extra/doc/resources/resize.png
+	A /1/extra/doc/resources/tree-vertical.png
+	A /1/extra/doc/resources/tree-hasnext.png
+	A /1/extra/doc/resources/tree-last.png
+	A /1/extra/doc/resources/combined.js
+	A /1/extra/doc/resources/footer.png
+	A /1/extra/doc/resources/sort.png
+	A /1/extra/doc/resources/style.css
+	A /1/extra/doc/resources/code-line.png
+	A /1/extra/doc/resources/tree-cleaner.png
+	A /1/extra/doc/resources/inherit.png
+	A /1/extra/doc/resources
+	A /1/extra/doc/resources/collapsed.png
+----------------------------------------------------------------------------
+r379 | fkb_159357@163.com | 2015-01-09 13:46:39 CST
+Changed paths:
+	M /1/extra/doc/source-class-DIException.html
+	M /1/extra/doc/function-inject_dymic.html
+	M /1/extra/doc/source-class-DIEvent_CallStaticFuncListener.html
+	A /1/extra/doc/function-url.html
+	M /1/extra/doc/class-DIEvent_ObjCreateListener.html
+	A /1/extra/doc/class-DIModelUtil.html
+	M /1/extra/doc/source-class-DIModelTemplate.html
+	D /1/extra/doc/resources
+	M /1/extra/doc/source-class-OrekiUtil.html
+	A /1/extra/doc/source-function-redirect.html
+	M /1/extra/doc/function-invoke_method.html
+	A /1/extra/doc/source-function-session_remove.html
+	M /1/extra/doc/source-class-DIEvent_CallFuncListener.html
+	M /1/extra/doc/class-DITpl.html
+	A /1/extra/doc/source-class-DIMySQL.html
+	M /1/extra/doc/source-class-DIRuntime.html
+	M /1/extra/doc/class-DIRuntime_Imported.html
+	M /1/extra/doc/source-class-DIDo.html
+	A /1/extra/doc/source-class-DIError.html
+	M /1/extra/doc/class-DIEvent_AppendVariableListener.html
+	M /1/extra/doc/source-class-DIEntity.html
+	M /1/extra/doc/class-DIBase.html
+	M /1/extra/doc/source-class-YyyFilter.html
+	M /1/extra/doc/source-class-DITpl.html
+	M /1/extra/doc/function-ref_arr.html
+	M /1/extra/doc/source-class-DIInclude.html
+	M /1/extra/doc/class-DIEvent_GetStaticVariableListener.html
+	M /1/extra/doc/source-class-DIFilter.html
+	M /1/extra/doc/class-DIEvent_DestroyListener.html
+	M /1/extra/doc/source-function-inject_dymic.html
+	M /1/extra/doc/source-class-DIEvent_ObjCreateListener.html
+	M /1/extra/doc/source-function-let_exists.html
+	M /1/extra/doc/source-class-XxxFilter.html
+	M /1/extra/doc/function-inject_full.html
+	M /1/extra/doc/function-session.html
+	M /1/extra/doc/class-DIFilter.html
+	M /1/extra/doc/class-DILet.html
+	M /1/extra/doc/class-Test.html
+	A /1/extra/doc/source-function-url.html
+	M /1/extra/doc/source-class-Global3Filter.html
+	M /1/extra/doc/source-function-inject.html
+	M /1/extra/doc/class-Exception.html
+	M /1/extra/doc/class-DIEvent_CallStaticFuncListener.html
+	M /1/extra/doc/class-DIContext.html
+	M /1/extra/doc/source-class-DIContext.html
+	M /1/extra/doc/class-DIInject.html
+	M /1/extra/doc/class-DIEvent_CallFuncListener.html
+	M /1/extra/doc/class-DIModel.html
+	M /1/extra/doc/source-class-TestInject.html
+	M /1/extra/doc/class-TestInject.html
+	M /1/extra/doc/function-array_unset.html
+	A /1/extra/doc/class-TemplateDo.html
+	M /1/extra/doc/source-class-DIEvent_ClassCallListener.html
+	A /1/extra/doc/function-session_remove.html
+	M /1/extra/doc/source-class-DIUrlShell.html
+	M /1/extra/doc/source-function-array_unset.html
+	M /1/extra/doc/class-DIEvent_GetVariableListener.html
+	M /1/extra/doc/function-let.html
+	M /1/extra/doc/source-function-import.html
+	A /1/extra/doc/source-function-bt_page.html
+	A /1/extra/doc/class-DIDBConfig.html
+	M /1/extra/doc/class-DIEntity.html
+	M /1/extra/doc/source-function-injectObjFunc.html
+	M /1/extra/doc/source-class-TestDo.html
+	M /1/extra/doc/class-XxxFilter.html
+	A /1/extra/doc/function-bt_page.html
+	M /1/extra/doc/source-class-DIEvent_SetVariableListener.html
+	M /1/extra/doc/source-class-TesttestDo.html
+	M /1/extra/doc/source-function-invoke_func.html
+	M /1/extra/doc/source-class-DIFilterUtil.html
+	M /1/extra/doc/source-class-DIEventListener.html
+	M /1/extra/doc/class-DIEvent_ClassCallListener.html
+	M /1/extra/doc/source-function-params_to_str.html
+	A /1/extra/doc/class-DIError.html
+	M /1/extra/doc/class-DIException.html
+	M /1/extra/doc/function-session_exists.html
+	M /1/extra/doc/source-class-DIIncludeConfig.html
+	A /1/extra/doc/function-putjson.html
+	M /1/extra/doc/class-DIRuntime.html
+	A /1/extra/doc/function-redirect.html
+	M /1/extra/doc/namespace-None.html
+	M /1/extra/doc/source-class-Test.html
+	M /1/extra/doc/source-class-DIEvent_AppendVariableListener.html
+	M /1/extra/doc/class-DIEvent_SetStaticVariableListener.html
+	A /1/extra/doc/class-DIMySQL.html
+	M /1/extra/doc/class-DIEvent_ObjCallListener.html
+	M /1/extra/doc/class-DIEvent.html
+	M /1/extra/doc/class-Global3Filter.html
+	M /1/extra/doc/function-let_exists.html
+	M /1/extra/doc/class-DIEvent_SetVariableListener.html
+	M /1/extra/doc/source-class-DILet.html
+	M /1/extra/doc/source-class-DIEvent_GetStaticVariableListener.html
+	M /1/extra/doc/source-function-ref_arr.html
+	M /1/extra/doc/source-class-DIFilterMap.html
+	M /1/extra/doc/source-class-DIInject.html
+	M /1/extra/doc/source-class-DIContext_Inject.html
+	M /1/extra/doc/source-class-DIEvent_AppendFuncListener.html
+	M /1/extra/doc/source-function-inject_full.html
+	M /1/extra/doc/class-DIUrlShell.html
+	A /1/extra/doc/source-function-putjsonp.html
+	M /1/extra/doc/source-function-let.html
+	M /1/extra/doc/class-YyyFilter.html
+	A /1/extra/doc/source-class-DIModelUtil.html
+	A /1/extra/doc/source-class-DIErrorCode.html
+	M /1/extra/doc/index.html
+	M /1/extra/doc/elementlist.js
+	M /1/extra/doc/class-Global2Filter.html
+	M /1/extra/doc/class-DIInclude.html
+	A /1/extra/doc/function-getip.html
+	M /1/extra/doc/class-DIFilterUtil.html
+	A /1/extra/doc/source-function-putjson.html
+	M /1/extra/doc/source-class-DIEvent.html
+	M /1/extra/doc/class-DIRoute.html
+	M /1/extra/doc/source-function-dump.html
+	M /1/extra/doc/function-invoke_func.html
+	M /1/extra/doc/source-class-Global1Filter.html
+	M /1/extra/doc/class-DIIncludeConfig.html
+	M /1/extra/doc/function-params_to_str.html
+	M /1/extra/doc/source-class-DIRuntime_Imported.html
+	M /1/extra/doc/function-inject_func.html
+	M /1/extra/doc/class-TestDo.html
+	A /1/extra/doc/source-class-DIDBConfig.html
+	M /1/extra/doc/function-create_class.html
+	M /1/extra/doc/class-DIModelTemplate.html
+	M /1/extra/doc/source-function-__autoload.html
+	A /1/extra/doc/class-PDO.html
+	A /1/extra/doc/class-DIErrorCode.html
+	A /1/extra/doc/source-function-component_exist.html
+	M /1/extra/doc/source-class-DIEvent_DestroyListener.html
+	M /1/extra/doc/function-injectObjFunc.html
+	M /1/extra/doc/source-class-DIEvent_GetVariableListener.html
+	M /1/extra/doc/source-function-session.html
+	A /1/extra/doc/function-putjsonp.html
+	M /1/extra/doc/source-function-session_exists.html
+	M /1/extra/doc/source-class-DIBase.html
+	A /1/extra/doc/function-component_exist.html
+	M /1/extra/doc/class-TesttestDo.html
+	M /1/extra/doc/source-function-invoke_method.html
+	A /1/extra/doc/source-class-TemplateDo.html
+	M /1/extra/doc/class-DIFilterMap.html
+	M /1/extra/doc/source-class-Global2Filter.html
+	M /1/extra/doc/source-class-DIRoute.html
+	M /1/extra/doc/class-DIEvent_AppendFuncListener.html
+	M /1/extra/doc/source-class-DIEvent_ObjCallListener.html
+	M /1/extra/doc/class-DIEventListener.html
+	M /1/extra/doc/function-dump.html
+	M /1/extra/doc/class-Global1Filter.html
+	A /1/extra/doc/function-bt_shell_page.html
+	M /1/extra/doc/source-class-DIModel.html
+	M /1/extra/doc/function-import.html
+	M /1/extra/doc/source-class-DIConfig.html
+	M /1/extra/doc/tree.html
+	M /1/extra/doc/class-DIConfig.html
+	M /1/extra/doc/function-inject.html
+	M /1/extra/doc/class-OrekiUtil.html
+	A /1/extra/doc/source-function-bt_shell_page.html
+	A /1/extra/doc/source-function-getip.html
+	A /1/extra/doc/source-function-arg.html
+	M /1/extra/doc/source-class-DIService.html
+	M /1/extra/doc/source-function-inject_func.html
+	M /1/extra/doc/class-DIDo.html
+	M /1/extra/doc/source-class-DIEvent_SetStaticVariableListener.html
+	M /1/extra/doc/class-DIContext_Inject.html
+	M /1/extra/doc/class-DIService.html
+	M /1/extra/doc/function-__autoload.html
+	A /1/extra/doc/function-arg.html
+	M /1/extra/doc/namespace-PHP.html
+	M /1/extra/doc/source-function-create_class.html
+
+文档
+----------------------------------------------------------------------------
+r378 | fkb_159357@163.com | 2015-01-09 13:20:11 CST
+Changed paths:
+	M /1/core/base/__base.php
+
+修改__base.php注释,修改DIBase构造器参数获取方式。
+----------------------------------------------------------------------------
+r377 | fkb_159357@163.com | 2015-01-09 12:45:43 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+----------------------------------------------------------------------------
+r376 | fkb_159357@163.com | 2015-01-08 15:11:46 CST
+Changed paths:
+	M /1/core/base/__base.php
+
+修改注释
+----------------------------------------------------------------------------
+r375 | fkb_159357@163.com | 2015-01-07 01:33:45 CST
+Changed paths:
+	M /1/extra/how_to_use.md
+	D /1/how_to_use.md
+----------------------------------------------------------------------------
+r374 | fkb_159357@163.com | 2015-01-04 02:47:36 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+优化cmpdo()代码，如果在urlshell中显式声明了DO命令，则会将大小写与声明中的同步
+----------------------------------------------------------------------------
+r373 | fkb_159357@163.com | 2015-01-03 18:20:14 CST
+Changed paths:
+	M /1/how_to_use.md
+
+如果定义的Do类不仅是开头大写，而且还是驼峰式的，如何确保控制器能被执行？
+----------------------------------------------------------------------------
+r372 | fkb_159357@163.com | 2015-01-03 00:00:32 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+增加arg()方便参数获取
+----------------------------------------------------------------------------
+r371 | fkb_159357@163.com | 2015-01-02 05:56:03 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+jsonp数据输出修正参数表
+----------------------------------------------------------------------------
+r370 | fkb_159357@163.com | 2015-01-02 02:13:38 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+DIModel对象授予操作权限到数据库驱动DIMySQL，以便共享page成员(分页变量缓存)
+----------------------------------------------------------------------------
+r369 | fkb_159357@163.com | 2015-01-01 22:05:35 CST
+Changed paths:
+	M /1/core/do/Template.do.php
+
+TemplateDo::tpl()履行DIDo::tpl()的return处理逻辑
+----------------------------------------------------------------------------
+r368 | fkb_159357@163.com | 2015-01-01 22:05:12 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+	M /1/core/base/__do.php
+
+修复tpl()方法的return参数处理问题，以及tpl()后控制结束的问题
+----------------------------------------------------------------------------
+r367 | fkb_159357@163.com | 2015-01-01 21:18:37 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+优化test/session
+----------------------------------------------------------------------------
+r366 | fkb_159357@163.com | 2015-01-01 21:13:25 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+会话便捷操作test/session增加单个key移除支持
+----------------------------------------------------------------------------
+r365 | fkb_159357@163.com | 2015-01-01 21:11:43 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+1、优化session_exists()
+2、增加session_remove()方法，删除某个key的会话(注意第二个参数是严格模式开关)
+----------------------------------------------------------------------------
+r364 | fkb_159357@163.com | 2015-01-01 19:36:53 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+会话便捷操作
+----------------------------------------------------------------------------
+r363 | fkb_159357@163.com | 2015-01-01 19:35:55 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+session()：：如果第一个参数为null/false/空字符串,则清空所有DI前缀设置的会话
+----------------------------------------------------------------------------
+r362 | fkb_159357@163.com | 2015-01-01 19:09:48 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+会话便捷操作：?test/session
+----------------------------------------------------------------------------
+r361 | fkb_159357@163.com | 2015-01-01 19:03:49 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+修改session_exists()的BUG
+----------------------------------------------------------------------------
+r360 | fkb_159357@163.com | 2015-01-01 16:42:57 CST
+Changed paths:
+	M /1/core/do/Template.do.php
+
+TemplateDo::tpl()继承可选参数，提高兼容性
+----------------------------------------------------------------------------
+r359 | fkb_159357@163.com | 2014-12-31 21:49:23 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+
+Smarty模板引擎支持使用DIBase的lambda成员，在模板页面中可以直接当变量函数调用。详见：$this->_smarty->assign($this->_do->getLambdas()) @ __tpl.php
+----------------------------------------------------------------------------
+r358 | fkb_159357@163.com | 2014-12-31 21:45:37 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+
+常规模板引擎支持使用DIBase的lambda成员，在模板页面中可以直接当变量函数调用。详见：extract($this->_do->getLambdas()) @ __tpl.php
+----------------------------------------------------------------------------
+r357 | fkb_159357@163.com | 2014-12-31 21:25:54 CST
+Changed paths:
+	M /1/core/do/Template.do.php
+
+TemplateDo::tpl()，要注意：如果TemplateDo的子类重写tpl()并调用了parent::tpl()，即上级调用这有可能还是tpl()，就要判断
+----------------------------------------------------------------------------
+r356 | fkb_159357@163.com | 2014-12-31 17:19:21 CST
+Changed paths:
+	M /1/core/do/Template.do.php
+
+danmu-tpl.php中：
+不要使用import()，否则无法使用extract()生成的变量 ?>
+----------------------------------------------------------------------------
+r355 | fkb_159357@163.com | 2014-12-31 16:50:48 CST
+Changed paths:
+	M /1/core/do/Template.do.php
+
+TemplateDo::tpl()调用条件限制：
+1、禁止URL直接访问(?简短类名/tpl，如?danmu/tpl)
+2、禁止其它类调用，即必须确保本类的对象（当前为子类的对象）的类名和上级调用点所处类名完全一样
+----------------------------------------------------------------------------
+r354 | fkb_159357@163.com | 2014-12-31 16:38:45 CST
+Changed paths:
+	A /1/core/do/Template.do.php
+
+可用于页面父模板嵌套的全局模板类TemplateDo
+----------------------------------------------------------------------------
+r353 | fkb_159357@163.com | 2014-12-29 12:54:05 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+取得访问IP  getip()
+----------------------------------------------------------------------------
+r352 | fkb_159357@163.com | 2014-12-28 22:26:24 CST
+Changed paths:
+	M /1/core/config/database.php
+	M /1/core/config/define.php
+
+恒创主机 - 香港PHP-300M体验型xmikucc域名更改为miku.us
+----------------------------------------------------------------------------
+r351 | fkb_159357@163.com | 2014-12-28 06:42:40 CST
+Changed paths:
+	M /1/core/ext/bootstrap.php
+
+修复点击下一页后跳转错误的BUG
+----------------------------------------------------------------------------
+r350 | fkb_159357@163.com | 2014-12-28 06:28:53 CST
+Changed paths:
+	A /1/core/ext/bootstrap.php
+
+快速分页生成方法：bt_page(),bt_shell_page()@/core/ext/bootstrap.php
+----------------------------------------------------------------------------
+r349 | fkb_159357@163.com | 2014-12-28 06:26:39 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+利用shell和GET参数生成URL
+----------------------------------------------------------------------------
+r348 | fkb_159357@163.com | 2014-12-27 19:25:02 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+
+LET格式由“?||xx|xx”改为“?xx.xx”
+----------------------------------------------------------------------------
+r347 | fkb_159357@163.com | 2014-12-27 19:14:16 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+LET格式由“?||xx|xx”改为“?xx.xx”
+----------------------------------------------------------------------------
+r346 | fkb_159357@163.com | 2014-12-27 19:12:47 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+LET格式由“?||xx|xx”改为“?xx.xx”
+----------------------------------------------------------------------------
+r345 | fkb_159357@163.com | 2014-12-27 19:10:16 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+	M /1/README.MD
+	M /1/core/base/__route.php
+	M /1/core/let/shell/shell.php
+
+LET格式由“?||xx|xx”改为“?xx.xx”
+----------------------------------------------------------------------------
+r344 | fkb_159357@163.com | 2014-12-23 05:00:09 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+try {
+    	    self::$_driver_handler = new $driver($this->table);
+	    } catch (Exception $e) {
+	        throw new DIException($e->getMessage());
+	    }
+----------------------------------------------------------------------------
+r343 | fkb_159357@163.com | 2014-12-23 04:52:32 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+if (!class_exists($driver, false)) {
+	        throw new DIException('找不到数据库驱动类，请检查数据库配置文件和驱动类文件');
+	    }
+----------------------------------------------------------------------------
+r342 | fkb_159357@163.com | 2014-12-23 04:44:23 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+并非newInstance()过于先进
+----------------------------------------------------------------------------
+r341 | fkb_159357@163.com | 2014-12-23 04:30:06 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+修改supertable()BUG
+----------------------------------------------------------------------------
+r340 | fkb_159357@163.com | 2014-12-23 04:21:47 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+//由于newInstance()过于先进，很多服务器不支持。建议先定义好XxxModel类再调用本方法
+----------------------------------------------------------------------------
+r339 | fkb_159357@163.com | 2014-12-17 06:25:23 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+redirect()优化逻辑： * 首选跳转XxxDO::func()，否则视为/index.php的相对路径，找不到时输出404页
+ * 也可以强制用第二个参数将shell指定为文件路径
+
+----------------------------------------------------------------------------
+r338 | fkb_159357@163.com | 2014-12-17 04:46:44 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+__model设置pager()为public
+
+----------------------------------------------------------------------------
+r337 | fkb_159357@163.com | 2014-12-17 03:24:50 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+cmpdo修复小BUG
+----------------------------------------------------------------------------
+r336 | fkb_159357@163.com | 2014-12-17 01:03:13 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+cmpdo检测不通过的全部抛出异常
+----------------------------------------------------------------------------
+r335 | fkb_159357@163.com | 2014-12-16 22:09:19 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+优化匹配Do的放行规则代码cmpdo()，完全遵守DO给出的规则和实际代码中的传参判断
+----------------------------------------------------------------------------
+r334 | fkb_159357@163.com | 2014-12-16 18:21:00 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+
+     * 注意：
+     *      不管是否处于严格模式，都会检测实际方法参数表配置的需传个数，
+     *      配置的最少参数个数的的规则  要比  实际方法的参数表个数设置 更优先
+----------------------------------------------------------------------------
+r333 | fkb_159357@163.com | 2014-12-16 18:08:22 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+
+注意：urlshell.php配置的最少参数个数的的规则  要比  实际方法的参数表个数设置 更优先
+----------------------------------------------------------------------------
+r332 | fkb_159357@163.com | 2014-12-16 17:21:47 CST
+Changed paths:
+	M /1/core/base/__do.php
+
+输出Do模板时，判断对应的XxxDo::func是否存在
+----------------------------------------------------------------------------
+r331 | fkb_159357@163.com | 2014-12-16 16:26:39 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+修改redirect()方法
+----------------------------------------------------------------------------
+r330 | fkb_159357@163.com | 2014-12-16 16:18:40 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+修改redirect()
+----------------------------------------------------------------------------
+r329 | fkb_159357@163.com | 2014-12-16 16:08:54 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+增加redirect()方法
+----------------------------------------------------------------------------
+r328 | fkb_159357@163.com | 2014-12-16 10:33:18 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+putjson
+----------------------------------------------------------------------------
+r327 | fkb_159357@163.com | 2014-12-15 20:42:57 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+    //application/x-javascript和application/json会触发IE下载，暂时取消
+    header("Content-type: text/html; charset=utf-8");
+----------------------------------------------------------------------------
+r326 | fkb_159357@163.com | 2014-12-15 20:39:03 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+    //header("Content-type: application/json; charset=utf-8");//IE会触发下载，暂时取消
+    改为header("Content-type: application/x-javascript; charset=utf-8");
+----------------------------------------------------------------------------
+r325 | fkb_159357@163.com | 2014-12-15 06:09:07 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+new DIRoute()初始化一些与URL、路由有关的资源
+----------------------------------------------------------------------------
+r324 | fkb_159357@163.com | 2014-12-15 05:19:01 CST
+Changed paths:
+	M /1/README.MD
+
+待办：模仿DIModelUtil::supertable()，写一个new类的通用方法，要考虑类已声明的情况
+----------------------------------------------------------------------------
+r323 | fkb_159357@163.com | 2014-12-12 21:30:40 CST
+Changed paths:
+	M /1/core/config/database.php
+
+'larele.com'
+----------------------------------------------------------------------------
+r322 | fkb_159357@163.com | 2014-12-12 21:29:21 CST
+Changed paths:
+	M /1/core/config/define.php
+
+larele.com
+----------------------------------------------------------------------------
+r321 | fkb_159357@163.com | 2014-12-11 15:51:21 CST
+Changed paths:
+	A /1/core/base/index.html
+	A /1/core/filter/index.html
+	A /1/core/tpl/index.html
+	A /1/core/config/index.html
+	A /1/core/entity/index.html
+	A /1/core/data/index.html
+	A /1/core/do/index.html
+	A /1/res/index.html
+	A /1/core/ext/index.html
+	M /1/core/let/shell/shell.php
+	A /1/core/let/index.html
+	A /1/core/service/index.html
+	A /1/core/inject/index.html
+	A /1/core/model/index.html
+	M /1/core/base/__include.php
+	A /1/core/index.html
+	A /1/core/setting/index.html
+
+增加index.html
+----------------------------------------------------------------------------
+r320 | fkb_159357@163.com | 2014-12-11 00:25:31 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+----------------------------------------------------------------------------
+r319 | fkb_159357@163.com | 2014-12-10 21:35:56 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+shell.php
+----------------------------------------------------------------------------
+r318 | fkb_159357@163.com | 2014-12-10 11:10:04 CST
+Changed paths:
+	M /1/core/config/define.php
+	M /1/core/config/database.php
+
+增加miku.us
+----------------------------------------------------------------------------
+r317 | fkb_159357@163.com | 2014-12-09 22:21:14 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+完善注释
+----------------------------------------------------------------------------
+r316 | fkb_159357@163.com | 2014-12-09 20:04:48 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+加入jsonp支持
+----------------------------------------------------------------------------
+r315 | fkb_159357@163.com | 2014-12-09 12:37:31 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+BGM链接
+----------------------------------------------------------------------------
+r314 | fkb_159357@163.com | 2014-12-09 03:18:41 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+背景+BGM
+----------------------------------------------------------------------------
+r313 | fkb_159357@163.com | 2014-12-09 01:18:34 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+示例首页BGM配置
+----------------------------------------------------------------------------
+r312 | fkb_159357@163.com | 2014-12-08 00:42:36 CST
+Changed paths:
+	M /1/core/config/database.php
+----------------------------------------------------------------------------
+r311 | fkb_159357@163.com | 2014-12-08 00:12:35 CST
+Changed paths:
+	M /1/core/config/database.php
+----------------------------------------------------------------------------
+r310 | fkb_159357@163.com | 2014-12-08 00:10:48 CST
+Changed paths:
+	M /1/core/config/define.php
+----------------------------------------------------------------------------
+r309 | fkb_159357@163.com | 2014-12-08 00:05:51 CST
+Changed paths:
+	M /1/core/config/database.php
+----------------------------------------------------------------------------
+r308 | fkb_159357@163.com | 2014-12-07 22:43:48 CST
+Changed paths:
+	M /1/core/config/database.php
+----------------------------------------------------------------------------
+r307 | fkb_159357@163.com | 2014-12-07 03:22:32 CST
+Changed paths:
+	M /1/README.MD
+
+次要
+----------------------------------------------------------------------------
+r306 | fkb_159357@163.com | 2014-12-07 02:55:54 CST
+Changed paths:
+	M /1/core/config/define.php
+----------------------------------------------------------------------------
+r305 | fkb_159357@163.com | 2014-12-03 22:28:29 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r304 | fkb_159357@163.com | 2014-12-03 13:25:03 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r303 | fkb_159357@163.com | 2014-12-03 10:57:06 CST
+Changed paths:
+	D /1/参考
+
+删除多余代码
+----------------------------------------------------------------------------
+r302 | fkb_159357@163.com | 2014-12-03 03:46:52 CST
+Changed paths:
+	M /1/core/base/__lib.php
+	M /1/README.MD
+	M /1/core/base/__exception.php
+
+DIError DIErrorCode putjson
+----------------------------------------------------------------------------
+r301 | fkb_159357@163.com | 2014-12-03 02:46:37 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+	M /1/core/base/__model.php
+
+增加update()的衍生方法：
+1、DIMySQL::alter()
+2、DIMySQL::alterByExpr()
+
+----------------------------------------------------------------------------
+r300 | fkb_159357@163.com | 2014-12-03 02:36:17 CST
+Changed paths:
+	M /1/core/config/database.php
+----------------------------------------------------------------------------
+r299 | fkb_159357@163.com | 2014-12-02 10:51:31 CST
+Changed paths:
+	M /1/core/base/__model.php
+----------------------------------------------------------------------------
+r298 | fkb_159357@163.com | 2014-12-02 10:39:17 CST
+Changed paths:
+	M /1/core/config/define.php
+
+正式环境/测试环境切换
+----------------------------------------------------------------------------
+r297 | fkb_159357@163.com | 2014-12-01 22:39:08 CST
+Changed paths:
+	M /1/core/base/__model.php
+----------------------------------------------------------------------------
+r296 | fkb_159357@163.com | 2014-12-01 22:38:54 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+TODO：incr()使参数更自由
+----------------------------------------------------------------------------
+r295 | fkb_159357@163.com | 2014-12-01 22:37:31 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+	M /1/core/base/__model.php
+
+完成DIMySQL::delete()
+----------------------------------------------------------------------------
+r294 | fkb_159357@163.com | 2014-12-01 22:24:48 CST
+Changed paths:
+	M /1/core/base/__model.php
+	M /1/core/do/Test.do.php
+
+完成DIMySQL的execute()和update()，修正生成SQL语句中字段为关键字的BUG
+----------------------------------------------------------------------------
+r293 | fkb_159357@163.com | 2014-12-01 22:17:29 CST
+Changed paths:
+	M /1/core/config/database.php
+----------------------------------------------------------------------------
+r292 | fkb_159357@163.com | 2014-12-01 21:25:00 CST
+Changed paths:
+	M /1/core/config/define.php
+
+define.php
+----------------------------------------------------------------------------
+r291 | fkb_159357@163.com | 2014-12-01 20:18:46 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+BUG修复：检测组件的支持文件是否存在 component_exist()
+----------------------------------------------------------------------------
+r290 | fkb_159357@163.com | 2014-12-01 20:10:43 CST
+Changed paths:
+	M /1/core/base/__exception.php
+----------------------------------------------------------------------------
+r289 | fkb_159357@163.com | 2014-12-01 20:09:25 CST
+Changed paths:
+	M /1/core/base/__exception.php
+
+__exception
+----------------------------------------------------------------------------
+r288 | fkb_159357@163.com | 2014-12-01 20:05:22 CST
+Changed paths:
+	M /1/README.MD
+
+readme
+----------------------------------------------------------------------------
+r287 | fkb_159357@163.com | 2014-12-01 17:53:02 CST
+Changed paths:
+	M /1/core/config/database.php
+
+配置文件
+----------------------------------------------------------------------------
+r286 | fkb_159357@163.com | 2014-12-01 16:36:08 CST
+Changed paths:
+	M /1/core/base/__filter.php
+
+修正变量名书写错误。
+优化__filter.php代码
+----------------------------------------------------------------------------
+r285 | fkb_159357@163.com | 2014-11-30 12:14:37 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+注释
+
+----------------------------------------------------------------------------
+r284 | fkb_159357@163.com | 2014-11-30 12:12:36 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+	M /1/core/base/__init.php
+
+转移测试代码
+
+----------------------------------------------------------------------------
+r283 | fkb_159357@163.com | 2014-11-30 12:11:56 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+----------------------------------------------------------------------------
+r282 | fkb_159357@163.com | 2014-11-30 11:52:10 CST
+Changed paths:
+	M /1/core/base/__init.php
+	M /1/core/base/__model.php
+
+DIMySQL::insert()
+----------------------------------------------------------------------------
+r281 | fkb_159357@163.com | 2014-11-30 11:51:09 CST
+Changed paths:
+	M /1/core/config/database.php
+----------------------------------------------------------------------------
+r280 | fkb_159357@163.com | 2014-11-29 03:47:43 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+【重要】检测组件的支持文件是否存在
+----------------------------------------------------------------------------
+r279 | fkb_159357@163.com | 2014-11-29 03:47:09 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+【重要】检测组件的支持文件是否存在
+----------------------------------------------------------------------------
+r278 | fkb_159357@163.com | 2014-11-29 03:46:33 CST
+Changed paths:
+	M /1/core/base/__do.php
+
+【重要】防止XxxDo初始化时，找不到XxxInject文件而出错
+----------------------------------------------------------------------------
+r277 | fkb_159357@163.com | 2014-11-29 03:45:37 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+检测组件的支持文件是否存在
+ * 支持的组件有：
+ *      DO/MODEL/FILTER/INJECT/SERVICE
+ *      ENTITY
+----------------------------------------------------------------------------
+r276 | fkb_159357@163.com | 2014-11-28 19:27:24 CST
+Changed paths:
+	M /1/core/base/__init.php
+	M /1/core/base/__model.php
+
+优化DIMySQL::count()方法，增加支持：预处理参数
+----------------------------------------------------------------------------
+r275 | fkb_159357@163.com | 2014-11-28 17:00:19 CST
+Changed paths:
+	M /1/core/base/__include.php
+----------------------------------------------------------------------------
+r274 | fkb_159357@163.com | 2014-11-28 16:54:44 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+新增DIModelUtil::supertable()
+----------------------------------------------------------------------------
+r273 | fkb_159357@163.com | 2014-11-28 16:51:46 CST
+Changed paths:
+	M /1/core/base/__base.php
+	M /1/core/base/__model.php
+
+类的实用方法：去除当前类名的前缀、后缀
+----------------------------------------------------------------------------
+r272 | fkb_159357@163.com | 2014-11-28 16:51:04 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r271 | fkb_159357@163.com | 2014-11-28 16:35:37 CST
+Changed paths:
+	M /1/core/config/define.php
+----------------------------------------------------------------------------
+r270 | fkb_159357@163.com | 2014-11-28 16:31:52 CST
+Changed paths:
+	M /1/how_to_use.md
+
+重写__autoload()之后的影响
+
+----------------------------------------------------------------------------
+r269 | fkb_159357@163.com | 2014-11-28 16:27:55 CST
+Changed paths:
+	M /1/core/base/__include.php
+
+【重要】系统关键字定义，将程序中涉及的各种高频词抽离
+----------------------------------------------------------------------------
+r268 | fkb_159357@163.com | 2014-11-28 16:26:13 CST
+Changed paths:
+	M /1/how_to_use.md
+
+三、关于__autoload()重写之后的影响
+	
+	class_exists($classname)执行时，会试图执行__autoload，会寻找特定格式名称的类，
+	如XxxDo,XxxModel,XxxFilter等等，还会扫描entity目录
+	建议指定第二个参数以得到正确结果，如class($classname, false)，
+	但代价是以后都不会重新自动加载类。
+----------------------------------------------------------------------------
+r267 | fkb_159357@163.com | 2014-11-28 16:20:43 CST
+Changed paths:
+	M /1/core/base/__env.php
+----------------------------------------------------------------------------
+r266 | fkb_159357@163.com | 2014-11-28 16:17:28 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+__autoload无法加载到类文件时，改为DIException抛出
+----------------------------------------------------------------------------
+r265 | fkb_159357@163.com | 2014-11-28 16:13:16 CST
+Changed paths:
+	M /1/core/base/__exception.php
+----------------------------------------------------------------------------
+r264 | fkb_159357@163.com | 2014-11-28 15:05:37 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+file_put_contents(DI_DATA_PATH . 'cache/a.php', '<?php  '.$code);//调试create_class()用，只注释不删除！
+----------------------------------------------------------------------------
+r263 | fkb_159357@163.com | 2014-11-28 14:55:05 CST
+Changed paths:
+	M /1/core/base/__include.php
+
+【重要】系统关键字定义，将程序中涉及的各种高频词抽离
+----------------------------------------------------------------------------
+r262 | fkb_159357@163.com | 2014-11-28 11:26:02 CST
+Changed paths:
+	M /1/core/base/__exception.php
+
+DIException构造参数修正
+----------------------------------------------------------------------------
+r261 | fkb_159357@163.com | 2014-11-28 11:08:59 CST
+Changed paths:
+	M /1/core/base/__model.php
+	M /1/core/base/__init.php
+
+find()
+----------------------------------------------------------------------------
+r260 | fkb_159357@163.com | 2014-11-28 10:41:07 CST
+Changed paths:
+	M /1/core/base/__model.php
+	M /1/core/base/__init.php
+
+DIMySQL所取数据集为对象集
+----------------------------------------------------------------------------
+r259 | fkb_159357@163.com | 2014-11-27 23:17:35 CST
+Changed paths:
+	A /1/参考
+	A /1/参考/Model.php
+
+上传参考代码
+----------------------------------------------------------------------------
+r258 | fkb_159357@163.com | 2014-11-27 23:16:43 CST
+Changed paths:
+	M /1/core/base/__model.php
+	M /1/core/base/__init.php
+
+DIMySQL::select()实现
+----------------------------------------------------------------------------
+r257 | fkb_159357@163.com | 2014-11-27 21:51:17 CST
+Changed paths:
+	M /1/core/base/__entity.php
+----------------------------------------------------------------------------
+r256 | fkb_159357@163.com | 2014-11-27 21:47:08 CST
+Changed paths:
+	M /1/core/config/database.php
+----------------------------------------------------------------------------
+r255 | fkb_159357@163.com | 2014-11-27 21:46:49 CST
+Changed paths:
+	M /1/core/base/__model.php
+
+模型操作模板接口，实现第一个驱动DIMySQL
+----------------------------------------------------------------------------
+r254 | fkb_159357@163.com | 2014-11-27 20:40:36 CST
+Changed paths:
+	M /1/core/config/database.php
+
+/**
+ * 配置数据库基本信息
+ * 【！！强烈建议！！】
+ * 不要将本文件中的外网数据库信息提交
+ */
+----------------------------------------------------------------------------
+r253 | fkb_159357@163.com | 2014-11-27 19:54:19 CST
+Changed paths:
+	M /1/core/config/define.php
+----------------------------------------------------------------------------
+r252 | fkb_159357@163.com | 2014-11-27 18:34:23 CST
+Changed paths:
+	M /1/core/base/__include.php
+----------------------------------------------------------------------------
+r251 | fkb_159357@163.com | 2014-11-27 18:15:25 CST
+Changed paths:
+	M /1/core/config/define.php
+
+define.php：按环境定制特性
+----------------------------------------------------------------------------
+r250 | fkb_159357@163.com | 2014-11-27 17:45:24 CST
+Changed paths:
+	M /1/core/base/__env.php
+
+是否自动载入视图 TODO:待实现。默认为false
+----------------------------------------------------------------------------
+r249 | fkb_159357@163.com | 2014-11-27 17:32:47 CST
+Changed paths:
+	M /1/core/base/__env.php
+
+删除DI_RUN_ENV
+----------------------------------------------------------------------------
+r248 | fkb_159357@163.com | 2014-11-27 16:40:49 CST
+Changed paths:
+	M /1/core/base/__env.php
+
+DI_RUN_ENV：系统所处的运行环境标识，默认为不指定(0值)
+----------------------------------------------------------------------------
+r247 | fkb_159357@163.com | 2014-11-27 16:20:23 CST
+Changed paths:
+	M /1/core/base/__env.php
+----------------------------------------------------------------------------
+r246 | fkb_159357@163.com | 2014-11-27 16:13:26 CST
+Changed paths:
+	M /1/core/base/__env.php
+
+规定__env.php不得修改
+----------------------------------------------------------------------------
+r245 | fkb_159357@163.com | 2014-11-27 10:59:27 CST
+Changed paths:
+	A /1/extra/sql/doinject.sql
+----------------------------------------------------------------------------
+r244 | fkb_159357@163.com | 2014-11-27 10:48:48 CST
+Changed paths:
+	A /1/extra/doc/resources/collapsed.png
+	A /1/extra/doc/function-inject_full.html
+	A /1/extra/doc/function-ref_arr.html
+	A /1/extra/doc/source-class-DIEvent_ClassCallListener.html
+	A /1/extra/doc/source-class-DILet.html
+	A /1/extra/doc/class-DIEvent_CallStaticFuncListener.html
+	A /1/extra/doc/resources/combined.js
+	A /1/extra/doc/function-session_exists.html
+	A /1/extra/doc/function-dump.html
+	A /1/extra/doc/class-DIInclude.html
+	A /1/extra/doc/source-class-DIRuntime_Imported.html
+	A /1/extra/doc/resources/style.css
+	A /1/extra/doc/class-TestInject.html
+	A /1/extra/doc/function-invoke_func.html
+	A /1/extra/doc/class-TesttestDo.html
+	A /1/extra/doc/source-function-inject_func.html
+	A /1/extra/doc/source-class-DIEvent_SetStaticVariableListener.html
+	A /1/extra/doc/source-class-DIInject.html
+	A /1/extra/doc/source-class-Global3Filter.html
+	A /1/extra/doc/class-DITpl.html
+	A /1/extra/doc/class-DIEvent_ClassCallListener.html
+	A /1/extra/doc/source-class-DIFilter.html
+	A /1/extra/doc/source-class-OrekiUtil.html
+	A /1/extra/doc/source-class-DIModel.html
+	A /1/extra/dist
+	A /1/extra/doc/resources/sort.png
+	A /1/extra/doc/source-class-DIEvent_DestroyListener.html
+	A /1/extra/doc/source-class-DIUrlShell.html
+	A /1/extra/doc/source-function-injectObjFunc.html
+	A /1/extra/dist/release/r1.zip
+	A /1/extra/doc/class-YyyFilter.html
+	A /1/extra/doc/source-function-inject_dymic.html
+	A /1/extra/doc/class-XxxFilter.html
+	A /1/extra/doc/class-DIIncludeConfig.html
+	A /1/extra/doc/source-class-DIModelTemplate.html
+	A /1/extra/doc/function-let_exists.html
+	A /1/extra/doc/function-session.html
+	A /1/extra/doc/elementlist.js
+	A /1/extra/doc/source-function-invoke_func.html
+	A /1/extra/doc/source-class-TestInject.html
+	A /1/extra
+	A /1/extra/doc/class-DIDo.html
+	A /1/extra/doc/class-Exception.html
+	A /1/extra/doc/function-__autoload.html
+	A /1/extra/doc/source-function-session_exists.html
+	A /1/extra/doc/source-function-session.html
+	A /1/extra/doc/source-class-XxxFilter.html
+	A /1/extra/doc/function-inject_func.html
+	D /1/dist
+	A /1/extra/doc/class-DIUrlShell.html
+	A /1/extra/doc/source-class-TesttestDo.html
+	A /1/extra/doc/function-array_unset.html
+	A /1/extra/doc/source-class-DIEvent_GetStaticVariableListener.html
+	A /1/extra/doc/class-DIFilter.html
+	A /1/extra/doc/class-Global1Filter.html
+	A /1/extra/doc/source-class-DIRoute.html
+	A /1/extra/doc/source-function-array_unset.html
+	A /1/extra/doc/source-class-DIEntity.html
+	A /1/extra/doc/source-function-inject.html
+	A /1/extra/doc/namespace-PHP.html
+	A /1/extra/doc/class-DIEvent_DestroyListener.html
+	A /1/extra/doc/resources/tree-hasnext.png
+	A /1/extra/dist/dev
+	A /1/extra/doc/class-Global2Filter.html
+	A /1/extra/doc/function-inject.html
+	A /1/extra/doc/source-function-import.html
+	A /1/extra/doc/source-class-DIFilterUtil.html
+	A /1/extra/doc/source-class-DIEvent_AppendVariableListener.html
+	A /1/extra/doc
+	A /1/extra/doc/resources/code-line.png
+	D /1/doc
+	A /1/extra/sql
+	A /1/extra/doc/source-class-DIRuntime.html
+	A /1/extra/doc/source-class-DIContext_Inject.html
+	A /1/extra/doc/source-class-YyyFilter.html
+	A /1/extra/doc/source-function-__autoload.html
+	A /1/extra/doc/source-class-Test.html
+	A /1/extra/doc/class-DIRoute.html
+	A /1/extra/doc/class-DIContext_Inject.html
+	A /1/extra/doc/class-DIEvent_AppendFuncListener.html
+	A /1/extra/dist/release
+	A /1/extra/doc/function-inject_dymic.html
+	A /1/extra/doc/source-class-DIInclude.html
+	A /1/extra/doc/source-class-DIService.html
+	A /1/extra/doc/class-DIModelTemplate.html
+	A /1/extra/doc/class-DIConfig.html
+	A /1/extra/doc/class-DIContext.html
+	A /1/extra/doc/function-params_to_str.html
+	A /1/extra/doc/source-class-DIEvent_ObjCreateListener.html
+	A /1/extra/doc/class-DIEntity.html
+	A /1/extra/doc/resources/tree-last.png
+	A /1/extra/doc/class-DILet.html
+	A /1/extra/doc/function-invoke_method.html
+	A /1/extra/doc/class-DIEvent_ObjCallListener.html
+	A /1/extra/doc/source-class-DIEvent.html
+	A /1/extra/doc/source-class-DIEvent_CallFuncListener.html
+	A /1/extra/doc/source-class-Global2Filter.html
+	A /1/extra/doc/source-class-DIEventListener.html
+	A /1/extra/doc/function-create_class.html
+	A /1/extra/doc/class-DIEvent_AppendVariableListener.html
+	A /1/extra/doc/class-DIEvent_ObjCreateListener.html
+	A /1/extra/doc/class-DIEvent_SetVariableListener.html
+	A /1/extra/doc/source-class-DIDo.html
+	A /1/extra/doc/class-DIModel.html
+	A /1/extra/doc/class-Global3Filter.html
+	A /1/extra/doc/class-DIRuntime_Imported.html
+	A /1/extra/doc/function-import.html
+	A /1/extra/doc/class-DIEvent_GetStaticVariableListener.html
+	A /1/extra/doc/source-function-let_exists.html
+	A /1/extra/doc/source-class-DIBase.html
+	A /1/extra/doc/source-class-DIEvent_AppendFuncListener.html
+	A /1/extra/doc/source-class-DIEvent_ObjCallListener.html
+	A /1/extra/doc/class-TestDo.html
+	A /1/extra/doc/class-DIEvent_CallFuncListener.html
+	A /1/extra/doc/class-DIService.html
+	A /1/extra/doc/tree.html
+	A /1/extra/doc/source-class-DIEvent_SetVariableListener.html
+	A /1/extra/doc/resources
+	A /1/extra/doc/source-class-DITpl.html
+	A /1/extra/doc/source-class-DIEvent_GetVariableListener.html
+	A /1/extra/doc/resources/resize.png
+	A /1/extra/doc/source-class-DIConfig.html
+	A /1/extra/doc/resources/tree-vertical.png
+	A /1/extra/doc/source-class-TestDo.html
+	A /1/extra/doc/source-function-dump.html
+	A /1/extra/doc/resources/inherit.png
+	A /1/extra/doc/index.html
+	A /1/extra/doc/resources/footer.png
+	A /1/extra/doc/class-DIFilterUtil.html
+	A /1/extra/doc/source-class-DIEvent_CallStaticFuncListener.html
+	A /1/extra/doc/source-function-params_to_str.html
+	A /1/extra/dist/dev/d1.rar
+	A /1/extra/doc/class-DIInject.html
+	A /1/extra/doc/source-class-DIIncludeConfig.html
+	A /1/extra/doc/function-injectObjFunc.html
+	A /1/extra/doc/class-DIEvent.html
+	A /1/extra/doc/function-let.html
+	A /1/extra/doc/class-Test.html
+	A /1/extra/doc/class-DIException.html
+	A /1/extra/doc/source-function-ref_arr.html
+	A /1/extra/doc/class-DIEvent_GetVariableListener.html
+	A /1/extra/doc/class-DIBase.html
+	A /1/extra/doc/namespace-None.html
+	A /1/extra/doc/class-DIRuntime.html
+	A /1/extra/doc/source-class-DIContext.html
+	A /1/extra/doc/source-class-DIFilterMap.html
+	A /1/extra/doc/source-function-invoke_method.html
+	A /1/extra/doc/class-DIFilterMap.html
+	A /1/extra/doc/class-OrekiUtil.html
+	A /1/extra/doc/source-class-DIException.html
+	A /1/extra/doc/source-class-Global1Filter.html
+	A /1/extra/doc/source-function-inject_full.html
+	A /1/extra/doc/class-DIEvent_SetStaticVariableListener.html
+	A /1/extra/doc/resources/tree-cleaner.png
+	A /1/extra/how_to_use.md
+	A /1/extra/doc/class-DIEventListener.html
+	A /1/extra/doc/source-function-create_class.html
+	A /1/extra/doc/source-function-let.html
+
+调整目录结构
+----------------------------------------------------------------------------
+r243 | fkb_159357@163.com | 2014-11-26 17:29:52 CST
+Changed paths:
+	A /1/dist/release/r1.zip
+	A /1/dist
+	A /1/dist/dev/d1.rar
+	A /1/dist/dev
+	A /1/dist/release
+
+打包版本
+----------------------------------------------------------------------------
+r242 | fkb_159357@163.com | 2014-11-26 16:00:18 CST
+Changed paths:
+	M /1/core/base/__base.php
+----------------------------------------------------------------------------
+r241 | fkb_159357@163.com | 2014-11-26 14:40:20 CST
+Changed paths:
+	M /1/core/config/filtermap.php
+
+删除多余注释
+----------------------------------------------------------------------------
+r240 | fkb_159357@163.com | 2014-11-26 11:22:10 CST
+Changed paths:
+	M /1/doc/source-class-TestInject.html
+	M /1/doc/source-class-Test.html
+	M /1/doc/class-DITpl.html
+	A /1/doc/class-Global2Filter.html
+	M /1/doc/function-array_unset.html
+	M /1/doc/class-DIEvent_ObjCreateListener.html
+	M /1/doc/function-ref_arr.html
+	M /1/doc/class-DIConfig.html
+	M /1/doc/source-class-DILet.html
+	M /1/doc/source-class-DIEvent_ObjCreateListener.html
+	M /1/doc/function-invoke_func.html
+	M /1/doc/class-DIModel.html
+	M /1/doc/source-class-DIEvent_ClassCallListener.html
+	M /1/doc/source-class-DIService.html
+	M /1/doc/class-DIInclude.html
+	M /1/doc/source-class-DIModel.html
+	M /1/doc/class-DIService.html
+	M /1/doc/source-function-inject_dymic.html
+	M /1/doc/source-class-DIUrlShell.html
+	M /1/doc/class-DIDo.html
+	A /1/doc/source-class-XxxFilter.html
+	M /1/doc/source-class-DIBase.html
+	A /1/doc/class-DIRuntime_Imported.html
+	M /1/doc/source-function-invoke_func.html
+	M /1/doc/source-class-DIEvent_AppendFuncListener.html
+	M /1/doc/class-DILet.html
+	M /1/doc/source-class-DIException.html
+	M /1/doc/source-function-dump.html
+	A /1/doc/class-YyyFilter.html
+	M /1/doc/source-class-DIEvent_ObjCallListener.html
+	M /1/doc/class-DIEvent_GetVariableListener.html
+	M /1/doc/source-class-DIInclude.html
+	M /1/doc/source-class-DIEntity.html
+	M /1/doc/source-class-DIEvent.html
+	M /1/doc/function-inject.html
+	M /1/doc/class-DIIncludeConfig.html
+	M /1/doc/source-function-let_exists.html
+	M /1/doc/class-DIEvent_AppendFuncListener.html
+	M /1/doc/function-inject_full.html
+	M /1/doc/class-Exception.html
+	M /1/doc/function-create_class.html
+	M /1/doc/source-class-TestDo.html
+	M /1/doc/source-class-DIInject.html
+	M /1/doc/class-OrekiUtil.html
+	M /1/doc/function-inject_dymic.html
+	M /1/doc/class-DIEvent_ClassCallListener.html
+	M /1/doc/source-class-DIDo.html
+	M /1/doc/function-__autoload.html
+	A /1/doc/class-Global3Filter.html
+	M /1/doc/source-class-DIEvent_DestroyListener.html
+	A /1/doc/source-class-Global2Filter.html
+	M /1/doc/function-session_exists.html
+	M /1/doc/function-injectObjFunc.html
+	M /1/doc/source-function-create_class.html
+	M /1/doc/source-function-invoke_method.html
+	M /1/doc/class-DIContext_Inject.html
+	M /1/doc/source-class-DIEvent_SetStaticVariableListener.html
+	M /1/doc/class-TestInject.html
+	A /1/doc/source-class-Global1Filter.html
+	M /1/doc/source-class-DIEventListener.html
+	A /1/doc/source-class-DIFilter.html
+	M /1/doc/source-class-OrekiUtil.html
+	A /1/doc/source-class-Global3Filter.html
+	M /1/doc/class-DIRuntime.html
+	M /1/doc/function-params_to_str.html
+	M /1/doc/source-function-import.html
+	M /1/doc/source-function-inject_full.html
+	M /1/doc/source-function-inject_func.html
+	M /1/doc/class-DIEvent_ObjCallListener.html
+	M /1/doc/source-function-injectObjFunc.html
+	M /1/doc/index.html
+	M /1/doc/class-DIUrlShell.html
+	M /1/doc/source-function-let.html
+	M /1/doc/source-function-session_exists.html
+	M /1/doc/class-TesttestDo.html
+	M /1/doc/source-function-inject.html
+	M /1/doc/class-DIRoute.html
+	M /1/doc/source-class-DIFilterMap.html
+	M /1/doc/source-class-DIEvent_CallStaticFuncListener.html
+	M /1/doc/function-import.html
+	M /1/doc/source-function-__autoload.html
+	M /1/doc/class-DIModelTemplate.html
+	M /1/doc/function-let_exists.html
+	M /1/doc/class-DIEvent_DestroyListener.html
+	M /1/doc/source-class-DIModelTemplate.html
+	M /1/doc/source-function-array_unset.html
+	M /1/doc/class-DIInject.html
+	M /1/doc/function-dump.html
+	M /1/doc/source-class-DIEvent_SetVariableListener.html
+	M /1/doc/class-DIEvent_AppendVariableListener.html
+	M /1/doc/class-DIContext.html
+	M /1/doc/class-DIEvent_GetStaticVariableListener.html
+	M /1/doc/source-class-DIContext.html
+	A /1/doc/class-XxxFilter.html
+	M /1/doc/elementlist.js
+	M /1/doc/class-DIEvent_SetVariableListener.html
+	M /1/doc/source-class-DIContext_Inject.html
+	M /1/doc/tree.html
+	M /1/doc/class-DIEventListener.html
+	M /1/doc/class-DIFilterMap.html
+	M /1/doc/function-session.html
+	A /1/doc/source-class-YyyFilter.html
+	M /1/doc/function-let.html
+	M /1/doc/namespace-None.html
+	M /1/doc/source-class-DIConfig.html
+	M /1/doc/source-class-DIIncludeConfig.html
+	M /1/doc/source-function-params_to_str.html
+	M /1/doc/source-class-DIRoute.html
+	M /1/doc/source-class-DIRuntime.html
+	M /1/doc/class-TestDo.html
+	A /1/doc/class-DIFilter.html
+	M /1/doc/source-class-DIEvent_GetVariableListener.html
+	M /1/doc/class-DIEvent_CallStaticFuncListener.html
+	M /1/doc/function-inject_func.html
+	M /1/doc/class-DIBase.html
+	M /1/doc/source-function-ref_arr.html
+	A /1/doc/source-class-DIFilterUtil.html
+	M /1/doc/source-function-session.html
+	A /1/doc/class-Global1Filter.html
+	M /1/doc/source-class-DITpl.html
+	M /1/doc/source-class-DIEvent_CallFuncListener.html
+	M /1/doc/source-class-TesttestDo.html
+	M /1/doc/class-Test.html
+	M /1/doc/class-DIEntity.html
+	A /1/doc/source-class-DIRuntime_Imported.html
+	M /1/doc/source-class-DIEvent_GetStaticVariableListener.html
+	M /1/doc/namespace-PHP.html
+	A /1/doc/class-DIFilterUtil.html
+	M /1/doc/class-DIEvent.html
+	M /1/doc/function-invoke_method.html
+	M /1/doc/class-DIException.html
+	M /1/doc/source-class-DIEvent_AppendVariableListener.html
+	M /1/doc/class-DIEvent_CallFuncListener.html
+	M /1/doc/class-DIEvent_SetStaticVariableListener.html
+
+新版文档
+----------------------------------------------------------------------------
+r239 | fkb_159357@163.com | 2014-11-26 11:06:55 CST
+Changed paths:
+	M /1/README.MD
+
+README.MD进度上报
+----------------------------------------------------------------------------
+r238 | fkb_159357@163.com | 2014-11-26 10:53:22 CST
+Changed paths:
+	M /1/core/base/__filter.php
+	M /1/core/config/filtermap.php
+	M /1/core/base/__route.php
+
+     * 执行全局过滤器
+     * 1、首选如果当前请求的shell等于首选启动指令，则忽略过滤器
+     * 2、系统会根据配置的全局过滤器的数组下标递增执行，详见DIFilterMap::getGlobalFilters() @ filtermap.php
+     * 3、如果shell等于全局过滤器中配置的例外项，也忽略对应的过滤器
+ * 过滤器分为全局过滤器和特定作用点过滤器
+ * 只对Do-Request有效，对Let-Request无效
+----------------------------------------------------------------------------
+r237 | fkb_159357@163.com | 2014-11-26 09:02:50 CST
+Changed paths:
+	M /1/core/base/__route.php
+	M /1/core/config/filtermap.php
+	M /1/core/base/__filter.php
+
+1111111111111111
+----------------------------------------------------------------------------
+r236 | fkb_159357@163.com | 2014-11-26 04:04:41 CST
+Changed paths:
+	M /1/core/base/__filter.php
+	A /1/core/filter/Global1.filter.php
+	M /1/core/base/__route.php
+	A /1/core/filter/Global3.filter.php
+	A /1/core/filter/Global2.filter.php
+	D /1/core/filter/Global.filter.php
+
+实现全局过滤器
+----------------------------------------------------------------------------
+r235 | fkb_159357@163.com | 2014-11-26 04:04:10 CST
+Changed paths:
+	M /1/core/config/filtermap.php
+
+	 * 获取全局过滤器，也获取过滤器优先级
+	 * 这些过滤器对全局所有访问有效
+	 * 如果需要指定例外项（如不需要全局过滤器的作用点），
+	 *     则需自行在过滤器的构造方法内作限制，具体过程不作赘述。
+----------------------------------------------------------------------------
+r234 | fkb_159357@163.com | 2014-11-26 03:30:09 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+用常量记录当前DO-FUNCTION-LET
+----------------------------------------------------------------------------
+r233 | fkb_159357@163.com | 2014-11-26 02:59:28 CST
+Changed paths:
+	A /1/core/filter/Global.filter.php
+	M /1/core/base/__filter.php
+	M /1/core/config/filtermap.php
+
+过滤器按优先级排序算法
+----------------------------------------------------------------------------
+r232 | fkb_159357@163.com | 2014-11-26 00:51:09 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+显示指出113行代码是正确的
+----------------------------------------------------------------------------
+r231 | fkb_159357@163.com | 2014-11-25 23:12:15 CST
+Changed paths:
+	A /1/core/filter/Yyy.filter.php
+	M /1/core/base/__filter.php
+
+过滤器按照优先级对号 入座
+----------------------------------------------------------------------------
+r230 | fkb_159357@163.com | 2014-11-25 22:56:07 CST
+Changed paths:
+	M /1/core/config/filtermap.php
+
+配置默认的过滤器执行优先级
+----------------------------------------------------------------------------
+r229 | fkb_159357@163.com | 2014-11-25 22:40:54 CST
+Changed paths:
+	M /1/core/config/filtermap.php
+
+配置过滤器执行的优先级
+----------------------------------------------------------------------------
+r228 | fkb_159357@163.com | 2014-11-25 22:33:47 CST
+Changed paths:
+	M /1/core/base/__base.php
+----------------------------------------------------------------------------
+r227 | fkb_159357@163.com | 2014-11-25 22:33:41 CST
+Changed paths:
+	M /1/core/base/__base.php
+----------------------------------------------------------------------------
+r226 | fkb_159357@163.com | 2014-11-25 22:32:08 CST
+Changed paths:
+	M /1/README.MD
+
+待办：增加跑异常时的错误码记录。要有专用类来把错误码和具体错误信息对应起来。
+
+----------------------------------------------------------------------------
+r225 | fkb_159357@163.com | 2014-11-25 22:30:39 CST
+Changed paths:
+	M /1/core/base/__filter.php
+	M /1/core/config/filtermap.php
+
+     * 运行机制：执行某个XXDo::yyFunction()时，会在本类的两个Map【getNeedsMap和getWithoutMap】中扫描“XX/yy”已配置的过滤器需求。
+     * 从中找出需要和不需要的过滤器，如需要{A,B,C}，不需要{B,C,D}，
+     * 而后根据DIFilter::$need的值决定配置冲突的过滤器最终是否需要，如本例中冲突的有{B,C},则剔除之。
+     * 最终结果是{A}，算法与集合的减运算相同。
+----------------------------------------------------------------------------
+r224 | fkb_159357@163.com | 2014-11-25 17:50:44 CST
+Changed paths:
+	M /1/core/base/__filter.php
+----------------------------------------------------------------------------
+r223 | fkb_159357@163.com | 2014-11-25 17:50:15 CST
+Changed paths:
+	M /1/core/base/__filter.php
+----------------------------------------------------------------------------
+r222 | fkb_159357@163.com | 2014-11-25 17:49:55 CST
+Changed paths:
+	M /1/core/base/__filter.php
+----------------------------------------------------------------------------
+r221 | fkb_159357@163.com | 2014-11-25 17:47:09 CST
+Changed paths:
+	M /1/core/base/__filter.php
+----------------------------------------------------------------------------
+r220 | fkb_159357@163.com | 2014-11-25 17:46:47 CST
+Changed paths:
+	M /1/core/base/__filter.php
+----------------------------------------------------------------------------
+r219 | fkb_159357@163.com | 2014-11-25 17:45:41 CST
+Changed paths:
+	M /1/core/base/__filter.php
+
+删除多余测试代码
+----------------------------------------------------------------------------
+r218 | fkb_159357@163.com | 2014-11-25 17:38:04 CST
+Changed paths:
+	M /1/core/base/__base.php
+
+getItem放弃异常抛出
+----------------------------------------------------------------------------
+r217 | fkb_159357@163.com | 2014-11-25 16:44:13 CST
+Changed paths:
+	M /1/core/base/__base.php
+
+获取import池
+----------------------------------------------------------------------------
+r216 | fkb_159357@163.com | 2014-11-25 15:58:01 CST
+Changed paths:
+	M /1/core/base/__base.php
+
+DIRuntime_Imported::INDEX常量化
+----------------------------------------------------------------------------
+r215 | fkb_159357@163.com | 2014-11-25 15:32:17 CST
+Changed paths:
+	M /1/core/base/__base.php
+
+Runtime::$items 更名 Runtime::$pool
+所有导入记录全部存储到Runtime::imported索引中
+----------------------------------------------------------------------------
+r214 | fkb_159357@163.com | 2014-11-24 23:13:40 CST
+Changed paths:
+	M /1/core/base/__filter.php
+
+        //从52~58行处改代码即可，52行的逻辑不对。
+        //可以先合并lneed和lwithout的list数组，不能重复
+        //http://ltre.cc/?test/lets
+        //flag下标其实没用，只是用来证明有没有配置过need/without规则而已
+        //重点就在两个list,和必要性DIFilterMap::$need的值
+        //从上一句话即可得出获取可执行过滤器列表的思路
+----------------------------------------------------------------------------
+r213 | fkb_159357@163.com | 2014-11-24 22:57:20 CST
+Changed paths:
+	M /1/core/base/__lib.php
+	M /1/core/base/__filter.php
+	M /1/core/base/__base.php
+
+DIRuntime_Imported
+----------------------------------------------------------------------------
+r212 | fkb_159357@163.com | 2014-11-24 21:43:32 CST
+Changed paths:
+	M /1/core/base/__base.php
+
+注释
+----------------------------------------------------------------------------
+r211 | fkb_159357@163.com | 2014-11-24 21:14:40 CST
+Changed paths:
+	M /1/core/base/__filter.php
+----------------------------------------------------------------------------
+r210 | fkb_159357@163.com | 2014-11-24 21:13:13 CST
+Changed paths:
+	M /1/core/base/__filter.php
+----------------------------------------------------------------------------
+r209 | fkb_159357@163.com | 2014-11-24 21:04:32 CST
+Changed paths:
+	M /1/core/base/__filter.php
+----------------------------------------------------------------------------
+r208 | fkb_159357@163.com | 2014-11-13 13:14:06 CST
+Changed paths:
+	A /1/res/shell/di-logo-large-fixcolor.png
+	A /1/res/shell/di-logo-large-fixvein.png
+----------------------------------------------------------------------------
+r207 | fkb_159357@163.com | 2014-11-13 13:00:34 CST
+Changed paths:
+	A /1/res/shell/di-logo-large.png
+
+添加无背景大logo
+----------------------------------------------------------------------------
+r206 | fkb_159357@163.com | 2014-11-13 10:28:04 CST
+Changed paths:
+	M /1/README.MD
+
+readme.md
+----------------------------------------------------------------------------
+r205 | fkb_159357@163.com | 2014-11-10 15:51:16 CST
+Changed paths:
+	M /1/README.MD
+
+待定：数据库配置区别正式、测试环境
+----------------------------------------------------------------------------
+r204 | fkb_159357@163.com | 2014-11-09 04:40:28 CST
+Changed paths:
+	D /1/sae_checker_06e8f68c37.php
+----------------------------------------------------------------------------
+r203 | fkb_159357@163.com | 2014-11-09 04:13:59 CST
+Changed paths:
+	A /1/sae_checker_06e8f68c37.php
+
+Autoversioning commit:  a non-deltaV client made a change to
+/1/sae_checker_06e8f68c37.php
+----------------------------------------------------------------------------
+r202 | fkb_159357@163.com | 2014-11-07 17:09:19 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+
+修改注释
+----------------------------------------------------------------------------
+r201 | fkb_159357@163.com | 2014-11-03 20:56:06 CST
+Changed paths:
+	M /1/core/base/__env.php
+
+修改注释
+----------------------------------------------------------------------------
+r200 | fkb_159357@163.com | 2014-10-31 21:54:04 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+----------------------------------------------------------------------------
+r199 | fkb_159357@163.com | 2014-10-30 21:16:37 CST
+Changed paths:
+	M /1/core/base/__filter.php
+	M /1/README.MD
+
+准备加入RPC支持
+----------------------------------------------------------------------------
+r198 | fkb_159357@163.com | 2014-10-29 11:33:04 CST
+Changed paths:
+	M /1/core/config/filtermap.php
+----------------------------------------------------------------------------
+r197 | fkb_159357@163.com | 2014-10-28 22:26:39 CST
+Changed paths:
+	A /1/core/base/__filter.php
+	M /1/core/base/__route.php
+	M /1/README.MD
+	M /1/core/base/__let.php
+	A /1/core/filter
+	M /1/core/config/filtermap.php
+	A /1/core/filter/Xxx.filter.php
+	M /1/core/config/define.php
+	M /1/core/base/__init.php
+	M /1/core/base/__include.php
+
+过滤器支持
+----------------------------------------------------------------------------
+r196 | fkb_159357@163.com | 2014-10-26 17:45:03 CST
+Changed paths:
+	M /1/core/base/__env.php
+
+__env.php
+----------------------------------------------------------------------------
+r195 | fkb_159357@163.com | 2014-10-24 16:05:28 CST
+Changed paths:
+	M /1/core/base/__env.php
+
+修改__env.php注释
+----------------------------------------------------------------------------
+r194 | fkb_159357@163.com | 2014-10-07 23:12:34 CST
+Changed paths:
+	M /1/core/base/__do.php
+
+修改注释
+----------------------------------------------------------------------------
+r193 | fkb_159357@163.com | 2014-09-29 16:17:06 CST
+Changed paths:
+	M /1/res/js/di.js
+
+format
+----------------------------------------------------------------------------
+r192 | fkb_159357@163.com | 2014-09-29 16:15:20 CST
+Changed paths:
+	M /1/res/js/di.js
+
+格式化代码
+----------------------------------------------------------------------------
+r191 | fkb_159357@163.com | 2014-09-26 14:19:52 CST
+Changed paths:
+	M /1/core/let/shell/clock.php
+
+script标签错误修复
+----------------------------------------------------------------------------
+r190 | fkb_159357@163.com | 2014-09-22 15:14:04 CST
+Changed paths:
+	M /1/core/let/shell/shell-css.php
+	M /1/res/shell/login_bg_rev.jpg
+
+修改shell背景图
+----------------------------------------------------------------------------
+r189 | fkb_159357@163.com | 2014-09-22 11:40:04 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+删除多余空白
+----------------------------------------------------------------------------
+r188 | fkb_159357@163.com | 2014-09-22 10:43:57 CST
+Changed paths:
+	M /1/core/tpl/503.php
+	M /1/core/tpl/403.php
+	M /1/core/tpl/404.php
+	M /1/core/tpl/400.php
+
+错误页优化
+----------------------------------------------------------------------------
+r187 | fkb_159357@163.com | 2014-09-22 10:38:58 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+优化shell提交
+----------------------------------------------------------------------------
+r186 | fkb_159357@163.com | 2014-09-22 10:34:15 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+优化shell命令提交
+----------------------------------------------------------------------------
+r185 | fkb_159357@163.com | 2014-09-22 03:35:23 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+----------------------------------------------------------------------------
+r184 | fkb_159357@163.com | 2014-09-22 03:24:49 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+shell页面添加背景音乐
+----------------------------------------------------------------------------
+r183 | fkb_159357@163.com | 2014-09-22 02:18:22 CST
+Changed paths:
+	M /1/core/let/shell/shell-css.php
+	M /1/core/let/shell/shell.php
+	A /1/res/js/di.js
+
+引入di.js
+----------------------------------------------------------------------------
+r182 | fkb_159357@163.com | 2014-09-21 16:05:52 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+shell.php：html伪脚本化
+----------------------------------------------------------------------------
+r181 | fkb_159357@163.com | 2014-09-21 15:18:22 CST
+Changed paths:
+	M /1/core/let/shell/shell-css.php
+
+css
+----------------------------------------------------------------------------
+r180 | fkb_159357@163.com | 2014-09-21 05:15:19 CST
+Changed paths:
+	M /1/core/let/shell/shell-css.php
+
+缩放率优化
+----------------------------------------------------------------------------
+r179 | fkb_159357@163.com | 2014-09-21 04:55:50 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+js
+
+----------------------------------------------------------------------------
+r178 | fkb_159357@163.com | 2014-09-21 04:53:15 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+	A /1/res/js
+	A /1/res/js/jquery-1.8.3.min.js
+
+shell窗口
+----------------------------------------------------------------------------
+r177 | fkb_159357@163.com | 2014-09-21 04:15:13 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+调整加载CSS脚本的位置
+----------------------------------------------------------------------------
+r176 | fkb_159357@163.com | 2014-09-21 04:04:44 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+CSS加载顺序
+----------------------------------------------------------------------------
+r175 | fkb_159357@163.com | 2014-09-21 04:02:52 CST
+Changed paths:
+	M /1/core/let/shell/shell.php
+
+备用CSS和缩放CSS
+----------------------------------------------------------------------------
+r174 | fkb_159357@163.com | 2014-09-21 03:34:41 CST
+Changed paths:
+	M /1/core/let/shell/shell-css.php
+	M /1/core/let/shell/shell.php
+
+用缩放率解决屏幕大小问题
+----------------------------------------------------------------------------
+r173 | fkb_159357@163.com | 2014-09-21 03:13:41 CST
+Changed paths:
+	A /1/core/let/shell/shell.php
+	A /1/core/let/shell/clock.php
+	D /1/core/let/shell.php
+	A /1/core/let/shell/shell-css.php
+	A /1/core/let/shell
+	A /1/core/let/shell/linenet.php
+	M /1/core/do/Test.do.php
+
+服务端处理shell页面响应性
+----------------------------------------------------------------------------
+r172 | fkb_159357@163.com | 2014-09-21 01:02:47 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+diroute::cmplet尚未完成
+----------------------------------------------------------------------------
+r171 | fkb_159357@163.com | 2014-09-21 00:57:58 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+
+urlshell注释
+----------------------------------------------------------------------------
+r170 | fkb_159357@163.com | 2014-09-20 04:50:35 CST
+Changed paths:
+	A /1/core/tpl/test-template.php
+	D /1/core/tpl/test-start.php
+	M /1/core/do/Test.do.php
+	A /1/core/tpl/test-template.html
+	D /1/core/tpl/test-start.html
+
+整理代码位置
+----------------------------------------------------------------------------
+r169 | fkb_159357@163.com | 2014-09-19 22:09:46 CST
+Changed paths:
+	M /1/README.MD
+
+readme
+----------------------------------------------------------------------------
+r168 | fkb_159357@163.com | 2014-09-19 22:08:38 CST
+Changed paths:
+	A /1/res/shell/shell.css
+	A /1/core/let/shell.php
+	A /1/res/shell/shell_gray.css
+	A /1/res/shell/shell_black.css
+	A /1/res/shell/bg.jpg
+	A /1/res/shell/shell_bluegreenscreen_graybg.css
+	A /1/res/shell
+	A /1/res/shell/shell_deepcyangreenscreen_deepbg.css
+	A /1/res/shell/shell_blackscreen_graybg.css
+	A /1/res/shell/shell_grayzhuanscreen_blackzhuanbg.css
+	A /1/res/shell/shell_blackbluescreen_graybg.css
+	A /1/res/shell/login_bg_rev.jpg
+
+添加测试页面美工稿
+?||shell
+----------------------------------------------------------------------------
+r167 | fkb_159357@163.com | 2014-09-19 21:57:01 CST
+Changed paths:
+	A /1/res/shell.rar
+
+美工稿
+----------------------------------------------------------------------------
+r166 | fkb_159357@163.com | 2014-09-19 15:04:08 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+测试代码
+----------------------------------------------------------------------------
+r165 | fkb_159357@163.com | 2014-09-19 11:51:31 CST
+Changed paths:
+	M /1/core/base/__base.php
+
+格式化代码
+----------------------------------------------------------------------------
+r164 | fkb_159357@163.com | 2014-09-18 22:07:37 CST
+Changed paths:
+	A /1/doc/resources/collapsed.png
+	A /1/doc/source-class-OrekiUtil.html
+	A /1/doc/class-DIInject.html
+	A /1/doc/class-TesttestDo.html
+	A /1/doc/function-inject.html
+	A /1/doc/source-class-DIFilterMap.html
+	A /1/doc/source-class-DITpl.html
+	A /1/doc/source-function-let.html
+	A /1/doc/source-class-DIEvent_GetVariableListener.html
+	A /1/doc/class-DIEvent_ObjCreateListener.html
+	A /1/doc/source-class-DIContext_Inject.html
+	A /1/doc/source-function-let_exists.html
+	A /1/doc/source-function-inject.html
+	A /1/doc/source-function-__autoload.html
+	A /1/doc/function-inject_func.html
+	A /1/doc/class-DIModelTemplate.html
+	A /1/doc/function-injectObjFunc.html
+	A /1/doc/resources/sort.png
+	A /1/doc/source-class-DIEvent_CallFuncListener.html
+	A /1/doc/source-class-DIEvent_GetStaticVariableListener.html
+	A /1/doc/index.html
+	A /1/doc/class-DIEvent_GetStaticVariableListener.html
+	A /1/doc/source-class-DILet.html
+	A /1/doc/class-DIEvent_ClassCallListener.html
+	A /1/doc/source-class-DIEvent_SetVariableListener.html
+	A /1/doc/source-class-DIBase.html
+	A /1/doc/class-DIEvent_CallFuncListener.html
+	A /1/doc/source-class-TestDo.html
+	A /1/doc/resources/footer.png
+	A /1/doc/class-TestInject.html
+	A /1/doc/source-function-invoke_method.html
+	A /1/doc/source-class-DIEvent_DestroyListener.html
+	A /1/doc/class-DIEventListener.html
+	A /1/doc/source-function-invoke_func.html
+	A /1/doc/source-class-TestInject.html
+	A /1/doc/namespace-PHP.html
+	A /1/doc/source-function-session.html
+	A /1/doc/source-class-DIException.html
+	A /1/doc/source-function-params_to_str.html
+	A /1/doc/source-class-DIContext.html
+	A /1/doc/source-class-DIInclude.html
+	A /1/doc/class-DIModel.html
+	A /1/doc/resources/code-line.png
+	A /1/doc/source-class-DIUrlShell.html
+	A /1/doc/resources/combined.js
+	A /1/doc/function-invoke_method.html
+	A /1/doc/source-class-DIModel.html
+	A /1/doc/resources/inherit.png
+	A /1/doc/source-class-DIEvent.html
+	A /1/doc/function-create_class.html
+	A /1/doc/function-invoke_func.html
+	A /1/doc/source-class-DIEvent_AppendFuncListener.html
+	A /1/doc/resources/tree-cleaner.png
+	A /1/doc/tree.html
+	A /1/doc/class-Test.html
+	A /1/doc/function-params_to_str.html
+	A /1/doc/source-function-inject_full.html
+	A /1/doc/class-DIRoute.html
+	A /1/doc/source-class-TesttestDo.html
+	A /1/doc/class-TestDo.html
+	A /1/doc/class-DIContext.html
+	A /1/doc/source-class-Test.html
+	A /1/doc/class-DIEvent_AppendVariableListener.html
+	A /1/doc/class-DIEvent_GetVariableListener.html
+	A /1/doc/function-import.html
+	A /1/doc/source-function-inject_dymic.html
+	A /1/doc/class-DIEvent_SetStaticVariableListener.html
+	A /1/doc/source-class-DIDo.html
+	A /1/doc/function-let_exists.html
+	A /1/doc/class-DIUrlShell.html
+	A /1/doc/source-function-import.html
+	A /1/doc/namespace-None.html
+	A /1/doc/source-class-DIEntity.html
+	A /1/doc/resources/tree-hasnext.png
+	A /1/doc/class-DIEvent_AppendFuncListener.html
+	A /1/doc/function-let.html
+	A /1/doc/source-class-DIConfig.html
+	A /1/doc/source-class-DIEvent_AppendVariableListener.html
+	A /1/doc/resources/resize.png
+	A /1/doc/class-DIRuntime.html
+	A /1/doc/resources/tree-vertical.png
+	A /1/doc/class-DIContext_Inject.html
+	A /1/doc/function-inject_full.html
+	A /1/doc/class-DIService.html
+	A /1/doc/source-class-DIEvent_ObjCallListener.html
+	A /1/doc/class-DIEvent.html
+	A /1/doc/source-class-DIEvent_CallStaticFuncListener.html
+	A /1/doc/resources
+	A /1/doc/source-function-injectObjFunc.html
+	A /1/doc/source-function-session_exists.html
+	A /1/doc/source-function-ref_arr.html
+	A /1/doc/class-DIFilterMap.html
+	A /1/doc/function-array_unset.html
+	A /1/doc/source-class-DIRoute.html
+	A /1/doc/function-inject_dymic.html
+	A /1/doc/resources/tree-last.png
+	A /1/doc/source-class-DIEvent_ObjCreateListener.html
+	A /1/doc/source-function-array_unset.html
+	A /1/doc/class-DIEvent_ObjCallListener.html
+	A /1/doc/source-class-DIService.html
+	A /1/doc/class-DITpl.html
+	A /1/doc/class-DIInclude.html
+	A /1/doc/source-class-DIModelTemplate.html
+	A /1/doc/class-DIEvent_CallStaticFuncListener.html
+	A /1/doc/source-function-inject_func.html
+	A /1/doc/source-function-create_class.html
+	A /1/doc/function-session_exists.html
+	A /1/doc/function-dump.html
+	A /1/doc/function-__autoload.html
+	A /1/doc/source-class-DIIncludeConfig.html
+	A /1/doc/source-class-DIEvent_SetStaticVariableListener.html
+	A /1/doc/source-class-DIEventListener.html
+	A /1/doc/resources/style.css
+	A /1/doc/source-function-dump.html
+	A /1/doc/class-DIIncludeConfig.html
+	A /1/doc/class-DILet.html
+	A /1/doc/source-class-DIInject.html
+	A /1/doc/class-DIEvent_DestroyListener.html
+	A /1/doc/class-DIDo.html
+	A /1/doc/elementlist.js
+	A /1/doc/class-DIException.html
+	A /1/doc/source-class-DIEvent_ClassCallListener.html
+	A /1/doc/class-OrekiUtil.html
+	A /1/doc/class-DIEvent_SetVariableListener.html
+	A /1/doc/function-ref_arr.html
+	A /1/doc/source-class-DIRuntime.html
+	A /1/doc/class-DIEntity.html
+	A /1/doc/class-DIBase.html
+	A /1/doc/function-session.html
+	A /1/doc/class-DIConfig.html
+	A /1/doc/class-Exception.html
+
+新版文档
+----------------------------------------------------------------------------
+r163 | fkb_159357@163.com | 2014-09-18 22:06:37 CST
+Changed paths:
+	D /1/doc/class-AIPEventListener.html
+	D /1/doc/source-function-let.html
+	D /1/doc/class-AIPEvent_ClassCallListener.html
+	D /1/doc/source-class-AIPEvent_GetStaticVariableListener.html
+	D /1/doc/function-import.html
+	D /1/doc/source-class-AIPException.html
+	D /1/doc/source-class-AIPConfig.html
+	D /1/doc/source-function-injectObjFunc.html
+	D /1/doc/class-AIPInclude.html
+	D /1/doc/class-AIPLet.html
+	D /1/doc/source-function-array_unset.html
+	D /1/doc/source-function-__autoload.html
+	D /1/doc/source-class-AIPEvent_CallFuncListener.html
+	D /1/doc/source-class-AIPTpl.html
+	D /1/doc/function-create_class.html
+	D /1/doc/class-TestInject.html
+	D /1/doc/class-AIPException.html
+	D /1/doc/class-AIPEvent_SetVariableListener.html
+	D /1/doc/function-invoke_method.html
+	D /1/doc/class-AIPEvent_CallFuncListener.html
+	D /1/doc/source-class-AIPEvent_ObjCallListener.html
+	D /1/doc/source-function-inject_dymic.html
+	D /1/doc/function-session_exists.html
+	D /1/doc/source-class-AIPEntity.html
+	D /1/doc/class-AIPIncludeConfig.html
+	D /1/doc/class-AIPRoute.html
+	D /1/doc/source-class-AIPLet.html
+	D /1/doc/source-class-AIPEvent_ObjCreateListener.html
+	D /1/doc/source-class-AIPBase.html
+	D /1/doc/source-class-AIPInject.html
+	D /1/doc/source-class-Test.html
+	D /1/doc/class-AIPUrlShell.html
+	D /1/doc/source-function-session_exists.html
+	D /1/doc/source-class-AIPUrlShell.html
+	D /1/doc/class-AIPService.html
+	D /1/doc/source-class-AIPRuntime.html
+	D /1/doc/constant-AIP_CORE_PATH.html
+	D /1/doc/class-AIPEvent_ObjCallListener.html
+	D /1/doc/source-class-AIPInclude.html
+	D /1/doc/class-AIPEvent_DestroyListener.html
+	D /1/doc/resources
+	D /1/doc/source-class-OrekiUtil.html
+	D /1/doc/class-AIPConfig.html
+	D /1/doc/source-function-import.html
+	D /1/doc/function-let.html
+	D /1/doc/class-Exception.html
+	D /1/doc/source-class-AIPContext.html
+	D /1/doc/function-inject_full.html
+	D /1/doc/function-invoke_func.html
+	D /1/doc/class-AIPEvent_ObjCreateListener.html
+	D /1/doc/function-params_to_str.html
+	D /1/doc/source-function-params_to_str.html
+	D /1/doc/source-function-ref_arr.html
+	D /1/doc/namespace-PHP.html
+	D /1/doc/source-class-TestDo.html
+	D /1/doc/function-injectObjFunc.html
+	D /1/doc/source-function-inject_func.html
+	D /1/doc/class-AIPEvent_AppendVariableListener.html
+	D /1/doc/source-function-session.html
+	D /1/doc/function-inject_dymic.html
+	D /1/doc/source-class-AIPEvent_SetVariableListener.html
+	D /1/doc/index.html
+	D /1/doc/class-AIPInject.html
+	D /1/doc/source-class-AIPContext_Inject.html
+	D /1/doc/source-class-AIPDo.html
+	D /1/doc/source-class-AIPIncludeConfig.html
+	D /1/doc/source-class-AIPEvent_ClassCallListener.html
+	D /1/doc/class-AIPModel.html
+	D /1/doc/source-function-inject_full.html
+	D /1/doc/function-__autoload.html
+	D /1/doc/function-inject_func.html
+	D /1/doc/function-inject.html
+	D /1/doc/source-class-AIPEvent_GetVariableListener.html
+	D /1/doc/class-AIPEntity.html
+	D /1/doc/function-let_exists.html
+	D /1/doc/class-Test.html
+	D /1/doc/source-function-let_exists.html
+	D /1/doc/source-class-AIPEvent_AppendFuncListener.html
+	D /1/doc/function-array_unset.html
+	D /1/doc/class-AIPContext_Inject.html
+	D /1/doc/source-class-AIPEvent_CallStaticFuncListener.html
+	D /1/doc/source-constant-AIP_CORE_PATH.html
+	D /1/doc/function-ref_arr.html
+	D /1/doc/elementlist.js
+	D /1/doc/class-AIPEvent_GetVariableListener.html
+	D /1/doc/source-class-TestInject.html
+	D /1/doc/source-class-TesttestDo.html
+	D /1/doc/source-class-AIPService.html
+	D /1/doc/class-AIPBase.html
+	D /1/doc/source-function-create_class.html
+	D /1/doc/source-class-AIPEvent_AppendVariableListener.html
+	D /1/doc/source-class-AIPEvent_DestroyListener.html
+	D /1/doc/namespace-None.html
+	D /1/doc/class-AIPDo.html
+	D /1/doc/class-AIPEvent_AppendFuncListener.html
+	D /1/doc/class-AIPEvent_SetStaticVariableListener.html
+	D /1/doc/source-class-AIPModel.html
+	D /1/doc/source-function-invoke_method.html
+	D /1/doc/class-AIPContext.html
+	D /1/doc/class-AIPModelTemplate.html
+	D /1/doc/source-class-AIPEvent.html
+	D /1/doc/class-AIPEvent_CallStaticFuncListener.html
+	D /1/doc/source-class-AIPRoute.html
+	D /1/doc/source-class-AIPEvent_SetStaticVariableListener.html
+	D /1/doc/tree.html
+	D /1/doc/class-AIPRuntime.html
+	D /1/doc/source-function-inject.html
+	D /1/doc/class-TesttestDo.html
+	D /1/doc/class-OrekiUtil.html
+	D /1/doc/class-AIPEvent.html
+	D /1/doc/class-AIPEvent_GetStaticVariableListener.html
+	D /1/doc/source-function-invoke_func.html
+	D /1/doc/class-AIPTpl.html
+	D /1/doc/source-class-AIPEventListener.html
+	D /1/doc/source-class-AIPModelTemplate.html
+	D /1/doc/function-session.html
+	D /1/doc/class-TestDo.html
+
+删除旧文档
+----------------------------------------------------------------------------
+r162 | fkb_159357@163.com | 2014-09-18 21:13:50 CST
+Changed paths:
+	M /1/.project
+	M /1/.settings/org.eclipse.php.core.prefs
+
+更改项目名
+----------------------------------------------------------------------------
+r161 | fkb_159357@163.com | 2014-09-18 21:09:57 CST
+Changed paths:
+	M /1/core/base/__base.php
+	M /1/core/config/define.php
+	M /1/core/ext/i.php
+	M /1/core/config/urlshell.php
+	M /1/core/let/i.php
+	M /1/core/base/__entity.php
+	M /1/core/base/__tpl.php
+	M /1/core/do/Testtest.do.php
+	M /1/README.MD
+	M /1/how_to_use.md
+	M /1/core/base/__route.php
+	M /1/core/base/__inject.php
+	M /1/core/base/__event.php
+	M /1/core/inject/Test.inject.php
+	M /1/core/base/__env.php
+	M /1/core/base/__do.php
+	M /1/core/config/filtermap.php
+	M /1/core/let/1.php
+	M /1/core/let/i/i/i.php
+	M /1/core/base/__let.php
+	M /1/core/ext/1.php
+	M /1/core/base/__model.php
+	M /1/core/ext/i/i.php
+	M /1/core/base/__service.php
+	M /1/core/base/__exception.php
+	M /1/core/base/__include.php
+	M /1/core/base/__config.php
+	M /1/core/base/__lib.php
+	M /1/core/base/__init.php
+	M /1/core/ext/i/i/i.php
+	M /1/core/do/Test.do.php
+	M /1/core/let/i/i.php
+	M /1/core/entity/Test.php
+
+AIP更名为DI
+----------------------------------------------------------------------------
+r160 | fkb_159357@163.com | 2014-09-18 12:32:56 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+__route.php确保正确获取与shell有关的$_GET键值。
+软肋：如果存在两个没有值的$_GET元素，则以左起第一个为准
+----------------------------------------------------------------------------
+r159 | fkb_159357@163.com | 2014-09-18 11:42:57 CST
+Changed paths:
+	M /1/cli_debug.php
+
+CLI调试
+----------------------------------------------------------------------------
+r158 | fkb_159357@163.com | 2014-09-18 11:42:45 CST
+Changed paths:
+	M /1/cli_debug.php
+
+CLI调试
+----------------------------------------------------------------------------
+r157 | fkb_159357@163.com | 2014-09-18 11:35:05 CST
+Changed paths:
+	M /1/cli_debug.php
+
+CLI调试
+----------------------------------------------------------------------------
+r156 | fkb_159357@163.com | 2014-09-18 11:26:19 CST
+Changed paths:
+	M /1/index.php
+	A /1/cli_debug.php
+
+CLI调试
+----------------------------------------------------------------------------
+r155 | fkb_159357@163.com | 2014-09-17 02:14:01 CST
+Changed paths:
+	M /1/core/base/__base.php
+----------------------------------------------------------------------------
+r154 | fkb_159357@163.com | 2014-09-15 10:31:42 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r153 | fkb_159357@163.com | 2014-09-15 03:41:40 CST
+Changed paths:
+	M /1/core/config/filtermap.php
+
+过滤器规则初步加入，尚未实现拦截逻辑
+----------------------------------------------------------------------------
+r152 | fkb_159357@163.com | 2014-09-13 19:28:47 CST
+Changed paths:
+	M /1/index.php
+	M /1/core/base/__route.php
+
+URL命令不必紧跟在?之后
+----------------------------------------------------------------------------
+r151 | fkb_159357@163.com | 2014-09-12 03:49:02 CST
+Changed paths:
+	M /1/core/base/__include.php
+----------------------------------------------------------------------------
+r150 | fkb_159357@163.com | 2014-09-12 03:47:46 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+取消GOTO
+----------------------------------------------------------------------------
+r149 | fkb_159357@163.com | 2014-09-11 23:23:12 CST
+Changed paths:
+	M /1/core/config/define.php
+----------------------------------------------------------------------------
+r148 | fkb_159357@163.com | 2014-09-11 20:58:43 CST
+Changed paths:
+	M /1/core/config/define.php
+	M /1/core/base/__env.php
+
+允许在__define.php中重写部分宏
+----------------------------------------------------------------------------
+r147 | fkb_159357@163.com | 2014-09-11 20:46:51 CST
+Changed paths:
+	M /1/core/base/__include.php
+	M /1/core/base/__route.php
+
+自动包含配置文件
+----------------------------------------------------------------------------
+r146 | fkb_159357@163.com | 2014-09-11 20:34:04 CST
+Changed paths:
+	M /1/core/base/__env.php
+
+注释：__env.php给出默认值
+----------------------------------------------------------------------------
+r145 | fkb_159357@163.com | 2014-09-11 20:21:50 CST
+Changed paths:
+	M /1/core/base/__exception.php
+
+AIPException日志支持
+----------------------------------------------------------------------------
+r144 | fkb_159357@163.com | 2014-09-11 15:23:24 CST
+Changed paths:
+	D /1/templates_c
+----------------------------------------------------------------------------
+r143 | fkb_159357@163.com | 2014-09-11 01:48:29 CST
+Changed paths:
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r142 | fkb_159357@163.com | 2014-09-11 01:48:02 CST
+Changed paths:
+	A /1/templates_c
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r141 | fkb_159357@163.com | 2014-09-11 01:45:08 CST
+Changed paths:
+	M /1/core/base/__env.php
+----------------------------------------------------------------------------
+r140 | fkb_159357@163.com | 2014-09-11 01:44:33 CST
+Changed paths:
+	A /1/core/tpl/400.php
+	A /1/core/tpl/503.php
+	A /1/core/tpl/403.php
+	A /1/core/tpl/404.php
+	M /1/core/base/__env.php
+
+错误页
+----------------------------------------------------------------------------
+r139 | fkb_159357@163.com | 2014-09-11 01:32:00 CST
+Changed paths:
+	M /1/core/base/__env.php
+----------------------------------------------------------------------------
+r138 | fkb_159357@163.com | 2014-09-11 01:12:01 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r137 | fkb_159357@163.com | 2014-09-11 00:55:28 CST
+Changed paths:
+	M /1/core/base/__env.php
+----------------------------------------------------------------------------
+r136 | fkb_159357@163.com | 2014-09-11 00:54:51 CST
+Changed paths:
+	M /1/core/tpl/test-start.html
+	M /1/core/tpl/test-else.html
+----------------------------------------------------------------------------
+r135 | fkb_159357@163.com | 2014-09-11 00:54:38 CST
+Changed paths:
+	M /1/core/base/__env.php
+----------------------------------------------------------------------------
+r134 | fkb_159357@163.com | 2014-09-11 00:52:45 CST
+Changed paths:
+	M /1/core/base/__env.php
+----------------------------------------------------------------------------
+r133 | fkb_159357@163.com | 2014-09-11 00:51:22 CST
+Changed paths:
+	M /1/core/base/__lib.php
+	M /1/core/ext/smarty/Smarty.class.php
+	M /1/core/base/__init.php
+
+在smarty的构造器中添加代码：
+        spl_autoload_unregister('__autoload');
+        spl_autoload_register('smartyAutoload');
+这样在smarty运作时，自动切换为smartyAutoload自动加载机制；
+
+在smarty的析构器中添加代码：
+        spl_autoload_unregister('smartyAutoload');
+        spl_autoload_register('__autoload');
+这样在smarty运作结束后，自动切换为系统原有的__autoload
+----------------------------------------------------------------------------
+r132 | fkb_159357@163.com | 2014-09-10 22:11:28 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r131 | fkb_159357@163.com | 2014-09-10 22:03:48 CST
+Changed paths:
+	M /1/core/tpl/test-start.html
+	M /1/core/tpl/test-else.html
+----------------------------------------------------------------------------
+r130 | fkb_159357@163.com | 2014-09-10 22:03:37 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+----------------------------------------------------------------------------
+r129 | fkb_159357@163.com | 2014-09-10 21:46:59 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+	M /1/core/tpl/test-start.html
+	M /1/core/tpl/test-else.html
+	M /1/core/base/__env.php
+----------------------------------------------------------------------------
+r128 | fkb_159357@163.com | 2014-09-10 15:48:03 CST
+Changed paths:
+	D /1/core/tpl/test-smarty.html
+	M /1/core/tpl/test-start.php
+	M /1/core/base/__tpl.php
+	M /1/core/base/__base.php
+	A /1/core/tpl/test-else.php
+	A /1/core/tpl/test-else.html
+	D /1/core/tpl/test-smarty.php
+	M /1/core/base/__do.php
+	M /1/core/do/Test.do.php
+
+完成XxxDo与普通PHP模板之间的变量共享
+----------------------------------------------------------------------------
+r127 | fkb_159357@163.com | 2014-09-10 15:05:02 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+----------------------------------------------------------------------------
+r126 | fkb_159357@163.com | 2014-09-10 15:04:56 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+//强制注册__autoload，防止无法加载
+spl_autoload_register('__autoload');
+----------------------------------------------------------------------------
+r125 | fkb_159357@163.com | 2014-09-10 14:34:13 CST
+Changed paths:
+	M /1/core/base/__lib.php
+	M /1/core/do/Test.do.php
+----------------------------------------------------------------------------
+r124 | fkb_159357@163.com | 2014-09-10 14:02:06 CST
+Changed paths:
+	M /1/core/base/__env.php
+----------------------------------------------------------------------------
+r123 | fkb_159357@163.com | 2014-09-10 10:10:33 CST
+Changed paths:
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r122 | fkb_159357@163.com | 2014-09-10 09:53:36 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+	M /1/core/base/__env.php
+	M /1/core/tpl/test-smarty.html
+	M /1/core/tpl/test-start.html
+
+解决输出编码问题
+----------------------------------------------------------------------------
+r121 | fkb_159357@163.com | 2014-09-10 04:20:57 CST
+Changed paths:
+	M /1/core/base/__env.php
+	A /1/core/tpl/test-smarty.php
+	M /1/core/tpl/test-smarty.html
+	A /1/core/tpl/test-start.php
+	M /1/core/base/__tpl.php
+	M /1/core/base/__do.php
+	M /1/core/tpl/test-start.html
+
+AIP_SMARTY_ENABLE：是否启用smarty(对于一些不支持I/O操作的主机，应该禁用之)
+----------------------------------------------------------------------------
+r120 | fkb_159357@163.com | 2014-09-10 03:49:58 CST
+Changed paths:
+	M /1/core/base/__do.php
+----------------------------------------------------------------------------
+r119 | fkb_159357@163.com | 2014-09-10 03:25:28 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+	M /1/core/base/__do.php
+	A /1/core/tpl/test-smarty.html
+	M /1/core/do/Test.do.php
+	A /1/core/tpl/test-start.html
+
+初步支持对应视图输出，支持smarty，暂不支持自动输出
+----------------------------------------------------------------------------
+r118 | fkb_159357@163.com | 2014-09-10 01:41:33 CST
+Changed paths:
+	A /1/core/ext/smarty/plugins/modifiercompiler.escape.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.strip_tags.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_get_include_path.php
+	A /1/core/ext/smarty/plugins/shared.literal_compiler_param.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_modifier.php
+	A /1/core/ext/smarty/plugins/function.html_options.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_setfilter.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.wordwrap.php
+	A /1/core/ext/smarty/plugins/modifier.debug_print_var.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_function.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_templatelexer.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_config_load.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_eval.php
+	A /1/core/ext/smarty/Smarty.class.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_resource_string.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_foreach.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_templatecompilerbase.php
+	A /1/core/ext/smarty/plugins/modifier.capitalize.php
+	A /1/core/ext/smarty/plugins/shared.mb_wordwrap.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_resource_extends.php
+	A /1/core/ext/smarty/plugins/function.counter.php
+	A /1/core/ext/smarty/sysplugins/smarty_cacheresource_custom.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.unescape.php
+	A /1/core/ext/smarty/plugins/modifier.truncate.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.count_characters.php
+	A /1/core/ext/smarty/plugins/function.html_table.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_include.php
+	A /1/core/ext/smarty/sysplugins/smarty_resource_uncompiled.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_call.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.noprint.php
+	A /1/core/ext/smarty/sysplugins/smarty_resource_recompiled.php
+	A /1/core/ext/smarty/plugins/block.textformat.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_resource_file.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_write_file.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.strip.php
+	A /1/core/ext/smarty/plugins/modifier.replace.php
+	A /1/core/ext/smarty/plugins/function.cycle.php
+	A /1/core/ext/smarty/plugins/function.fetch.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_section.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_smartytemplatecompiler.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_templateparser.php
+	A /1/core/ext/smarty/SmartyBC.class.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_break.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_resource_php.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_config.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_insert.php
+	A /1/core/ext/smarty/plugins/outputfilter.trimwhitespace.php
+	A /1/core/ext/smarty/plugins/function.math.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_block.php
+	A /1/core/ext/smarty/plugins/shared.make_timestamp.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_append.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.cat.php
+	A /1/core/ext/smarty/plugins/function.mailto.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_template.php
+	A /1/core/ext/smarty/plugins
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_object_function.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_registered_block.php
+	A /1/core/ext/smarty/debug.tpl
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_capture.php
+	A /1/core/ext/smarty/plugins/modifier.regex_replace.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.count_paragraphs.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_utility.php
+	A /1/core/ext/smarty/plugins/shared.mb_unicode.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_block_plugin.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.count_words.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_filter_handler.php
+	A /1/core/ext/smarty/sysplugins/smarty_cacheresource_keyvaluestore.php
+	A /1/core/ext/smarty/plugins/function.html_select_time.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_debug.php
+	A /1/core/ext/smarty/plugins/shared.mb_str_replace.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_function_call_handler.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_resource_stream.php
+	A /1/core/ext/smarty
+	A /1/core/ext/smarty/plugins/modifiercompiler.to_charset.php
+	A /1/core/ext/smarty/plugins/variablefilter.htmlspecialchars.php
+	A /1/core/ext/smarty/sysplugins/smarty_resource_custom.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.lower.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_resource_registered.php
+	A /1/core/ext/smarty/plugins/function.html_select_date.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_print_expression.php
+	A /1/core/ext/smarty/plugins/function.html_image.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_object_block_function.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.default.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_if.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_resource_eval.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_data.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.string_format.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_continue.php
+	A /1/core/ext/smarty/plugins/shared.escape_special_chars.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_configfileparser.php
+	A /1/core/ext/smarty/sysplugins/smarty_resource.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_assign.php
+	A /1/core/ext/smarty/sysplugins/smarty_security.php
+	A /1/core/ext/smarty/plugins/function.html_checkboxes.php
+	A /1/core/ext/smarty/sysplugins
+	A /1/core/ext/smarty/plugins/modifier.date_format.php
+	A /1/core/ext/smarty/sysplugins/smarty_config_source.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_rdelim.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_cacheresource_file.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_while.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.count_sentences.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.indent.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compilebase.php
+	A /1/core/ext/smarty/plugins/function.html_radios.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_special_variable.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_include_php.php
+	A /1/core/ext/smarty/sysplugins/smarty_cacheresource.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_debug.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_parsetree.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_config_file_compiler.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.upper.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_configfilelexer.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_nocache_insert.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_for.php
+	A /1/core/ext/smarty/plugins/modifier.escape.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_ldelim.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_templatebase.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_function_plugin.php
+	A /1/core/ext/smarty/plugins/modifier.spacify.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_extends.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_registered_function.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_nocache.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.from_charset.php
+----------------------------------------------------------------------------
+r117 | fkb_159357@163.com | 2014-09-10 01:31:26 CST
+Changed paths:
+	D /1/core/ext/smarty
+----------------------------------------------------------------------------
+r116 | fkb_159357@163.com | 2014-09-09 23:18:24 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+----------------------------------------------------------------------------
+r115 | fkb_159357@163.com | 2014-09-09 22:07:25 CST
+Changed paths:
+	M /1/core/base/__tpl.php
+----------------------------------------------------------------------------
+r114 | fkb_159357@163.com | 2014-09-09 22:06:39 CST
+Changed paths:
+	A /1/core/ext/smarty/Smarty.class.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_get_include_path.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_capture.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.indent.php
+	A /1/core/ext/smarty/sysplugins
+	A /1/core/ext/smarty/sysplugins/smarty_cacheresource.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_while.php
+	A /1/core/ext/smarty
+	A /1/core/ext/smarty/plugins/function.mailto.php
+	A /1/core/ext/smarty/plugins/function.html_radios.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_for.php
+	A /1/core/ext/smarty/plugins/function.cycle.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_continue.php
+	A /1/core/ext/smarty/plugins/function.html_select_time.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_ldelim.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_config.php
+	A /1/core/ext/smarty/plugins/modifier.replace.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_foreach.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.string_format.php
+	A /1/core/ext/smarty/sysplugins/smarty_cacheresource_keyvaluestore.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_templatebase.php
+	A /1/core/ext/smarty/sysplugins/smarty_security.php
+	A /1/core/ext/smarty/plugins/modifier.regex_replace.php
+	M /1/core/base/__lib.php
+	A /1/core/ext/smarty/plugins/shared.mb_str_replace.php
+	A /1/core/ext/smarty/plugins/function.html_image.php
+	A /1/core/ext/smarty/plugins/modifier.date_format.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_config_load.php
+	A /1/core/ext/smarty/plugins/variablefilter.htmlspecialchars.php
+	A /1/core/ext/smarty/plugins/modifier.escape.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.unescape.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.strip_tags.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_resource_registered.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_resource_php.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_extends.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_object_function.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_configfileparser.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.from_charset.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_resource_string.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_write_file.php
+	A /1/core/ext/smarty/plugins
+	A /1/core/ext/smarty/sysplugins/smarty_internal_config_file_compiler.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.noprint.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_template.php
+	A /1/core/ext/smarty/plugins/shared.mb_unicode.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.to_charset.php
+	A /1/core/ext/smarty/plugins/modifier.truncate.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_assign.php
+	A /1/core/ext/smarty/plugins/function.html_select_date.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_function.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_debug.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.lower.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_templateparser.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_nocache_insert.php
+	A /1/core/ext/smarty/plugins/outputfilter.trimwhitespace.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_utility.php
+	M /1/core/do/Test.do.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.count_characters.php
+	A /1/core/ext/smarty/debug.tpl
+	A /1/core/ext/smarty/sysplugins/smarty_internal_smartytemplatecompiler.php
+	A /1/core/ext/smarty/plugins/block.textformat.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_debug.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_call.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_templatelexer.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_special_variable.php
+	A /1/core/ext/smarty/sysplugins/smarty_resource_custom.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_section.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compilebase.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_registered_block.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_insert.php
+	A /1/core/ext/smarty/plugins/modifier.capitalize.php
+	A /1/core/ext/smarty/plugins/modifier.debug_print_var.php
+	A /1/core/ext/smarty/plugins/shared.escape_special_chars.php
+	A /1/core/ext/smarty/plugins/function.html_table.php
+	A /1/core/ext/smarty/sysplugins/smarty_resource_recompiled.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.upper.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.count_sentences.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.strip.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_eval.php
+	A /1/core/ext/smarty/plugins/function.counter.php
+	A /1/core/ext/smarty/SmartyBC.class.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_block_plugin.php
+	M /1/core/base/__tpl.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.default.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_block.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_rdelim.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_break.php
+	A /1/core/ext/smarty/sysplugins/smarty_config_source.php
+	A /1/core/ext/smarty/plugins/function.math.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_parsetree.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_object_block_function.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_data.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_resource_stream.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_cacheresource_file.php
+	A /1/core/ext/smarty/plugins/shared.literal_compiler_param.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_filter_handler.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_configfilelexer.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_include.php
+	A /1/core/ext/smarty/sysplugins/smarty_resource_uncompiled.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.escape.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.wordwrap.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_registered_function.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_function_plugin.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_resource_file.php
+	A /1/core/ext/smarty/plugins/function.html_checkboxes.php
+	A /1/core/ext/smarty/sysplugins/smarty_cacheresource_custom.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_nocache.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_modifier.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.count_paragraphs.php
+	A /1/core/ext/smarty/plugins/shared.mb_wordwrap.php
+	A /1/core/ext/smarty/sysplugins/smarty_resource.php
+	A /1/core/ext/smarty/plugins/function.html_options.php
+	A /1/core/ext/smarty/plugins/function.fetch.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_resource_extends.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_resource_eval.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_private_print_expression.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_templatecompilerbase.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_include_php.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_if.php
+	A /1/core/ext/smarty/plugins/modifier.spacify.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_append.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.count_words.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_function_call_handler.php
+	A /1/core/ext/smarty/sysplugins/smarty_internal_compile_setfilter.php
+	A /1/core/ext/smarty/plugins/shared.make_timestamp.php
+	A /1/core/ext/smarty/plugins/modifiercompiler.cat.php
+
+初步导入smarty引擎
+----------------------------------------------------------------------------
+r113 | fkb_159357@163.com | 2014-09-09 19:53:12 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+	M /1/core/base/__env.php
+
+是否自动载入视图 TODO:待实现
+----------------------------------------------------------------------------
+r112 | fkb_159357@163.com | 2014-09-09 17:30:35 CST
+Changed paths:
+	M /1/README.MD
+
+待办：全局过滤器规则实现
+待办：视图输出及模板引擎加载。难点：模板引擎合理加载
+----------------------------------------------------------------------------
+r111 | fkb_159357@163.com | 2014-09-09 17:26:19 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r110 | fkb_159357@163.com | 2014-09-09 17:17:51 CST
+Changed paths:
+	M /1/core/base/__route.php
+	M /1/core/config/urlshell.php
+	M /1/core/base/__init.php
+	M /1/core/do/Test.do.php
+	M /1/core/ext/i.php
+
+提供默认入口命令
+----------------------------------------------------------------------------
+r109 | fkb_159357@163.com | 2014-09-09 16:52:18 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+当包含的是单个文件时，还可以获得require语句的返回值，视所包含文件的return语句而定。
+----------------------------------------------------------------------------
+r108 | fkb_159357@163.com | 2014-09-09 16:46:40 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+import异常提示信息修改
+----------------------------------------------------------------------------
+r107 | fkb_159357@163.com | 2014-09-09 16:39:32 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r106 | fkb_159357@163.com | 2014-09-09 16:39:21 CST
+Changed paths:
+	M /1/core/base/__lib.php
+----------------------------------------------------------------------------
+r105 | fkb_159357@163.com | 2014-09-09 16:35:36 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r104 | fkb_159357@163.com | 2014-09-09 16:33:16 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+import()在包含了不存在的文件时，给出具体错误源
+----------------------------------------------------------------------------
+r103 | fkb_159357@163.com | 2014-09-09 16:13:43 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+import()内的包含更改为require_once，防止多次调用import()时发生重复执行的问题
+----------------------------------------------------------------------------
+r102 | fkb_159357@163.com | 2014-09-09 16:08:46 CST
+Changed paths:
+	M /1/core/base/__env.php
+----------------------------------------------------------------------------
+r101 | fkb_159357@163.com | 2014-09-09 16:07:09 CST
+Changed paths:
+	M /1/core/base/__env.php
+
+注释：调试模式（启用时，所有的异常直接抛出；禁用时，所有异常会记录到日志或数据库，详见 AIPException @ __exception.php）
+----------------------------------------------------------------------------
+r100 | fkb_159357@163.com | 2014-09-09 15:29:52 CST
+Changed paths:
+	A /1/doc/function-import.html
+	A /1/doc/function-let_exists.html
+	A /1/doc/resources/inherit.png
+	A /1/doc/source-class-AIPEvent_ClassCallListener.html
+	A /1/doc/class-TestInject.html
+	A /1/doc/function-inject_func.html
+	A /1/doc/source-class-AIPConfig.html
+	A /1/doc/class-AIPService.html
+	A /1/doc/source-class-TesttestDo.html
+	A /1/doc/class-AIPContext.html
+	A /1/doc/source-class-AIPEvent_SetVariableListener.html
+	A /1/doc/source-class-Test.html
+	A /1/doc/class-AIPEvent_SetStaticVariableListener.html
+	A /1/doc/source-class-AIPEvent_CallFuncListener.html
+	A /1/doc/class-AIPEvent_AppendFuncListener.html
+	A /1/doc/source-function-inject_func.html
+	A /1/doc/class-AIPEvent_GetVariableListener.html
+	A /1/doc/source-class-AIPModelTemplate.html
+	A /1/doc/source-class-AIPEntity.html
+	A /1/doc/class-AIPEventListener.html
+	A /1/doc/source-class-OrekiUtil.html
+	A /1/doc/function-params_to_str.html
+	A /1/doc/function-inject_dymic.html
+	A /1/doc/source-function-injectObjFunc.html
+	A /1/doc/class-AIPInject.html
+	A /1/doc/resources/resize.png
+	A /1/doc/source-class-AIPLet.html
+	A /1/doc/source-function-import.html
+	A /1/doc/class-AIPInclude.html
+	A /1/doc/source-class-AIPRuntime.html
+	A /1/doc/namespace-PHP.html
+	A /1/doc/resources/tree-cleaner.png
+	A /1/doc/source-function-array_unset.html
+	A /1/doc/class-AIPRuntime.html
+	A /1/doc/source-class-AIPContext_Inject.html
+	A /1/doc/class-TesttestDo.html
+	A /1/doc/class-AIPDo.html
+	A /1/doc/source-constant-AIP_CORE_PATH.html
+	A /1/doc/source-class-AIPEvent_GetVariableListener.html
+	A /1/doc/class-AIPEntity.html
+	A /1/doc/source-function-params_to_str.html
+	A /1/doc/class-AIPBase.html
+	A /1/doc/source-class-AIPEvent_DestroyListener.html
+	A /1/doc/source-class-AIPRoute.html
+	A /1/doc/function-array_unset.html
+	A /1/doc/source-function-__autoload.html
+	A /1/doc/source-class-AIPIncludeConfig.html
+	A /1/doc/function-create_class.html
+	A /1/doc/source-class-AIPEventListener.html
+	A /1/doc/source-class-AIPEvent_ObjCreateListener.html
+	A /1/doc/source-class-AIPEvent_ObjCallListener.html
+	A /1/doc/source-class-AIPEvent_SetStaticVariableListener.html
+	A /1/doc/class-Test.html
+	A /1/doc/source-class-AIPService.html
+	A /1/doc/source-class-TestDo.html
+	A /1/doc/function-ref_arr.html
+	A /1/doc/source-function-create_class.html
+	A /1/doc/class-AIPEvent_ObjCallListener.html
+	A /1/doc/source-class-AIPEvent_GetStaticVariableListener.html
+	A /1/doc/source-function-ref_arr.html
+	A /1/doc/function-__autoload.html
+	A /1/doc/resources/combined.js
+	A /1/doc/source-class-AIPEvent_AppendVariableListener.html
+	A /1/doc/elementlist.js
+	A /1/doc/source-class-AIPEvent.html
+	A /1/doc/class-AIPLet.html
+	A /1/doc/class-AIPRoute.html
+	A /1/doc/function-invoke_func.html
+	A /1/doc/source-class-TestInject.html
+	A /1/doc/resources/collapsed.png
+	A /1/doc/source-function-inject_full.html
+	A /1/doc/constant-AIP_CORE_PATH.html
+	A /1/doc/source-function-inject_dymic.html
+	A /1/doc/class-OrekiUtil.html
+	A /1/doc/source-class-AIPUrlShell.html
+	A /1/doc/index.html
+	A /1/doc/class-AIPIncludeConfig.html
+	A /1/doc/source-function-invoke_method.html
+	A /1/doc/source-class-AIPBase.html
+	A /1/doc/class-AIPEvent_DestroyListener.html
+	A /1/doc/source-class-AIPEvent_CallStaticFuncListener.html
+	A /1/doc/class-AIPTpl.html
+	A /1/doc/class-TestDo.html
+	A /1/doc/class-AIPEvent_SetVariableListener.html
+	A /1/doc/class-AIPUrlShell.html
+	A /1/doc/class-AIPModelTemplate.html
+	A /1/doc/class-AIPModel.html
+	A /1/doc/source-class-AIPTpl.html
+	A /1/doc/resources/tree-last.png
+	A /1/doc/resources/footer.png
+	A /1/doc/source-class-AIPInject.html
+	A /1/doc/function-invoke_method.html
+	A /1/doc/source-function-let.html
+	A /1/doc/class-AIPContext_Inject.html
+	A /1/doc/source-class-AIPModel.html
+	A /1/doc
+	A /1/doc/class-Exception.html
+	A /1/doc/source-function-inject.html
+	A /1/doc/function-inject.html
+	A /1/doc/tree.html
+	A /1/doc/resources/tree-vertical.png
+	A /1/doc/source-function-session.html
+	A /1/doc/class-AIPException.html
+	A /1/doc/source-class-AIPException.html
+	A /1/doc/resources/sort.png
+	A /1/doc/source-function-session_exists.html
+	A /1/doc/class-AIPEvent.html
+	A /1/doc/namespace-None.html
+	A /1/doc/function-session_exists.html
+	A /1/doc/resources/code-line.png
+	A /1/doc/class-AIPConfig.html
+	A /1/doc/resources/tree-hasnext.png
+	A /1/doc/source-function-let_exists.html
+	A /1/doc/source-class-AIPInclude.html
+	A /1/doc/class-AIPEvent_ClassCallListener.html
+	A /1/doc/function-session.html
+	A /1/doc/class-AIPEvent_CallStaticFuncListener.html
+	A /1/doc/class-AIPEvent_AppendVariableListener.html
+	A /1/doc/function-let.html
+	A /1/doc/resources/style.css
+	A /1/doc/source-function-invoke_func.html
+	A /1/doc/class-AIPEvent_GetStaticVariableListener.html
+	A /1/doc/resources
+	A /1/doc/class-AIPEvent_ObjCreateListener.html
+	A /1/doc/function-injectObjFunc.html
+	A /1/doc/class-AIPEvent_CallFuncListener.html
+	A /1/doc/source-class-AIPContext.html
+	A /1/doc/function-inject_full.html
+	A /1/doc/source-class-AIPEvent_AppendFuncListener.html
+	A /1/doc/source-class-AIPDo.html
+
+更新文档
+----------------------------------------------------------------------------
+r99 | fkb_159357@163.com | 2014-09-09 15:22:40 CST
+Changed paths:
+	M /1/core/base/__do.php
+
+1、对于需要配置注入器的Do方法，掉用它的时候需要分别判断前置、环绕、后置是否存在。
+2、CLASS AUTOLOAD严格模式启用时，如果目标类不存在，则不会直接抛出异常，而是不进行任何包含操作，仅进行eval同名的临时类
+----------------------------------------------------------------------------
+r98 | fkb_159357@163.com | 2014-09-09 15:20:29 CST
+Changed paths:
+	M /1/core/do/Testtest.do.php
+	M /1/core/base/__lib.php
+	M /1/core/base/__do.php
+
+1、对于需要配置注入器的Do方法，掉用它的时候需要分别判断前置、环绕、后置是否存在。
+2、CLASS AUTOLOAD严格模式启用时，如果目标类不存在，则不会直接抛出异常，而是不进行任何包含操作，仅进行eval同名的临时类
+----------------------------------------------------------------------------
+r97 | fkb_159357@163.com | 2014-09-09 11:47:26 CST
+Changed paths:
+	M /1/core/base/__route.php
+	M /1/core/base/__lib.php
+	M /1/core/base/__env.php
+
+类自动加载加载是否启用严格模式（启用时，必须用import进行ext类库引入；禁用时，在系统找不到目标类时，将对ext目录进行全部包含。强烈建议：启用该严格模式，在引用外部库时，一定要提前用import()）
+----------------------------------------------------------------------------
+r96 | fkb_159357@163.com | 2014-09-09 08:41:50 CST
+Changed paths:
+	M /1/core/entity/Test.php
+----------------------------------------------------------------------------
+r95 | fkb_159357@163.com | 2014-09-09 08:10:00 CST
+Changed paths:
+	M /1/core/base/__lib.php
+	M /1/core/base/__init.php
+
+__autoload()修正为在包含AIP_NOSPCL_AUTOLOAD_PATH之后还是没有找到目标类时，再进行EXT目录包含
+----------------------------------------------------------------------------
+r94 | fkb_159357@163.com | 2014-09-09 00:00:22 CST
+Changed paths:
+	M /1/core/base/__env.php
+
+是否统一对有do命令的参数进行过滤  TODO:准备实现过滤函数，实现自动过滤和手动过滤
+----------------------------------------------------------------------------
+r93 | fkb_159357@163.com | 2014-09-08 23:57:48 CST
+Changed paths:
+	M /1/core/base/__lib.php
+	M /1/core/base/__include.php
+	D /1/core/entity/Test.entity.php
+	A /1/core/entity/Test.php
+	M /1/core/do/Test.do.php
+
+自动加载：不具有后缀的特定意义文件(例如客观实体类不需要Entity这样繁琐的后缀)。
+__autoload：修改以适配不具有后缀的特定意义文件
+测试代码：TestDo::lets(){goto LET13;}
+----------------------------------------------------------------------------
+r92 | fkb_159357@163.com | 2014-09-07 01:25:48 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r91 | fkb_159357@163.com | 2014-09-07 01:20:10 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+----------------------------------------------------------------------------
+r90 | fkb_159357@163.com | 2014-09-07 01:19:29 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+测试异常的控制
+----------------------------------------------------------------------------
+r89 | fkb_159357@163.com | 2014-09-07 01:18:15 CST
+Changed paths:
+	M /1/core/base/__env.php
+
+__env.php，配置调试模式和IO启用
+----------------------------------------------------------------------------
+r88 | fkb_159357@163.com | 2014-09-07 01:17:25 CST
+Changed paths:
+	M /1/core/base/__exception.php
+
+可以根据DEBUG模式的启用情况，给出常规处理方式。
+----------------------------------------------------------------------------
+r87 | fkb_159357@163.com | 2014-09-05 19:14:08 CST
+Changed paths:
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r86 | fkb_159357@163.com | 2014-09-05 17:39:21 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+----------------------------------------------------------------------------
+r85 | fkb_159357@163.com | 2014-09-05 16:26:28 CST
+Changed paths:
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r84 | fkb_159357@163.com | 2014-09-05 16:24:01 CST
+Changed paths:
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r83 | fkb_159357@163.com | 2014-09-05 16:19:28 CST
+Changed paths:
+	M /1/core/base/__route.php
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r82 | fkb_159357@163.com | 2014-09-05 16:17:38 CST
+Changed paths:
+	M /1/core/base/__init.php
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r81 | fkb_159357@163.com | 2014-09-05 16:12:56 CST
+Changed paths:
+	M /1/core/do/Testtest.do.php
+	M /1/core/do/Test.do.php
+	M /1/core/base/__init.php
+
+整理测试代码
+----------------------------------------------------------------------------
+r80 | fkb_159357@163.com | 2014-09-05 15:46:06 CST
+Changed paths:
+	M /1/core/base/__init.php
+
+__init.php运行时信息测试
+var_dump(AIPRuntime::getRuntime());
+----------------------------------------------------------------------------
+r79 | fkb_159357@163.com | 2014-09-05 15:45:38 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+
+严格/非严格模式测试Do命令参数
+----------------------------------------------------------------------------
+r78 | fkb_159357@163.com | 2014-09-05 15:44:53 CST
+Changed paths:
+	M /1/README.MD
+
+route流程————识别请求的类型->规则拦截->重写->参数过滤->分派执行
+----------------------------------------------------------------------------
+r77 | fkb_159357@163.com | 2014-09-05 15:44:33 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r76 | fkb_159357@163.com | 2014-09-05 15:44:19 CST
+Changed paths:
+	M /1/how_to_use.md
+
+how to use
+----------------------------------------------------------------------------
+r75 | fkb_159357@163.com | 2014-09-05 15:43:27 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+关于create_class的使用问题：如果要传参给构造，即create_class(...)->newInstance(array(传参)),
+则创建class时必须继承  {已经显示声明空参构造器的类，不一定是AIPBase}
+----------------------------------------------------------------------------
+r74 | fkb_159357@163.com | 2014-09-05 15:35:23 CST
+Changed paths:
+	M /1/core/base/__base.php
+----------------------------------------------------------------------------
+r73 | fkb_159357@163.com | 2014-09-05 15:31:53 CST
+Changed paths:
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r72 | fkb_159357@163.com | 2014-09-05 15:31:26 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+修正：禁用严格模式时，DO命令找不到目标时抛出的ReflectionMethod异常
+----------------------------------------------------------------------------
+r71 | fkb_159357@163.com | 2014-09-05 14:37:37 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+非严格模式下，DO命令放行逻辑
+----------------------------------------------------------------------------
+r70 | fkb_159357@163.com | 2014-09-05 14:36:52 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+
+    /**
+     * 严格模式启用时：
+     *  对于do命令————只能访问配置表里所允许的项目，且传入参数个数要不少于配置的个数。
+     *  对于let命令————只能访问配置规则允许的项目
+     * 严格模式禁用时：
+     *  对于do命令————所有do命令都可访问，但系统依旧判断目标是否存在。
+     *      已在配置表里指定参数个数的，依旧要传入足够的参数。
+     *      对于没有在配置表里存在的命令，其传入参数必需个数  以 { 实际函数参数表必需个数 } 为准。
+     *  对于let命令————所有let命令都可访问，但系统依旧判断目标是否存在。
+     * @var boolean
+     */
+    static $_strict_mode = false;
+----------------------------------------------------------------------------
+r69 | fkb_159357@163.com | 2014-09-05 14:36:18 CST
+Changed paths:
+	M /1/core/base/__env.php
+
+//是否统一对多有do命令的参数进行过滤  TODO:准备实现过滤函数，实现自动过滤和手动过滤
+define('AIP_FILTRATE_DOPARAMS', false);
+----------------------------------------------------------------------------
+r68 | fkb_159357@163.com | 2014-09-05 14:12:48 CST
+Changed paths:
+	M /1/core/base/__route.php
+
+修改DO放行规则匹配代码
+----------------------------------------------------------------------------
+r67 | fkb_159357@163.com | 2014-09-05 14:04:24 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+	M /1/core/base/__route.php
+	M /1/core/base/__do.php
+	M /1/core/base/__env.php
+	A /1/how_to_use.md
+	M /1/core/do/Testtest.do.php
+	M /1/core/base/__include.php
+	M /1/core/inject/Test.inject.php
+
+1、how to use
+2、AIPDo取消$_runtime注入，采用$_bridge与其他类型程序共享信息
+3、增加AIP_URLREWRITE_ENABLE常量，尚未实现URL重写
+----------------------------------------------------------------------------
+r66 | fkb_159357@163.com | 2014-09-05 07:04:10 CST
+Changed paths:
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r65 | fkb_159357@163.com | 2014-09-05 07:03:22 CST
+Changed paths:
+	A /1/core/let/i.php
+	M /1/core/base/__route.php
+	A /1/core/let/i/i
+	A /1/core/let/i/i/i.php
+	A /1/core/let/i
+	A /1/core/let/i/i.php
+
+完成LET调度
+----------------------------------------------------------------------------
+r64 | fkb_159357@163.com | 2014-09-05 06:53:16 CST
+Changed paths:
+	M /1/core/base/__config.php
+----------------------------------------------------------------------------
+r63 | fkb_159357@163.com | 2014-09-05 06:52:31 CST
+Changed paths:
+	M /1/core/base/__route.php
+	M /1/core/config/urlshell.php
+	M /1/core/base/__base.php
+	M /1/core/base/__include.php
+
+1、配置文件：添加常用配置文件名称
+2、AIPRuntime添加merge方法，改静态，取消执行XxxDo传入的$runtime，改用全局的静态AIPRuntime
+3、解析DO/LET请求以及放行规则匹配完成
+----------------------------------------------------------------------------
+r62 | fkb_159357@163.com | 2014-09-04 18:15:36 CST
+Changed paths:
+	M /1/core/base/__route.php
+----------------------------------------------------------------------------
+r61 | fkb_159357@163.com | 2014-09-04 15:56:17 CST
+Changed paths:
+	M /1/core/base/__config.php
+----------------------------------------------------------------------------
+r60 | fkb_159357@163.com | 2014-09-04 15:53:43 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+
+修改注释
+----------------------------------------------------------------------------
+r59 | fkb_159357@163.com | 2014-09-04 15:46:58 CST
+Changed paths:
+	M /1/core/base/__env.php
+----------------------------------------------------------------------------
+r58 | fkb_159357@163.com | 2014-09-04 15:39:00 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r57 | fkb_159357@163.com | 2014-09-04 15:31:15 CST
+Changed paths:
+	M /1/core/base/__exception.php
+----------------------------------------------------------------------------
+r56 | fkb_159357@163.com | 2014-09-04 04:00:24 CST
+Changed paths:
+	M /1/core/base/__init.php
+	M /1/core/base/__route.php
+	M /1/core/base/__config.php
+----------------------------------------------------------------------------
+r55 | fkb_159357@163.com | 2014-09-04 03:07:42 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r54 | fkb_159357@163.com | 2014-09-04 03:04:54 CST
+Changed paths:
+	M /1/core/config/urlshell.php
+
+AIPUrlShell规则初始配置
+----------------------------------------------------------------------------
+r53 | fkb_159357@163.com | 2014-09-03 23:54:33 CST
+Changed paths:
+	M /1/core/base/__env.php
+
+配置文件
+----------------------------------------------------------------------------
+r52 | fkb_159357@163.com | 2014-09-03 23:41:38 CST
+Changed paths:
+	M /1/core/base/__let.php
+----------------------------------------------------------------------------
+r51 | fkb_159357@163.com | 2014-09-03 23:39:24 CST
+Changed paths:
+	M /1/core/base/__model.php
+----------------------------------------------------------------------------
+r50 | fkb_159357@163.com | 2014-09-03 20:51:11 CST
+Changed paths:
+	M /1/core/base/__init.php
+	M /1/index.php
+	M /1/core/base/__lib.php
+	M /1/core/base/__include.php
+	M /1/core/base/__route.php
+	M /1/core/base/__base.php
+----------------------------------------------------------------------------
+r49 | fkb_159357@163.com | 2014-09-03 18:02:26 CST
+Changed paths:
+	M /1/core/base/__lib.php
+----------------------------------------------------------------------------
+r48 | fkb_159357@163.com | 2014-09-03 17:24:10 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r47 | fkb_159357@163.com | 2014-09-03 17:23:52 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r46 | fkb_159357@163.com | 2014-09-03 17:22:00 CST
+Changed paths:
+	M /1/core/base/__base.php
+
+拟定添加系统运行时类AIPRuntime
+----------------------------------------------------------------------------
+r45 | fkb_159357@163.com | 2014-09-03 17:21:29 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r44 | fkb_159357@163.com | 2014-09-03 17:21:23 CST
+Changed paths:
+	M /1/core/do/Test.do.php
+----------------------------------------------------------------------------
+r43 | fkb_159357@163.com | 2014-09-03 17:11:35 CST
+Changed paths:
+	M /1/core/base/__lib.php
+----------------------------------------------------------------------------
+r42 | fkb_159357@163.com | 2014-09-03 16:26:52 CST
+Changed paths:
+	M /1/README.MD
+
+README.MD
+在新__autoload()中，使用create_class继承原类，扩展要调用的方法。
+----------------------------------------------------------------------------
+r41 | fkb_159357@163.com | 2014-09-03 16:23:11 CST
+Changed paths:
+	M /1/core/base/__route.php
+	M /1/core/base/__init.php
+	A /1/core/do/Testtest.do.php
+	M /1/core/base/__lib.php
+	M /1/core/base/__base.php
+	A /1/core/entity/Test.entity.php
+	M /1/core/do/Test.do.php
+
+1、增加上下文的概念
+2、转移__init.php中的测试代码
+3、新增array_unset函数
+----------------------------------------------------------------------------
+r40 | fkb_159357@163.com | 2014-09-03 15:58:08 CST
+Changed paths:
+	M /1/README.MD
+
+旧的注入思路：
+方式1：利用__call()。
+方式2：使用eval()执行新继承的临时类，在新类中扩展原有的方法。缺陷：需要显式地调用新类
+
+新的注入思路：
+1、构造全局上下文AIPContext，在AIPContext中注册需要注入的对象和注入点。
+2、利用AIPContext托管全局注册表，遇到不存在的类时，使用spl_autoload_register()临时覆盖__autoload(),新的autoload会自动调用注入逻辑，完成调用后，将恢复原__autoload()。
+		针对现状：要么改造原__autoload()，要么临时覆盖__autoload()
+
+待办：
+不应该把__autoload()写死，应该实现支持随处注册__autoload()的特性。
+----------------------------------------------------------------------------
+r39 | fkb_159357@163.com | 2014-09-03 15:54:22 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r38 | fkb_159357@163.com | 2014-09-03 15:50:50 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r37 | fkb_159357@163.com | 2014-09-03 15:24:59 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r36 | fkb_159357@163.com | 2014-09-03 15:03:02 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r35 | fkb_159357@163.com | 2014-09-03 14:58:32 CST
+Changed paths:
+	M /1/core/base/__include.php
+----------------------------------------------------------------------------
+r34 | fkb_159357@163.com | 2014-09-03 14:51:53 CST
+Changed paths:
+	M /1/core/base/__include.php
+----------------------------------------------------------------------------
+r33 | fkb_159357@163.com | 2014-09-03 14:39:41 CST
+Changed paths:
+	M /1/core/base/__include.php
+----------------------------------------------------------------------------
+r32 | fkb_159357@163.com | 2014-09-03 14:28:47 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+修正__autoload的if分支，防止载入XxxDo、XxxxInject之类的文件时，载入多余的ext目录文件
+----------------------------------------------------------------------------
+r31 | fkb_159357@163.com | 2014-09-03 13:46:03 CST
+Changed paths:
+	M /1/core/base/__let.php
+----------------------------------------------------------------------------
+r30 | fkb_159357@163.com | 2014-09-03 13:44:03 CST
+Changed paths:
+	M /1/core/base/__inject.php
+	M /1/core/base/__lib.php
+	M /1/core/base/__init.php
+
+调整inject库的位置
+----------------------------------------------------------------------------
+r29 | fkb_159357@163.com | 2014-09-03 13:12:20 CST
+Changed paths:
+	M /1/core/base/__env.php
+	M /1/core/base/__let.php
+
+LET小程序支持开关
+----------------------------------------------------------------------------
+r28 | fkb_159357@163.com | 2014-09-03 13:01:00 CST
+Changed paths:
+	A /1/core/ext/i
+	A /1/core/ext/1.php
+	M /1/core/base/__init.php
+	A /1/core/ext/i.php
+	M /1/core/base/__let.php
+	A /1/core/ext/i/i
+	A /1/core/let/1.php
+	A /1/core/ext/i/i/i.php
+	M /1/core/base/__lib.php
+	A /1/core/ext/i/i.php
+
+1、添加let小程序支持
+2、增强import()健壮性
+----------------------------------------------------------------------------
+r27 | fkb_159357@163.com | 2014-09-03 11:24:17 CST
+Changed paths:
+	M /1/core/base/__include.php
+----------------------------------------------------------------------------
+r26 | fkb_159357@163.com | 2014-09-03 11:10:53 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r25 | fkb_159357@163.com | 2014-09-03 11:08:36 CST
+Changed paths:
+	M /1/core/base/__let.php
+----------------------------------------------------------------------------
+r24 | fkb_159357@163.com | 2014-09-03 11:07:55 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r23 | fkb_159357@163.com | 2014-09-03 08:45:37 CST
+Changed paths:
+	M /1/core/base/__include.php
+	A /1/core/base/__let.php
+	A /1/core/let
+
+准备增加小程序支持
+----------------------------------------------------------------------------
+r22 | fkb_159357@163.com | 2014-09-03 00:45:23 CST
+Changed paths:
+	M /1/README.MD
+----------------------------------------------------------------------------
+r21 | fkb_159357@163.com | 2014-09-02 13:42:24 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r20 | fkb_159357@163.com | 2014-09-02 11:28:02 CST
+Changed paths:
+	M /1/core/base/__lib.php
+----------------------------------------------------------------------------
+r19 | fkb_159357@163.com | 2014-09-02 10:58:21 CST
+Changed paths:
+	M /1/core/base/__lib.php
+
+准备实现：动态注入或批量注入
+----------------------------------------------------------------------------
+r18 | fkb_159357@163.com | 2014-09-02 10:53:07 CST
+Changed paths:
+	M /1/core/base/__lib.php
+	D /1/core/data/a.php
+	M /1/core/base/__init.php
+
+完全实现前后注入
+----------------------------------------------------------------------------
+r17 | fkb_159357@163.com | 2014-09-02 04:47:51 CST
+Changed paths:
+	M /1/core/base/__lib.php
+	A /1/core/data/a.php
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r16 | fkb_159357@163.com | 2014-09-02 00:12:28 CST
+Changed paths:
+	M /1/core/base/__base.php
+----------------------------------------------------------------------------
+r15 | fkb_159357@163.com | 2014-09-02 00:11:24 CST
+Changed paths:
+	M /1/core/base/__base.php
+----------------------------------------------------------------------------
+r14 | fkb_159357@163.com | 2014-09-02 00:10:46 CST
+Changed paths:
+	M /1/core/base/__base.php
+----------------------------------------------------------------------------
+r13 | fkb_159357@163.com | 2014-09-02 00:07:09 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r12 | fkb_159357@163.com | 2014-09-02 00:06:45 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r11 | fkb_159357@163.com | 2014-09-02 00:05:14 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r10 | fkb_159357@163.com | 2014-09-01 20:04:00 CST
+Changed paths:
+	M /1/core/base/__init.php
+	M /1/core/base/__base.php
+	M /1/core/base/__lib.php
+
+inject()待插入特殊作用的代码，可以生成继承类，并注入自己代码，保持原有的参数传入和功能代码段，需要用到反射，需要读取函数参数的默认值等等注意事项。
+----------------------------------------------------------------------------
+r9 | fkb_159357@163.com | 2014-09-01 16:47:13 CST
+Changed paths:
+	M /1/core/base/__init.php
+	M /1/core/base/__lib.php
+
+优化create_class代码，为其新增实例化临时对象的功能
+----------------------------------------------------------------------------
+r8 | fkb_159357@163.com | 2014-09-01 15:11:58 CST
+Changed paths:
+	M /1/core/base/__init.php
+----------------------------------------------------------------------------
+r7 | fkb_159357@163.com | 2014-09-01 15:10:01 CST
+Changed paths:
+	M /1/core/base/__env.php
+	M /1/core/base/__lib.php
+	M /1/core/base/__init.php
+
+修正按名称取会话时，会话名与前缀名相同而导致的信息失真的情况
+----------------------------------------------------------------------------
+r6 | fkb_159357@163.com | 2014-09-01 13:42:10 CST
+Changed paths:
+	M /1/core/base/__env.php
+----------------------------------------------------------------------------
+r5 | fkb_159357@163.com | 2014-09-01 12:31:43 CST
+Changed paths:
+	M /1/core/base/__env.php
+----------------------------------------------------------------------------
+r4 | fkb_159357@163.com | 2014-09-01 12:30:31 CST
+Changed paths:
+	M /1/core/base/__entity.php
+----------------------------------------------------------------------------
+r3 | fkb_159357@163.com | 2014-08-31 02:29:44 CST
+Changed paths:
+	M /1/core/base/__lib.php
+	M /1/core/base/__env.php
+
+多应用私有会话支持
+----------------------------------------------------------------------------
+r2 | fkb_159357@163.com | 2014-08-23 17:19:17 CST
+Changed paths:
+	A /1/core/config/filtermap.php
+	A /1/core/ext/OrekiUtil.class.php
+	A /1/.settings
+	A /1/core/base/__include.php
+	A /1/.settings/org.eclipse.php.core.prefs
+	A /1/core/service
+	A /1/core/base/__init.php
+	A /1/core/base/__do.php
+	A /1/core/do
+	A /1/core/base/__base.php
+	A /1/core/base/__lib.php
+	A /1/core/base/__event.php
+	A /1/core/config/database.php
+	A /1/core/base/__route.php
+	A /1/core/do/Test.do.php
+	A /1/core/base/__config.php
+	A /1/.buildpath
+	A /1/core/tpl
+	A /1/core/base/__env.php
+	A /1/core/config/define.php
+	A /1/.project
+	A /1/core/ext
+	A /1/core/inject
+	A /1/core/base/__entity.php
+	A /1/core/inject/Test.inject.php
+	A /1/core/model
+	A /1/core/config/urlshell.php
+	A /1/core/setting
+	A /1/core/base/__model.php
+	A /1/README.MD
+	A /1/core/data/log
+	A /1/res
+	A /1/core/base/__service.php
+	A /1/core/entity
+	A /1/core/config/const.php
+	A /1/core/config
+	M /1/index.php
+	A /1/core/data
+	A /1/core
+	A /1/core/data/cache
+	A /1/core/base
+	A /1/core/base/__inject.php
+	A /1/core/base/__tpl.php
+	A /1/core/base/__exception.php
+----------------------------------------------------------------------------
+r1 | sae-web@sina.com.cn | 2014-08-23 16:44:30 CST
+Changed paths:
+	A /1
+	A /1/config.yaml
+	A /1/index.php
+
+auto versioning
+----------------------------------------------------------------------------

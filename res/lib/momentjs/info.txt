@@ -1,0 +1,54 @@
+http://momentjs.com/
+
+Download
+
+moment.js 
+
+moment.min.js 12k gz 
+
+moment+locales.js 
+
+moment+locales.min.js 43.4k gz 
+
+
+Install
+bower install moment --save # bower
+npm install moment --save   # npm
+Install-Package Moment.js   # NuGet
+spm install moment --save   # spm
+meteor add momentjs:moment  # meteor
+
+
+Format Dates
+moment().format('MMMM Do YYYY, h:mm:ss a');
+moment().format('dddd');
+moment().format("MMM Do YY");
+moment().format('YYYY [escaped] YYYY');
+moment().format();
+
+Relative Time
+moment("20111031", "YYYYMMDD").fromNow();
+moment("20120620", "YYYYMMDD").fromNow();
+moment().startOf('day').fromNow();
+moment().endOf('day').fromNow();
+moment().startOf('hour').fromNow();
+
+Calendar Time
+moment().subtract(10, 'days').calendar();
+moment().subtract(6, 'days').calendar();
+moment().subtract(3, 'days').calendar();
+moment().subtract(1, 'days').calendar();
+moment().calendar();
+moment().add(1, 'days').calendar();
+moment().add(3, 'days').calendar();
+moment().add(10, 'days').calendar();
+
+Multiple Locale Support
+moment().format('L');
+moment().format('l');
+moment().format('LL');
+moment().format('ll');
+moment().format('LLL');
+moment().format('lll');
+moment().format('LLLL');
+moment().format('llll');

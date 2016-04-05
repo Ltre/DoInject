@@ -1,0 +1,25 @@
+<iframe src="./?test.websocket.server"></iframe>
+<div>服务已启动..</div>
+<!-- Import JavaScript Libraries. -->
+<script type="text/javascript" src="swfobject.js"></script>
+<script type="text/javascript" src="web_socket.js"></script>
+
+<script type="text/javascript">
+
+  // Let the library know where WebSocketMain.swf is:
+  WEB_SOCKET_SWF_LOCATION = "WebSocketMain.swf";
+
+  // Write your code in the same way as for native WebSocket:
+  var ws = new WebSocket("ws://127.0.0.1:12345/");
+  ws.onopen = function() {
+    ws.send("Hello");  // Sends a message.
+  };
+  ws.onmessage = function(e) {
+    // Receives a message.
+    alert(e.data);
+  };
+  ws.onclose = function() {
+    alert("closed");
+  };
+
+</script>

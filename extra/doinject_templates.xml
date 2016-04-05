@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="php-global-members" deleted="false" description="创建一个继承DIDo的类" enabled="true" name="dido">class ${class_name}Do extends DIDo {&#13;
+    function start() {&#13;
+        ${cursor}&#13;
+    }&#13;
+}</template></templates>
