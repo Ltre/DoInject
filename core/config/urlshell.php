@@ -24,6 +24,16 @@ class DIUrlShell {
     static $_strict_mode = false;
     
     /**
+     * regexp命令：可以指定一定的SHELL正则，将其重定向到DO或LET或ROUTE别名
+     * 注：该特性支持CMS系统的自由路由设计，不必再将URL拘泥于DO或LET
+     */
+    static function regexpshell(){
+        return array(
+            '/diyroute(\/[^\/]+)*$/' => 'diyroute',
+        );
+    }
+    
+    /**
      * do命令：可以定位到Do组件，再精确到子方法，还可尾随参数
      * URI格式：?xxx/yyy[/param1/param2/.../paramx]
      * 格式说明：xxx对应XxxDo，yyy对应function yyy()

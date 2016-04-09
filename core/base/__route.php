@@ -233,7 +233,7 @@ final class DIRoute {
         return $runtime;
     }
     
-    //获取指令，不论GET还是POST都会进行分析。取值优先顺序：配置的默认指令 => “x”参数的值 => 位于左起第一个且没有值的参数名(如果没有，则取默认指令)。
+    //获取指令，不论GET还是POST都会进行分析。取值优先顺序：配置的默认指令 => “x”参数的值 => 位于左起第一个且没有值的参数名(如果没有，则取默认指令) => 最后分析该命令是否为regexp命令，是则重定向到对应的DO或LET命令，否则保持原值。
     private function getShell( $request ){
         $shell = DIUrlShell::$_default_shell;
         $x = DI_ROUTE_REQUEST_PARAM_NAME;
@@ -247,6 +247,7 @@ final class DIRoute {
                 }
             }
         }
+        $this->cmpregexp($shell);
         return $shell;
     }
     
@@ -294,6 +295,20 @@ final class DIRoute {
 
         $rs = preg_match("/".$re1.$re2.$re3."/is", $shell);
         return false!==$rs && 0 < $rs;
+    }
+    
+    
+    //匹配正则命令，以便重定向到DO或LET命令
+    private function cmpregexp(&$shell){
+        $rules = DIUrlShell::regexpshell();
+        foreach ($rules as $regExp => $destShell) {
+            if (preg_match($regExp, $shell, $matches)) {
+                define('DI_REGEXP_SHELL', empty($matches) ? '' : $matches[0]);
+                $shell = $destShell;
+                break;
+            }
+            defined('DI_REGEXP_SHELL') || define('DI_REGEXP_SHELL', '');
+        }
     }
     
     
