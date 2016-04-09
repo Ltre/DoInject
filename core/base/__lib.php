@@ -527,7 +527,7 @@ function session_remove($key, $strict = false, $prefix = null){
 }
 
 //方便参数获取（注意合并顺序，可能会影响到路由的最终值）
-$GLOBALS['request_args'] = array_merge($_GET, $_POST, $_REQUEST);
+$GLOBALS['request_args'] = $_GET + $_POST + $_REQUEST;
 function arg($name = null, $default = null, $callback_funcname = null) {
     if($name){
         if(!isset($GLOBALS['request_args'][$name]))return $default;
