@@ -10,7 +10,7 @@ final class DIRoute {
     //总路由
     public function route(){
         $request = $GLOBALS['request_args'];
-        $this->isAllowRewrite($request) && $this->rewrite($request);//重写路由
+        $this->isAllowRewrite($request) && $this->rewrite2($request);//重写路由
         
         $rt = $this->analyse($request);//分析路由
         DIRuntime::mergeNewItems($rt);
@@ -192,6 +192,55 @@ final class DIRoute {
         }
     }
     
+    
+    private function rewrite2(&$request){
+        $rules = DIRouteRewrite::$rulesMap;
+        $dontRules = DIRouteRewrite::$withoutMap;
+        
+        $pureUri = '/' == path_prefix() ? uri_prefix() : uri_pure();
+        $pureUriWithoutSuffix = preg_replace('/(\/|\.html?)$/i', '', $pureUri);
+        $req = url_prefix('://') . $pureUri;
+        $reqWithoutSuffix = preg_replace('/(\/|\.html?)$/i', '', $req);//默认支持后缀“/”、“.htm”、“.html”
+        //以下情况免重写
+        if (in_array($pureUri, array_keys($dontRules))) {
+            if ($dontRules[$pureUri]) die;
+            return;
+        }
+        //开始尝试重写，遇到第一个符合的即确定结果
+        foreach ($rules as $k => $v) {
+            $newK = '';
+            if (0 !== stripos($k, '://')) {
+                $newK = '://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '\//') . '/' . $k;
+            } else {
+                $newK = $k;
+            }
+            $re = '/' . str_ireplace(
+                array('\\\\', '://', '/', '<', '>',  '.'),
+                array( '', '', '\/', '(?<', '>\w+)', '\.'),
+                $newK
+            ) . '$/i';
+            if (preg_match($re, $reqWithoutSuffix, $matches)) {
+                foreach ($matches as $matchKey => $matchVal) {
+                    $v = str_ireplace("<{$matchKey}>", $matchVal, $v);
+                }
+                array_unshift_withkey($request, str_replace(array('.'), array('_'), $v), '');
+                return;//此处重写成功
+            }
+        }
+        //当无规则可匹配，且当前有用的URL不为空时
+        if ('' != $pureUri) {
+            //若启用了DI_KILL_ON_FAIL_REWRITE，则终止。这可以减少被盲点爬虫时消耗的流量
+            if (DI_KILL_ON_FAIL_REWRITE) {
+                die;
+            }
+            //否则将QUERY_STRING部分重写为$pureUriWithoutSuffix
+            array_unshift_withkey($request, str_replace(array('.'), array('_'), $pureUriWithoutSuffix), '');
+        }
+        //无规则可匹配，但当前有用的URL为空，则走DIUrlShell::$_default_shell指定的路由。
+        return;
+    }
+    
+    
     //判断请求类型，识别DO请求和LET请求，并进行规则匹配，将匹配情况记入$runtime
     private function analyse( $request ){
         $rawShell = $this->getShell($request);
@@ -307,8 +356,8 @@ final class DIRoute {
                 $shell = $destShell;
                 break;
             }
-            defined('DI_REGEXP_SHELL') || define('DI_REGEXP_SHELL', '');
         }
+        defined('DI_REGEXP_SHELL') || define('DI_REGEXP_SHELL', '');
     }
     
     
