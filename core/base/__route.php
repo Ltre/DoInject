@@ -290,7 +290,7 @@ final class DIRoute {
             $shell = $request[$x];
         } else {
             foreach ($request as $k => $g) {
-                if('' === $g && 0 == $k){
+                if ('' === $g) {
                     $shell = rtrim($k, '/');
                     break;
                 }
