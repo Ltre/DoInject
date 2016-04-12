@@ -223,7 +223,7 @@ final class DIRoute {
                 foreach ($matches as $matchKey => $matchVal) {
                     $v = str_ireplace("<{$matchKey}>", $matchVal, $v);
                 }
-                array_unshift_withkey($request, str_replace(array('.'), array('_'), $v), '');
+                array_unshift_withkey($request, str_replace(array('.'), array('_'), urldecode($v)), '');
                 return;//此处重写成功
             }
         }
@@ -234,7 +234,7 @@ final class DIRoute {
                 die;
             }
             //否则将QUERY_STRING部分重写为$pureUriWithoutSuffix
-            array_unshift_withkey($request, str_replace(array('.'), array('_'), $pureUriWithoutSuffix), '');
+            array_unshift_withkey($request, str_replace(array('.'), array('_'), urldecode($pureUriWithoutSuffix)), '');
         }
         //无规则可匹配，但当前有用的URL为空，则走DIUrlShell::$_default_shell指定的路由。
         return;
