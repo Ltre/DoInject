@@ -48,7 +48,7 @@ final class DIRoute {
      * 检查是否符合路由重写条件：
      *      1、启用了重写开关；
      *      2、路由“x”参数的值没被指定；
-     *      3、request_args中下标为零且值为空串的参数不存在【此条件暂时禁用】
+     *      3、request_args中下标为零且值为空串的参数不存在
      */
     private function isAllowRewrite($request){
         if (! DI_ROUTE_REWRITE) {
@@ -59,12 +59,12 @@ final class DIRoute {
             return false;
         }
         $checkFirst = true;
-        /* foreach ($request as $k => $g) {
+        foreach ($request as $k => $g) {
             if ('' === $g) {
                 $checkFirst = false;
                 break;
             }
-        } */
+        }
         return $checkFirst;
     }
     
@@ -283,6 +283,17 @@ final class DIRoute {
     }
     
     //获取指令，不论GET还是POST都会进行分析。取值优先顺序：配置的默认指令 => “x”参数的值 => 位于左起第一个且没有值的参数名(如果没有，则取默认指令) => 最后分析该命令是否为regexp命令，是则重定向到对应的DO或LET命令，否则保持原值。
+    /*
+     * 获取指令，不论GET还是POST都会进行分析。
+     * 取值优先顺序：
+     *      => 配置的默认指令
+     *      => “x”参数的值
+     *      => 位于左起第一个且没有值的参数名(如果没有，则取默认指令)
+     *      => 分析该命令是否为regexp命令，是则重定向到对应的DO或LET命令，否则保持原参数名。
+     * 指令使用方式建议：
+     *      在一个请求中，如能保证所有参数值不会出现空字符串的情况，则可以用“位于左起第一个且没有值的参数名”作为shell。
+     *      否则，要以“x”参数的值作为shell
+     */
     private function getShell( $request ){
         $shell = DIUrlShell::$_default_shell;
         $x = DI_ROUTE_REQUEST_PARAM_NAME;
