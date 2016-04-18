@@ -48,7 +48,7 @@ final class DIRoute {
      * 检查是否符合路由重写条件：
      *      1、启用了重写开关；
      *      2、路由“x”参数的值没被指定；
-     *      3、request_args中下标为零且值为空串的参数不存在
+     *      3、request_args中下标为零且值为空串的参数不存在【此条件暂时禁用】
      */
     private function isAllowRewrite($request){
         if (! DI_ROUTE_REWRITE) {
@@ -59,12 +59,12 @@ final class DIRoute {
             return false;
         }
         $checkFirst = true;
-        foreach ($request as $k => $g) {
-            if ('' === $g && 0 == $k) {
+        /* foreach ($request as $k => $g) {
+            if ('' === $g) {
                 $checkFirst = false;
                 break;
             }
-        }
+        } */
         return $checkFirst;
     }
     
