@@ -1,7 +1,6 @@
 <?php
 function showTrace($errMsg = '', $goDie = true) {
     $trace = debug_backtrace();
-    dump($trace);
     $out = "<hr/><div>".$errMsg."<br /><table border='1'>";
     $out .= "<thead><tr><th>file</th><th>line</th><th>function</th><th>args</th></tr></thead>";
     foreach ($trace as $v) {
