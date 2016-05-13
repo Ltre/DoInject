@@ -6,7 +6,7 @@ function showTrace($errMsg = '', $goDie = true) {
     foreach ($trace as $v) {
         if (!isset($v['file'])) $v['file'] = '[PHP Kernel]';
         if (!isset($v['line'])) $v['line'] = '';
-        $v['args'] = var_export($v['args'], true);
+        $v['args'] = print_r($v['args'], true);
         $out .= "<tr><td>{$v["file"]}</td><td>{$v["line"]}</td><td>{$v["function"]}</td><td>{$v["args"]}</td></tr>";
     }
     $out .= "</table></div><hr/></p>";
