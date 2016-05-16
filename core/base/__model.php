@@ -281,7 +281,7 @@ class DIMySQL implements DIModelTemplate {
 	 * 1、$t->count(array('id'=>2));
 	 * 2、$t->count(array('id > :id'), array('id'=>2));
 	 */
-	function count($conditions = null, $bindparams = array()){
+	function count($conditions = array(), $bindparams = array()){
 	    $select = "SELECT COUNT(*) AS total FROM {$this->table} ";
 	    $needbind = false;//是否需要预处理参数
 	    $where = ' WHERE 1 ';
