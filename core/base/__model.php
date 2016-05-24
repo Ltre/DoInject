@@ -13,22 +13,30 @@ class DIModelUtil {
      * 根据简短表名获取继承于DIModel的模型实例
      * @return DIModel
      */
-    static function supertable($shortname){
+    static function supertable($shortname, $singleton = true){
+        static $objMap = array();
         $table_class = ucfirst($shortname) . ucfirst(DI_KEYWORD_MODEL);
-        if (class_exists($table_class, false)) {
-            return new $table_class();
+        if ($singleton && isset($objMap[$table_class])) {
+            $currObj = $objMap[$table_class];
+        } else if (class_exists($table_class, false)) {
+            $currObj = new $table_class();
         } else {
             //由于newInstance()过于先进，很多服务器不支持。建议先定义好XxxModel类再调用本方法
-            return create_class($table_class, false, 'DIModel')->newInstance();
+            $currObj = create_class($table_class, false, 'DIModel')->newInstance();
         }
+        $singleton AND $objMap[$table_class] = $currObj;//仅在单例模式时，才改动实例MAP
+        return $currObj;
     }
     
     /**
      * 创建一个临时的DIModel实例，和任何表无关
+     * @param bool $useRandName 
+     *      设置为true时，一定会产生新的对象；设置为false时，会根据原本类中是否声明单例模式而决定是否产生新对象。
      * @return DIModel
      */
-    static function instance(){
-        $c = 'di_model_instance_'.rand(0, 999);
+    static function instance($useRandName = true){
+        $c = 'di_model_instance';
+        if ($useRandName) $c .= '_'.rand(0, 9999);
         return self::supertable($c);
     }
     
@@ -62,7 +70,7 @@ interface DIModelTemplate {
 abstract class DIModel extends DIBase implements DIModelTemplate {
     public $table = null;//表名默认为前缀+类名去掉“Model”，也可以在继承后充写改属性来指定表名
     public $page;//分页缓存变量，操作权共享给数据库驱动，如DIMySQL，详见__constructor()
-    protected $_conn = null;
+    protected static $_conn = null;
     protected $_cache_rs = array();
     
     /** @var DIModel */
@@ -84,7 +92,7 @@ abstract class DIModel extends DIBase implements DIModelTemplate {
         } catch (Exception $e) {
             throw new DIException($e->getMessage());
         }
-        $this->_conn or self::connect();
+        self::$_conn or $this->connect();
     }
     
 	/**
@@ -93,8 +101,8 @@ abstract class DIModel extends DIBase implements DIModelTemplate {
 	 */
 	final function connect(){
 	    //填写模板套用过程，并在DIModelTemplate中声明这些模板方法
-	    $this->_conn = $this->_driver_handler->connect();
-	    return $this->_conn;
+	    self::$_conn = $this->_driver_handler->connect();
+	    return self::$_conn;
 	}
 	
 	final function query($sql, $params = array()){
@@ -165,7 +173,7 @@ abstract class DIModel extends DIBase implements DIModelTemplate {
  */
 class DIMySQL implements DIModelTemplate {
     
-    protected $_conn;//与DIModel::$_conn存在引用关联，详见本类的&connect()
+    protected static $_conn;//与DIModel::$_conn存在引用关联，详见本类的&connect()
     protected $table;//当前表名
     protected $_M;//DIModel对象授予操作权限
     
@@ -185,8 +193,8 @@ class DIMySQL implements DIModelTemplate {
         $options = array(
         	PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8'
         );
-        $this->_conn = new PDO($dsn, DIDBConfig::$user, DIDBConfig::$pwd, $options);
-        return $this->_conn;
+        self::$_conn = new PDO($dsn, DIDBConfig::$user, DIDBConfig::$pwd, $options);
+        return self::$_conn;
     }
     
     /**
@@ -211,7 +219,7 @@ class DIMySQL implements DIModelTemplate {
         }
         $sql = "INSERT INTO " . $this->table . " (" . join(', ', $keys) . ") VALUES ( :" . join(', :', $prevalues) . ")";
         $sth = $this->_bindParams($sql, $data);
-        if ($sth->execute()) return $this->_conn->lastInsertId();
+        if ($sth->execute()) return self::$_conn->lastInsertId();
         $err = $sth->errorInfo();
         throw new DIException('Database SQL: "' . $sql. '". ErrorInfo: '. $err[2], 1);
     }
@@ -308,7 +316,7 @@ class DIMySQL implements DIModelTemplate {
 	}
 	
     private function _bindParams($sql, $params=array()){
-        $sth = $this->_conn->prepare($sql);
+        $sth = self::$_conn->prepare($sql);
         if(is_array($params) && !empty($params)){
             foreach($params as $k=>&$v){
                 $sth->bindParam($k, $v);
@@ -334,7 +342,7 @@ class DIMySQL implements DIModelTemplate {
         if(is_bool($str))return $str ? 1 : 0;
         if(is_int($str))return (int)$str;
         if(@get_magic_quotes_gpc())$str = stripslashes($str);
-        return $this->_conn->quote($str);
+        return self::$_conn->quote($str);
     }
     
     //参数：当前页码，页内条数上限，可见页码数，记录总条数
@@ -378,10 +386,10 @@ class DIMySQL implements DIModelTemplate {
 /******************************* 以下是方便调用的别名函数 *******************************/
 /*******************************                        *******************************/
 
-function supertable($shortname){
-    return DIModelUtil::supertable($shortname);
+function supertable($shortname, $singleton = true){
+    return DIModelUtil::supertable($shortname, $singleton);
 }
 
-function supermodel(){
-    return DIModelUtil::instance();
+function supermodel($useRandName = true){
+    return DIModelUtil::instance($useRandName);
 }
