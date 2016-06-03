@@ -624,7 +624,7 @@ function url($shell, array $params = array()){
     if ('' === $shell) return './';
     $u = './?' . $shell;
     foreach ($params as $k => $v) {
-        if (!is_numeric($k) && (is_string($v) || is_numeric($v)))
+        if (!is_numeric($k) && (is_string($v) || is_numeric($v) || is_bool($v)))
             $u .= "&{$k}={$v}";
     }
     return $u;
