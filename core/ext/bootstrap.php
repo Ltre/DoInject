@@ -121,7 +121,7 @@ function bt_shell_page($shell_tpml, $pager, $tpml_search = '{p}', array $elsePar
     return $page_str."</ul></div>";
 }
 
-//{~spte s="posts/p{p}" p=$page~}
+//{~spte s="posts/p{p}" p=$page e=$elseParams~}
 function bt_shell_page_sm($params, $smarty){
     isset($params['s']) || $params['s'] = '';
     if (! isset($params['s'])) throw new DIException('没有指定pager');
@@ -170,7 +170,7 @@ function bt3_shell_page($shell_tpml, $pager, $tpml_search = '{p}', array $elsePa
     return $page_str."</ul></div>";
 }
 
-//{~spte3 s="posts/p{p}" p=$page~}
+//{~spte3 s="posts/p{p}" p=$page e=$elseParams~}
 function bt3_shell_page_sm($params, $smarty){
     isset($params['s']) || $params['s'] = '';
     if (! isset($params['s'])) throw new DIException('没有指定pager');
