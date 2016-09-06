@@ -286,9 +286,10 @@ final class DIRoute {
     /*
      * 获取指令，不论GET还是POST都会进行分析。
      * 取值优先顺序：
-     *      => 配置的默认指令
+     *      => “xx”加密参数的值(用可变的值于保护接口API，防止被社工搜索到源码)
      *      => “x”参数的值
      *      => 位于左起第一个且没有值的参数名(如果没有，则取默认指令)
+     *      => 配置的默认指令
      *      => 分析该命令是否为regexp命令，是则重定向到对应的DO或LET命令，否则保持原参数名。
      * 指令使用方式建议：
      *      在一个请求中，如能保证所有参数值不会出现空字符串的情况，则可以用“位于左起第一个且没有值的参数名”作为shell。
@@ -296,8 +297,11 @@ final class DIRoute {
      */
     private function getShell( $request ){
         $shell = DIUrlShell::$_default_shell;
+        $xx = DI_ROUTE_ADVANCE_REQUEST_PARAM_NAME;
         $x = DI_ROUTE_REQUEST_PARAM_NAME;
-        if (isset($request[$x])) {
+        if (isset($request[$xx])) {
+            $shell = ltreDeCrypt($request[$xx]);
+        } elseif (isset($request[$x])) {
             $shell = $request[$x];
         } else {
             foreach ($request as $k => $g) {

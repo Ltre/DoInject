@@ -29,6 +29,10 @@ if (!defined('DI_KILL_ON_FAIL_REWRITE'))
 if(!defined('DI_ROUTE_REQUEST_PARAM_NAME'))
     define('DI_ROUTE_REQUEST_PARAM_NAME', 'x');
 
+//备用的高级加密路由REQUEST参数，方便HTML表单或有需要保护API的场景使用，该方式可防止被社工搜索到API源码
+if(!defined('DI_ROUTE_ADVANCE_REQUEST_PARAM_NAME'))
+    define('DI_ROUTE_ADVANCE_REQUEST_PARAM_NAME', 'xx');
+
 //是否统一对有do命令的参数进行过滤  TODO:准备实现过滤函数，实现自动过滤和手动过滤。默认为false
 if(!defined('DI_FILTRATE_DOPARAMS'))
     define('DI_FILTRATE_DOPARAMS', false);
