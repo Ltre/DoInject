@@ -65,6 +65,10 @@ if(!defined('DI_SMARTY_LEFT_DELIMITER'))
 if(!defined('DI_SMARTY_RIGHT_DELIMITER'))
     define('DI_SMARTY_RIGHT_DELIMITER', '}}');
 
+//使用PDO获取查询结果时，选择返回的数据格式，如PDO::FETCH_ASSOC
+if(!defined('DI_PDO_FETCH_TYPE'))
+    define('DI_PDO_FETCH_TYPE', PDO::FETCH_ASSOC);
+    
 //缓存文件目录
 if(!defined('DI_CACHE_PATH'))
     define('DI_CACHE_PATH', DI_DATA_PATH . 'cache/');

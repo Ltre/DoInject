@@ -206,7 +206,7 @@ class DIMySQL implements DIModelTemplate {
     function query($sql, $params=array()){
 		$this->sql = $sql;
 		$sth = $this->_bindParams($sql, $params);
-		if($sth->execute()) return $sth->fetchAll(PDO::FETCH_OBJ);
+		if ($sth->execute()) return $sth->fetchAll(DI_PDO_FETCH_TYPE);
 		$err = $sth->errorInfo();
 		throw new DIException('Database SQL: "' . $sql. '". ErrorInfo: '. $err[2], 1);
 	}
