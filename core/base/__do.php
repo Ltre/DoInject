@@ -83,6 +83,9 @@ abstract class DIDo extends DIBase{
 	    }
 	    
 	    $tplFile = DI_TPL_PATH . $tpl_name . '.html';
+	    if(! is_file($tplFile)){
+	        throw new DIException("模板文件[ $tplFile ]不存在");
+	    }
 	    
 	    $ret = $this->_tpl->showWithSmarty($tplFile, $return);
 	    if ($return) {
