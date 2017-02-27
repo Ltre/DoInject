@@ -192,7 +192,7 @@ class TestDo extends DIDo{
 	
 	//测试mysql
 	function mysql(){
-	    goto MYSQL1;
+	    goto MYSQL10;
 	    // 测试1
 	    MYSQL1:
 	    $e = create_class('Erbi', false, 'DIModel', null, array('var $table = "di_table";'))->newInstance();
@@ -246,6 +246,19 @@ class TestDo extends DIDo{
 	    MYSQL10:
 	    $opt = DIModelUtil::supertable('table')->alterByExpr(array('id'=>1), array('`id`=`id`-1', '`value`="vvv"'));
 	    var_dump($opt);
+	    //测试11：
+	    MYSQL11:
+	    $senior = new SeniorModel();
+	    $data = $senior->seniorSelect(array(
+	        'select' => 'id, vname',
+	        'from' => 'dm_danmu',
+	        'where' => ['id', '=', 1]
+	    ));
+	    dump($data);
+	    //测试12:
+	    MYSQL12:
+	    $data = supertable('Test')->select();
+	    dump(supertable('Test'));
 	}
 	
 	/* 
