@@ -375,7 +375,7 @@ function params_to_str( $num ){
 }
 
 /**
- * 创建一个类
+ * 创建一个类。若已有，则不会再创建
  * @param string $name
  * @param bool $abstract
  * @param string $extends
@@ -400,22 +400,25 @@ function params_to_str( $num ){
  * </pre>
  */
 function create_class($name, $abstract=false, $extends=null, $implements=null, $vars=array(), $funcs=array()){
-	$abstract = $abstract===true ? 'abstract' : '';
-	$code = "$abstract class $name ";
-	empty($extends) || $code .= "extends $extends ";
-	empty($implements) || $code .= "implements $implements ";
-	$code .= '{';
-	foreach (array('vars','funcs') as $v){
-		$$v = $$v === null || ! is_array($$v) ? array() : $$v;
-		foreach ($$v as $item){
-			$code .= $item;
-		}
-	}
-	$code .= '}';
-	//file_put_contents(DI_DATA_PATH . 'cache/a.php', '<?php  '.$code);//调试用，只注释不删除！
-	eval($code);
-	
-	//创建类之后，可选择性的实例化一个临时对象。如create_class('clazz')->newInstance(array(参数集));
+    try {
+        class_exists($name);//触发autoload加载
+    } catch (Exception $e) { //class_exists抛出异常，说明该类不存在，而且autoload函数也无法寻找到合适的php文件，此时才需要创建类。
+        $abstract = $abstract===true ? 'abstract' : '';
+        $code = "$abstract class $name ";
+        empty($extends) || $code .= "extends $extends ";
+        empty($implements) || $code .= "implements $implements ";
+        $code .= '{';
+        foreach (array('vars','funcs') as $v){
+            $$v = $$v === null || ! is_array($$v) ? array() : $$v;
+            foreach ($$v as $item){
+                $code .= $item;
+            }
+        }
+        $code .= '}';
+        //file_put_contents(DI_DATA_PATH . 'cache/a.php', '<?php  '.$code);//调试用，只注释不删除！
+        eval($code);
+    }
+	//选择性的实例化一个临时对象。如create_class('clazz')->newInstance(array(参数集));
 	if(!class_exists('DITempObject', false)){
 	    class DITempObject extends DIBase {
 	        var $class_name;

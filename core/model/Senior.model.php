@@ -58,10 +58,8 @@ class SeniorModel extends DIModel {
      * </pre>
      */
     public function seniorSelect($args){
-        if (empty($args['from'])) throw new Exception('args.from is empty!');
-    
         @$select = $args['select'] ?: '*';
-        @$from = $args['from'] ?: '';
+        @$from = $args['from'] ?: " {$this->table} ";
         @$where = $args['where'] ?: array();
         @$orderBy = $args['orderBy'] ?: '';
         @$groupBy = $args['groupBy'] ?: '';
@@ -107,6 +105,7 @@ class SeniorModel extends DIModel {
             'totalSql' => $totalSql,
             'conds' => $ret['conds'],
         );
+
         return array('list' => $list, 'pages' => $pages, 'count' => $count, 'debug' => $debug);
     }
     
