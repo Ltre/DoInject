@@ -48,7 +48,7 @@ class SeniorModel extends DIModel {
      *                      ),
      *                  ),
      *              ),
-     *              以上为复杂的逻辑条件，也支持简单的条件，如: where => ['uidEqual', 'u.user_id', '=', '50014545']
+     *              以上为复杂的逻辑条件，也支持简单的条件，如: where => ['u.user_id', '=', '50014545']
      *      orderBy => ORDER BY子句，如"u.user_id DESC"
      *      groupBy => GROUP BY子句，如"u.role"
      *      limitBy => 分页所需参数，数组元素顺序如下：页码、每页结果集个数上限、可见的页码范围长度。
