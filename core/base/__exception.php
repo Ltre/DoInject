@@ -7,13 +7,31 @@
  */
 class DIException extends Exception {
 	
+    private $args = array();
+    
     /**
      * @param string $message 错误信息
      * @param string $errPage 错误页，用来include。当处于处于DI_DEBUG_MODE时，可能会调用。
      * @param array|callable $callback 回调体。如果在回调体中终止程序，则$errPage参数会失效。
      */
 	function __construct($message, $errPage=DI_PAGE_503, $callback=NULL, $code=0, $previous=NULL){
-
+        $this->args = array(
+            'message' => $message,
+            'errPage' => $errPage,
+            'callback' => $callback,
+            'code' => $code,
+            'previous' => $previous,
+        );
+	}
+    
+    //处理异常过程
+    function deal(){
+        $message = $this->args['message'];
+        $errPage = $this->args['errPage'];
+        $callback = $this->args['callback'];
+        $code = $this->args['code'];
+        $previous = $this->args['previous'];
+        
         //记录错误日志到文件或数据库
         if (DI_IO_RWFUNC_ENABLE) {
             $time = date('Y-m-d H:i:s');
@@ -34,7 +52,7 @@ class DIException extends Exception {
         }
 
 		if(DI_DEBUG_MODE){
-            parent::__construct($message, $code, $previous);
+            dump($this);
 		}
 		else{
     		//这里不继承调用父类构造器，阻止显式抛出异常，这样就不用在每个catch块中进行手动判断DEBUG模式了
@@ -42,8 +60,7 @@ class DIException extends Exception {
                 include $errPage;
             }
 		}
-		
-	}
+    }
 	
 }
 
