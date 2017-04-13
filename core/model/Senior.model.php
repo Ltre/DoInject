@@ -112,7 +112,7 @@ class SeniorModel extends DIModel {
     
     protected function _seniorWhere(array $where, $layer = 1){
         if ($layer == 1 && count($where) == 0) { //第一层就是空数组，表示无条件查询
-            return array('whereSql' => '1=1', 'conds' => array());
+            return array('whereSql' => 'WHERE 1=1', 'conds' => array());
         }
     
         $whereJson = json_encode($where, JSON_UNESCAPED_UNICODE);
