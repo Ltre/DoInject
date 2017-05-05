@@ -1,8 +1,7 @@
 <?php
 if (! strcasecmp($_SERVER['REQUEST_METHOD'], 'post')) {
 	preg_match(arg('re'), arg('str'), $matches);
-	
-	putjson(0, htmlspecialchars(var_export($matches, true)));
+	putjson(0, '<pre>'.htmlspecialchars(var_export($matches, true)).'</pre>');
 }
 ?><html>
 <head>
