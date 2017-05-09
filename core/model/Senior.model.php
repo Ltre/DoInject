@@ -158,7 +158,7 @@ class SeniorModel extends DIModel {
                 throw new Exception('Build whereSql failure in simple condition layer, $where must be an array with 3 elements, and the first 2 elements of $where can not be array! Current $where is '.$whereJson.'.');
             }
             list($field, $op, $value) = $where;
-            $key = str_replace('.', '', $field).'_'.intval(microtime(1)*1000);
+            $key = str_replace('.', '', $field).'_'.intval(microtime(1)*1000).'_r'.rand(100, 999);
             if ($op == 'IN' || $op == 'NOT IN') {
                 if (! is_array($value) || count($value) == 0) { //含有IN运算符的条件值必须是含有至少一个元素的数组
                     throw new Exception("Build whereSql failure in [IN|NOT IN] condition layer, \$where[2] must be an array, and must contain at least one element value! Current \$where is {$whereJson}.");
