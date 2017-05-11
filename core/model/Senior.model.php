@@ -90,7 +90,11 @@ class SeniorModel extends DIModel {
     
         //按需分页
         if ($pageable) {
-            $totalSql = "SELECT COUNT(1) `cnt` {$tailSql} {$groupSql}";
+            if ($groupBy) {
+                $totalSql = "SELECT COUNT(1) `cnt` FROM ( SELECT 1 {$tailSql} {$groupSql} ) AS `tmp`";
+            } else {
+                $totalSql = "SELECT COUNT(1) `cnt` {$tailSql}";
+            }
             $total = $this->query($totalSql, $ret['conds']) ?: array();
             $count = $total[0]['cnt']?:0;
             $pages = $this->pager($page, $limit, $scope, $count);
