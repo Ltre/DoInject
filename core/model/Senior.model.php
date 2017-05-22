@@ -54,7 +54,7 @@ class SeniorModel extends DIModel {
      *      limitBy => 分页所需参数，数组元素顺序如下：页码、每页结果集个数上限、可见的页码范围长度。
      *                 如：[5, 10, 10]表示取第5页，显示最多10条数据，假设总页数足够，则可见的页码为[5,6,7,8,9,10,11,12,13,14]
      *      listable => 值true|false，是否获取列表，默认为是
-     *      pageable => 值true|false, 是否获取分页，默认为否
+     *      pageable => 值true|false, 是否获取分页，默认为是
      * </pre>
      */
     public function seniorSelect($args){
@@ -65,7 +65,7 @@ class SeniorModel extends DIModel {
         @$groupBy = $args['groupBy'] ?: '';
         @$limitBy = $args['limitBy'] ?: array(1, 10, 10);
         @$listable = (! isset($args['listable']) || $args['listable']) ? true : false;
-        @$pageable = $args['pageable'] ? true : false;
+        @$pageable = (! isset($args['pageable']) || $args['pageable']) ? true : false;
     
         $page = max(1, (int)$limitBy[0]);
         $limit = $limitBy[1];
