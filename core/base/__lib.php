@@ -554,7 +554,7 @@ function dump($var, $exit = false){
 
 function putjson($code, $data = null, $msg = ''){
     //application/x-javascript和application/json会触发IE下载，暂时取消
-    header('Access-Control-Allow-Origin: '.($_SERVER['HTTP_ORIGIN']?:'*'));
+    @header('Access-Control-Allow-Origin: '.($_SERVER['HTTP_ORIGIN']?:'*'));
     header('Access-Control-Allow-Credentials: true');
     echo json_encode(compact('code', 'data', 'msg'));
     exit;
@@ -563,7 +563,7 @@ function putjson($code, $data = null, $msg = ''){
 //jsonp数据输出
 function putjsonp($code, $data = null, $msg = '', $callback='callback'){
     header("Content-Type: application/x-javascript; charset=UTF-8");
-    header('Access-Control-Allow-Origin: '.($_SERVER['HTTP_ORIGIN']?:'*'));
+    @header('Access-Control-Allow-Origin: '.($_SERVER['HTTP_ORIGIN']?:'*'));
     header('Access-Control-Allow-Credentials: true');
     $json = json_encode(compact('code', 'data', 'msg'));
     if( !empty($_GET[$callback])){
@@ -792,7 +792,7 @@ function ltreDeCrypt($str){
 //处理OPTIONS请求，前提：r参数必须必须必须写到URL里！！！（一般跨域POST时比较有用）
 function dealOptionsMethod(){
     if (strtolower($_SERVER['REQUEST_METHOD']) === 'options') {
-        header('Access-Control-Allow-Origin: '.($_SERVER['HTTP_ORIGIN']?:'*'));
+        @header('Access-Control-Allow-Origin: '.($_SERVER['HTTP_ORIGIN']?:'*'));
         header('Access-Control-Allow-Credentials: true');
         header(0, 0, 204);
         exit;
