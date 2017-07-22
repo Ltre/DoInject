@@ -48,7 +48,8 @@ final class DIRoute {
      * 检查是否符合路由重写条件：
      *      1、启用了重写开关；
      *      2、路由“x”参数的值没被指定；
-     *      3、request_args中下标为零且值为空串的参数不存在
+     *      3、路由“xx”参数的值没被指定
+     *      4、request_args中不存在值为空串、且在url中显式使用等号的参数
      */
     private function isAllowRewrite($request){
         if (! DI_ROUTE_REWRITE) {
@@ -58,11 +59,18 @@ final class DIRoute {
         if (isset($request[$x]) && '' !== $request[$x]) {
             return false;
         }
+        $xx = DI_ROUTE_ADVANCE_REQUEST_PARAM_NAME;
+        if (isset($request[$xx]) && '' !== $request[$xx]) {
+            return false;
+        }
         $checkFirst = true;
         foreach ($request as $k => $g) {
             if ('' === $g) {
-                $checkFirst = false;
-                break;
+                $usedEqual = preg_match('/[?&]'.str_replace('/', '\\/', $k).'=/', $_SERVER['REQUEST_URI']);
+                if (! $usedEqual) {
+                    $checkFirst = false;
+                    break;
+                }
             }
         }
         return $checkFirst;
