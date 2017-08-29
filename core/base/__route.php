@@ -49,7 +49,10 @@ final class DIRoute {
      *      1、启用了重写开关；
      *      2、路由“x”参数的值没被指定；
      *      3、路由“xx”参数的值没被指定
-     *      4、request_args中不存在值为空串、且在url中显式使用等号的参数
+     *      4、request_args中不存在以下：
+     *              值为空串、且在url中显式使用等号的参数（GET情况）
+     *              或
+     *              值为空串的POST参数（POST情况）
      */
     private function isAllowRewrite($request){
         if (! DI_ROUTE_REWRITE) {
@@ -67,7 +70,8 @@ final class DIRoute {
         foreach ($request as $k => $g) {
             if ('' === $g) {
                 $usedEqual = preg_match('/[?&]'.str_replace('/', '\\/', $k).'=/', $_SERVER['REQUEST_URI']);
-                if (! $usedEqual) {
+                $firstPostArgIsNulStr = strtolower($_SERVER['REQUEST_METHOD']) == 'post';
+                if (! $usedEqual && ! $firstPostArgIsNulStr) {
                     $checkFirst = false;
                     break;
                 }
