@@ -70,8 +70,9 @@ final class DIRoute {
         foreach ($request as $k => $g) {
             if ('' === $g) {
                 $usedEqual = preg_match('/[?&]'.str_replace('/', '\\/', $k).'=/', $_SERVER['REQUEST_URI']);
-                $firstPostArgIsNulStr = strtolower($_SERVER['REQUEST_METHOD']) == 'post';
-                if (! $usedEqual && ! $firstPostArgIsNulStr) {
+                //$firstPostArgIsNulStr = strtolower($_SERVER['REQUEST_METHOD']) == 'post';
+                $isInPostArgs = isset($_POST[$k]);
+                if (! $usedEqual && ! $isInPostArgs) {//原：! $usedEqual && ! $firstPostArgIsNulStr
                     $checkFirst = false;
                     break;
                 }
