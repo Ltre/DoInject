@@ -3,7 +3,7 @@ function showTrace($errMsg = '', $goDie = true) {
     $trace = debug_backtrace();
     $out = "<hr/><div>".$errMsg."<br /><table border='1'>";
     $out .= "<thead><tr><th>file</th><th>line</th><th>function</th><th>args</th></tr></thead>";
-    foreach ($trace as $v) {
+    foreach ($trace as $k => $v) {
         if ($k == 0) continue;//忽略本方法调用信息
         if (!isset($v['file'])) $v['file'] = '[PHP Kernel]';
         if (!isset($v['line'])) $v['line'] = '';
