@@ -33,7 +33,7 @@ define('DI_KEYWORD_INIT', 'init');
 
 
 /* 系统保留目录：约定所有路径都以“/”结尾 */
-define('DI_CORE_PATH', DI_KEYWORD_CORE . '/');
+define('DI_CORE_PATH', BASE_DIR.DI_KEYWORD_CORE . '/');
 define('DI_BASE_PATH',		DI_CORE_PATH . DI_KEYWORD_BASE . '/');
 define('DI_CONFIG_PATH',	DI_CORE_PATH . DI_KEYWORD_CONFIG . '/');
 define('DI_ENTITY_PATH',	DI_CORE_PATH . DI_KEYWORD_ENTITY . '/');
