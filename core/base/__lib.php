@@ -126,16 +126,16 @@ function __autoload( $class_name ){
 		eval("class $class_name {}");
 	}
 } */
-function __autoload__( $class_name ){
+@eval('function __autoload($class_name){
     $aap = DIIncludeConfig::DI_SPCL_AUTOLOAD_PATH();
     $pos = false;
-    $name = ''; $path = '';
+    $name = ""; $path = "";
 
     foreach ($aap as $i=>$p){
         $pos = strripos($class_name, $i);
         if(false!==$pos){
             $name = substr($class_name, 0, $pos);
-            $path = str_replace('{name}', $name, $p);
+            $path = str_replace("{name}", $name, $p);
             file_exists($path) && require $path;
             break;
         }
@@ -145,7 +145,7 @@ function __autoload__( $class_name ){
         $aap = DIIncludeConfig::DI_NOSPCL_AUTOLOAD_PATH();
         $name = &$class_name;
         foreach ($aap as $i=>$p){
-            $path = str_replace('{name}', $name, $p);
+            $path = str_replace("{name}", $name, $p);
             if(file_exists($path)){
                 require $path;
                 //return;
@@ -165,7 +165,7 @@ function __autoload__( $class_name ){
         $msg = "类[ $class_name ]不存在";
         throw new DIException($msg);
     }
-}
+};');
 // 强制注册__autoload，防止无法加载
 spl_autoload_register('__autoload__');
 
