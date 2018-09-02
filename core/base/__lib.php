@@ -167,7 +167,7 @@ function __autoload( $class_name ){
     }
 };');
 // 强制注册__autoload，防止无法加载
-spl_autoload_register('__autoload__');
+spl_autoload_register('__autoload');
 
 
 /**
