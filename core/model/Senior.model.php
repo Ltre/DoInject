@@ -15,8 +15,8 @@ class SeniorModel extends DIModel {
         ));
         return $data['count'];
     }
-    
-    
+
+
     /**
      * 高级SELECT查询方法
      * <pre>
@@ -58,12 +58,15 @@ class SeniorModel extends DIModel {
      * </pre>
      */
     public function seniorSelect($args){
+        if (empty($args['from']) && empty($this->table_name)) {
+            throw new Exception('The [args.from] is empty!');
+        }
         if (! (empty($args['limitBy']) || is_array($args['limitBy']) && 3 == count($args['limitBy']) && is_numeric(join('', $args['limitBy'])))) {
             throw new Exception('The [args.limitBy] is only accept empty value or an array contains three numbers!');
         }
 
         @$select = $args['select'] ?: '*';
-        @$from = $args['from'] ?: " {$this->table} ";
+        @$from = $args['from'] ?: " {$this->table_name} ";
         @$where = $args['where'] ?: array();
         @$orderBy = $args['orderBy'] ?: '';
         @$groupBy = $args['groupBy'] ?: '';
@@ -88,11 +91,11 @@ class SeniorModel extends DIModel {
 
         $orderSql = $orderBy ? "ORDER BY {$orderBy}" : "";
         $groupSql = $groupBy ? "GROUP BY {$groupBy}" : "";
-    
+
         $ret = $this->_seniorWhere($where);
         $whereSql = $ret['whereSql'];
         $tailSql = "FROM {$from} {$whereSql}";
-    
+
         //按需取列表
         if ($listable) {
             $sql = "SELECT {$select} {$tailSql} {$groupSql} {$orderSql} {$limitSql}";
@@ -101,7 +104,7 @@ class SeniorModel extends DIModel {
             $sql = '';
             $list = array();
         }
-    
+
         //按需分页
         if ($pageable) {
             if ($groupBy) {
@@ -117,22 +120,21 @@ class SeniorModel extends DIModel {
             $count = 0;
             $pages = array();
         }
-    
+
         $debug = array(
             'sql' => $sql,
             'totalSql' => $totalSql,
             'conds' => $ret['conds'],
         );
-
         return array('list' => $list, 'pages' => $pages, 'count' => $count, 'debug' => $debug);
     }
-    
-    
+
+
     protected function _seniorWhere(array $where, $layer = 1){
         if ($layer == 1 && count($where) == 0) { //第一层就是空数组，表示无条件查询
             return array('whereSql' => 'WHERE 1=1', 'conds' => array());
         }
-    
+
         $whereJson = json_encode($where, JSON_UNESCAPED_UNICODE);
         $allIsArray = true;
         $firstIsLogicAndAllOtherIsArray = true;
@@ -145,13 +147,13 @@ class SeniorModel extends DIModel {
         if ($allIsArray) {  //可能缺少处于第一元素位置的逻辑符[AND|OR|NOT]
             throw new Exception("In layer {$layer}, all elements of \$where are array, maybe you miss the first element with logic value such as 'AND','OR','NOT'! Current \$where is {$whereJson}.");
         }
-    
+
         $whereSql = "";
         $conds = array();
         if ($layer == 1) {
             $whereSql = "WHERE";
         }
-    
+        
         $inComplexLayer = $firstIsLogicAndAllOtherIsArray;
         if ($inComplexLayer) { //处于具有复杂逻辑的层，将会递归到下层
             $logic = $where[0];
@@ -176,7 +178,7 @@ class SeniorModel extends DIModel {
                 throw new Exception('Build whereSql failure in simple condition layer, $where must be an array with 3 elements, and the first 2 elements of $where can not be array! Current $where is '.$whereJson.'.');
             }
             list($field, $op, $value) = $where;
-            $key = str_replace('.', '', $field).'_'.intval(microtime(1)*1000).'_r'.rand(100, 999);
+            $key = '_'.preg_replace('/\W/', '', $field).'_'.intval(microtime(1)*1000).'_r'.rand(100, 999);
             if ($op == 'IN' || $op == 'NOT IN') {
                 if (! is_array($value) || count($value) == 0) { //含有IN运算符的条件值必须是含有至少一个元素的数组
                     throw new Exception("Build whereSql failure in [IN|NOT IN] condition layer, \$where[2] must be an array, and must contain at least one element value! Current \$where is {$whereJson}.");
@@ -188,12 +190,12 @@ class SeniorModel extends DIModel {
                     $conds["{$key}_{$vk}"] = $vv;
                 }
                 $whereSql .= implode(',', $keys) . ')';
-            } else {
+            } else {                
                 $whereSql .= " {$field} {$op} :{$key}";
                 $conds[$key] = $value;
             }
             return array('whereSql' => $whereSql, 'conds' => $conds);
         }
     }
-    
+
 }
