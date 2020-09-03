@@ -197,5 +197,50 @@ class SeniorModel extends DIModel {
             return array('whereSql' => $whereSql, 'conds' => $conds);
         }
     }
+    
+    
+    /**
+     * 循环方式，将别表的数据列合并到左列表（节流查询）
+     * 
+     *      实际不执行联表，而是一次性IN查询
+     *
+     * @param array $list 左列表
+     * @param string $select 右表select子句，实际会在字句的左边，自动追加k2k参数中的左侧键名
+     * @param string $from 右表的from子句
+     * @param string $k2k 左表待展开查询的数据ID，该ID与右表的查询键关联。例如"user_id -> id"，可视为左表的user_id，对应右表(用户)的主键id
+     * @return array 左右合并后的列表
+     */
+    public function loopMergeTable(array $list, $select, $from, $k2k = 'user_id -> id'){
+        if (empty($list)) return [];
+        if (! preg_match('/([\w_]+)\s*->\s*(\w+)/', $k2k, $matches)) return [];
+
+        $ids = [];
+        list (, $leftKey, $rightKey) = $matches;
+        foreach ($list as $v) {
+            $id = $v[$leftKey];
+            $ids[] = $id;
+        }
+        $ids = array_unique($ids);
+
+        //取得旁表数据MAP
+        $map = [];
+        $pack = $this->seniorSelect([
+            'select' => "{$rightKey}, {$select}",
+            'from' => $from,
+            'where' => [$rightKey, 'IN', $ids],
+            'listable' => true,
+            'pageable' => false,
+        ]);
+        foreach ($pack['list'] as $v) $map[$v[$rightKey]] = $v;
+
+        //合并数据
+        foreach ($list as $k => $v) {
+            $rightData = $map[$v[$leftKey]];
+            unset($rightData[$rightKey]);
+            $list[$k] += $rightData;
+        }
+
+        return $list;
+    }
 
 }
