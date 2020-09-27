@@ -242,5 +242,28 @@ class SeniorModel extends DIModel {
 
         return $list;
     }
+    
+
+    /**
+     * 计算任意表达式
+     *
+     * @param string $field 指定字段，形式如"表名.字段"或"字段"，如 user.score 或 score
+     * @param string $formula 含有问号的表达式，如 "SUM(?)"
+     * @param string $where
+     * @return mixed 计算结果
+     */
+    public function calc($field, $formula, $where){
+        $e = explode('.', $field);
+        $from = count($e)==2 ? $e[0] : $this->table_name;
+        $field = count($e)==2 ? $e[1] : $field;
+        $formula = str_replace('?', "`{$field}`", $formula);
+        $pack = $this->seniorSelect([
+            'select' => "{$formula} rs",
+            'from' => $from,
+            'where' => $where,
+            'pageable' => false,
+        ]);
+        return $pack['list'][0]['rs'] ?: 0;
+    }
 
 }
