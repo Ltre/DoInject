@@ -179,6 +179,7 @@ class SeniorModel extends DIModel {
             }
             list($field, $op, $value) = $where;
             $key = '_'.preg_replace('/\W/', '', $field).'_'.intval(microtime(1)*1000).'_r'.rand(100, 999);
+            $op = strtoupper(trim($op));
             if ($op == 'IN' || $op == 'NOT IN') {
                 if (! is_array($value) || count($value) == 0) { //含有IN运算符的条件值必须是含有至少一个元素的数组
                     throw new Exception("Build whereSql failure in [IN|NOT IN] condition layer, \$where[2] must be an array, and must contain at least one element value! Current \$where is {$whereJson}.");
@@ -265,5 +266,41 @@ class SeniorModel extends DIModel {
         ]);
         return $pack['list'][0]['rs'] ?: 0;
     }
+
+
+    /* 未确定是否加入此代码
+    //当不指定具体的select子句时，将使用驼峰化命名
+    public function makeHumpFileds(){
+        $dRs = $this->query("DESC `{$this->table_name}`") ?: [];
+        $fs = [];
+        foreach ($dRs as $v) {
+            //@todo 有空根据$v['Type']，将输出数据类型指定好，不用搞的全部是字符串
+            $fs[] = $v['Field'] . ' AS ' . preg_replace_callback('/_([a-zA-Z])/', function($matches){
+                return strtoupper($matches[1]);
+            }, $v['Field']);
+        }
+        return join(', ', $fs);
+    }
+    */
+
+
+    /* 未确定是否加入此代码
+    public function proFind($conditions=array(),$field='', $order=null) {
+        if ($field == '' || trim(((string)$field).'') == '*') {
+            $field = $this->makeHumpFileds();
+        }
+        return parent::find($conditions, $field, $order);
+    }
+    */
+    
+
+    /* 未确定是否加入此代码
+    public function proSelect( $conditions=array(), $field='', $order=null, $limit=null ){
+        if ($field == '' || trim(((string)$field).'') == '*') {
+            $field = $this->makeHumpFileds();
+        }
+        return parent::select($conditions, $field, $order, $limit);
+    }
+    */
 
 }
