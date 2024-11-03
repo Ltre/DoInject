@@ -15,6 +15,7 @@ class DIException extends Exception {
      * @param array|callable $callback 回调体。如果在回调体中终止程序，则$errPage参数会失效。
      */
 	function __construct($message, $errPage=DI_PAGE_503, $callback=NULL, $code=0, $previous=NULL){
+        parent::__construct($message, $code, $previous);
         $this->args = array(
             'message' => $message,
             'errPage' => $errPage,
